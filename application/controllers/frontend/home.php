@@ -54,6 +54,9 @@ class Home extends CI_Controller {
 	  	// get record
    		$data['brands'] = $this->modelfrontend->getAllData($table_name, $filter);
 		
+   		$filter_banner = 'banner';
+		$data['banners'] = $this->modelfrontend->getAllData($table_name, $filter_banner);
+		//print_r($data['banner']);die();
 		// pagination
 		
 		$config['base_url'] = base_url().'frontend/home';
@@ -190,6 +193,25 @@ class Home extends CI_Controller {
    		// load view
    
    		$this->load->view('frontend/product_detail', $data);
+   		
+   	}
+	public function getPageDetail()
+   	{
+   
+   		$data = '';
+   		
+		// get url parameter
+   
+   		$slug = $this->uri->segment(2);
+		//echo $id;die();
+		// get product
+		
+		$table_name = 'np_general_settings';
+   		$data['page'] = $this->modelfrontend->getPageRecord($table_name, $slug);
+   		//print_r($data['page']);die();
+   		// load view
+   
+   		$this->load->view('frontend/layout/detail_template', $data);
    		
    	}
    // --------------------------------------------------------------------

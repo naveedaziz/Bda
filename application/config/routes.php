@@ -46,16 +46,13 @@ $route['default_controller'] = 'frontend/home';
 $route['frontend/home:any'] = 'frontend/home/index';
 $route['frontend/allProducts'] = "frontend/home/getAllProducts";
 $route['frontend/allProducts:any'] = "frontend/home/getAllProducts";
-$route['frontend/getBrands'] = 'frontend/home/getBrand';
-$route['frontend/brands'] = 'frontend/home/getAllBrands';
-$route['frontend/brands:any'] = "frontend/home/getAllBrands";
-$route['frontend/brand_detail:any'] = "frontend/home/getBrandDetail";
+$route['pages:any'] = "frontend/home/getPageDetail";
 $route['frontend/products'] = 'frontend/home/allProducts';
 $route['frontend/product_detail:any'] = 'frontend/home/getProductDetail';
 $route['frontend/query'] = 'frontend/home/query';
 $route['frontend/query:any'] = 'frontend/home/query';
 $route['frontend/submitQuery'] = 'frontend/home/submitQuery';
-$route['frontend/thanks'] = 'frontend/home/thanks';
+$route['thanks'] = 'frontend/home/thanks';
 $route['frontend/aboutus'] = 'frontend/home/aboutus';
 $route['404_override'] = '';
 
@@ -109,6 +106,14 @@ $route['admin/edit_page:any'] = "backend/page/edit";
 $route['admin/change_page_status:any'] = "backend/page/ChangeStatus";
 $route['admin/update_page'] = "backend/page/update";
 $route['admin/delete_page:any'] = "backend/page/delete";
+
+$route['admin/banners'] = "backend/banner/index";
+$route['admin/add_banner'] = "backend/banner/add";
+$route['admin/insert_banner'] = "backend/banner/insert";
+$route['admin/edit_banner:any'] = "backend/banner/edit";
+$route['admin/change_banner_status:any'] = "backend/banner/ChangeStatus";
+$route['admin/update_banner'] = "backend/banner/update";
+$route['admin/delete_banner:any'] = "backend/banner/delete";
 
 $route['admin/notifications'] = "backend/notification/index";
 $route['admin/insert_notification'] = "backend/notification/insert";

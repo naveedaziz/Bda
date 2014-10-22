@@ -26,7 +26,7 @@ class modelFrontend extends CI_Model {
    
    		if ($table_name == 'np_general_settings')
    			{
-   			$sql = "SELECT * FROM `" . $table_name . "` where type = '" . $filter . "' and status = '1' order by id desc";
+   			 $sql = "SELECT * FROM `" . $table_name . "` where type = '" . $filter . "' and status = '1' order by id desc";
    			}
    		  else
    			{
@@ -100,6 +100,21 @@ class modelFrontend extends CI_Model {
    	public function getRecord($table_name, $id)
    	{
    		$sql = "SELECT * FROM `" . $table_name . "` where id = '" . $id . "'";
+   		$result = $this->db->query($sql);
+   		$row = $result->row();
+   		if (!empty($row))
+   			{
+   			return $row;
+   			}
+   		  else
+   			{
+   			return false;
+   			}
+   	}
+	
+	public function getPageRecord($table_name, $slug)
+   	{
+   		 $sql = "SELECT * FROM `" . $table_name . "` where seo_url = '" . $slug . "' and type = 'page'";
    		$result = $this->db->query($sql);
    		$row = $result->row();
    		if (!empty($row))
