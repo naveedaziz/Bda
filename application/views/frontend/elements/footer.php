@@ -11,7 +11,7 @@
                   <div class="col-md-10">
                      <ul class="nav-footer">
                         <li class="active">
-                           <a href="<?php echo base_url(); ?>">About</a>  
+                           <a href="<?php echo base_url(); ?>frontend/aboutus">About</a>  
                         </li>
                         <li>
                            <a href="<?php echo base_url(); ?>">Contact</a>

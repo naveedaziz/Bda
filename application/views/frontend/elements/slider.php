@@ -12,7 +12,7 @@
     With branded <br/>
 	food & beverage solutions
     <p>We’ll enable you to innovate & delight your customers<br /> Call Now &nbsp;<span class="contactNo-slider"> 0800 111 111</span><p>
-   <a href="#" class="contact-slider"><button class="btn btn-contact-slider">Contact</button></a>
+     <a href="<?php echo base_url(); ?>frontend/aboutus" class="contact-slider"><button class="btn btn-contact-slider">Contact</button></a>
     </div>
             <div class="item">
                 <div class="fill" style="background-image:url('<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>home-banner.jpg');"></div>

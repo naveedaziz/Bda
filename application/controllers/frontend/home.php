@@ -281,11 +281,15 @@ class Home extends CI_Controller {
    	 */
    	public function aboutus()
    	{
+		$this->load->library('parser');
 		$data = "";
-		
+		$data = array(
+              'title'   => 'My Blog Title',
+              'Description' => 'Description'
+            );
    		// load user view with data listing
    
-   		$template[ 'body_content' ] = $this->load->view( 'frontend/aboutus', $data, true );
+   		$this->parser->parse('frontend/layout/detail_template', $data);
    	}
 		
 		// --------------------------------------------------------------------

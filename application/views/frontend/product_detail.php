@@ -27,8 +27,7 @@
 <div class="container">
    <!----- Brand Carousel ------>
       <div class="row">
-         <div class="span12">
-            <?php if(!empty($product)) { ?> 
+           <?php if(!empty($product)) { ?> 
             <div class="col-md-12">
             	<div class="col-md-7">
                <h2> <?php echo $product->title; ?></h2>
@@ -81,9 +80,7 @@
                else { ?>
             <p> <?php echo 'No Record Found!'; ?> </p>
             <?php } ?>
-            <hr />
          </div>
-      </div>
 </div>
 <!-- /.container -->
 <?php $this->load->view('frontend/elements/footer'); ?>
