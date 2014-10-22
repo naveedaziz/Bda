@@ -1,12 +1,13 @@
 <?php $this->load->view('backend/elements/header'); ?>
 <!-- Banner content -->
 <div id="page-content">
-   <form id="form-validation" action="<?php echo base_url();?>admin/update_banner" method="post" class="form-horizontal" enctype="multipart/form-data">
+   <form id="form-validation" action="<?php echo base_url();?>admin/insert_banner" method="post" class="form-horizontal" enctype="multipart/form-data">
+      <input type="hidden" value="banner" name="type" />
       <div class="row">
          <div class="col-sm-12 col-lg-12 margin-bottom">
             <div class="row">
                <div class="col-sm-9">
-                  <h3 class="remove-margin"> <i class="fa fa-files-o fa-fw"></i> Edit Banner</h3>
+                  <h3 class="remove-margin"> <i class="fa fa-files-o fa-fw"></i> Add Banner</h3>
                </div>
                <div class="col-sm-3 align-right">
                   <div class="col-xs-12 remove-padding">
@@ -30,9 +31,7 @@
                <div class="col-sm-9">
                   <div class="form-group">
                      <div class="col-xs-12">
-                        <input type="hidden" value="<?php echo $row->id; ?>" name="id" />
-                        <input type="hidden" value="banner" name="type" />
-                        <input type="text" id="title" name="title" class="form-control" value="<?php echo $row->title;?>" autocomplete="off">
+                        <input type="text" id="title" name="title" class="form-control" placeholder="Title" autocomplete="off">
                      </div>
                   </div>
                </div>
@@ -49,18 +48,6 @@
                   <div class="form-group">
                      <div class="col-xs-12">
                         <input id="files" type="file" name="myfile[]" accept="image/*" multiple="multiple" />
-                        <?php if($row->images){
-                           $string = $row->images;
-                           $json_o = (array) json_decode($string);
-                           
-                           foreach($json_o as $key =>$value){ ?>
-                        <div class="edit-multiple-images">
-                           <i onclick="removeItem($(this))" class="fa fa-trash-o fa-fw remove-thumb-edit"></i>
-                           <img src="<?php echo base_url().$json_o[$key]; ?>" alt="" class="thumbnail previous-thumbs">
-                           <input type="hidden" name="pic_<?php echo $key; ?>" value="<?php echo $json_o[$key]; ?>" />
-                        </div>
-                        <?php }?>
-                        <?php } ?>
                         <output id="result" />
                      </div>
                   </div>
@@ -80,7 +67,7 @@
                            <!-- Simple Editor Content -->
                            <div class="form-group">
                               <div class="col-xs-12">
-                                 <textarea id="description" name="description" rows="10" class="form-control textarea-editor"><?php echo $row->description;?></textarea>
+                                 <textarea id="description" name="description" rows="10" class="form-control textarea-editor"></textarea>
                               </div>
                            </div>
                            <!-- END Simple Editor Content -->
@@ -99,22 +86,22 @@
                <div class="col-sm-9">
                   <div class="form-group">
                      <div class="col-xs-12">
-                        <input type="text" id="title" name="seo_title" class="form-control" placeholder="Banner title" value="<?php echo $row->seo_title; ?>" autocomplete="off">
+                        <input type="text" id="seo_title" name="seo_title" class="form-control" placeholder="Banner title" autocomplete="off">
                      </div>
                   </div>
                   <div class="form-group">
                      <div class="col-xs-12">
-                        <input type="text" id="title" name="seo_description" class="form-control" placeholder="Meta description" value="<?php echo $row->seo_description;?>" autocomplete="off">
+                        <input type="text" id="seo_description" name="seo_description" class="form-control" placeholder="Meta description" autocomplete="off">
                      </div>
                   </div>
                   <div class="form-group">
                      <div class="col-xs-12">
-                        <input type="text" id="title" name="seo_url" class="form-control" placeholder="URL & Handle" value="<?php echo $row->seo_url;?>" autocomplete="off">
+                        <input type="text" id="seo_url" name="seo_url" class="form-control" placeholder="URL & Handle" autocomplete="off">
                      </div>
                   </div>
                   <div class="form-group">
                      <div class="col-xs-12">
-                        <input type="text" id="title" name="seo_tags" class="form-control" placeholder="Meta tags" value="<?php echo $row->seo_tags;?>" autocomplete="off">
+                        <input type="text" id="seo_tags" name="seo_tags" class="form-control" placeholder="Meta tags" autocomplete="off">
                      </div>
                   </div>
                </div>
@@ -129,7 +116,7 @@
                   <div class="form-group">
                      <div class="col-xs-12">
                         <label class="switch switch-success" data-toggle="tooltip" title="Status enable/disable">
-                        <input type="checkbox" id="status" name="status" <?php if($row->status == 1){?> checked="checked" value="1" <?php } ?> >
+                        <input type="checkbox" id="status" name="status"  />
                         <span></span>
                         </label> 
                         <hr class="space">
@@ -143,6 +130,7 @@
       </div>
       <!-- END main contant Row -->
    </form>
+</div>
 </div>
 <!-- END Banner Content -->
 <?php $this->load->view('backend/elements/footer'); ?>
