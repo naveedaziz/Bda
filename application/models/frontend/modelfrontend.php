@@ -26,9 +26,13 @@ class modelFrontend extends CI_Model {
    
    		if ($table_name == 'np_general_settings')
    			{
-   			 $sql = "SELECT * FROM `" . $table_name . "` where type = '" . $filter . "' and status = '1' order by id desc";
-   			}
-   		  else
+				if($filter == 'category'){
+				 $sql = "SELECT * FROM `" . $table_name . "` where type = '" . $filter . "' and title != 'Vending Solutions' and status = '1' order by id desc";
+				}else
+				{
+				$sql = "SELECT * FROM `" . $table_name . "` where type = '" . $filter . "' and status = '1' order by id desc";
+				}
+			}else
    			{
    			$sql = "SELECT * FROM `" . $table_name . "` where status = '1' order by id desc";
    			}

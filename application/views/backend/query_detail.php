@@ -58,6 +58,14 @@
                         <td> <?php if($row->note){ echo $row->note; } ?> </td>
                      </tr>
                      <tr>
+                        <td> <b>Category Name:</b> </td>
+                        <td> <?php if($row->category_name){ ?> <a href="<?php //echo base_url().'admin/edit_brand/'.$row->brandID; ?>"> <?php echo $row->category_name; ?></a> <?php } ?> </td>
+                     </tr>
+                     <tr>
+                        <td> <b>Brand Name:</b> </td>
+                        <td> <?php if($row->brand_name){ ?> <a href="<?php //echo base_url().'admin/edit_brand/'.$row->brandID; ?>"> <?php echo $row->brand_name; ?></a> <?php } ?> </td>
+                     </tr>
+                     <tr>
                         <td> <b>Product Name:</b> </td>
                         <td> <?php if($row->productTitle){?> <a href="<?php echo base_url().'admin/edit_product/'.$row->product_id; ?>"> <?php echo $row->productTitle; ?></a> <?php } ?> </td>
                      </tr>
