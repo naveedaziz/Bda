@@ -1,4 +1,4 @@
-<?php $this->load->view('frontend/elements/header_slider'); ?>
+<?php $this->load->view('frontend/elements/header'); ?>
 <!-- Page Content -->
 <div class="container">
    <!-- Categories Section -->

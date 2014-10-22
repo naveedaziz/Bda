@@ -130,9 +130,14 @@ a .btn-enquiry{ text-decoration:none;color:#92002d;}
 h4 a{ color:#919293;}
 h4 a:hover{ color:#919293; text-decoration:none;}
 .images-section:hover{ opacity:0.8;}
+.thumbs-product-detail{ margin:0 10px 10px 0px;}
 .thumbs-product{ margin:0 10px 10px 10px;}
 .thumbs-product:first-child{ margin-left:0px;}
 .thumbs-product:last-child{ margin-right:0px;}
 .msg-bottom{ margin-top:25px;}
 .col-right{ float:right !important;}
 p{ text-align:justify;}
+.col-space-top { margin:50px 0;}
+.col-space-top-l { margin:30px 0;}
+.no-padding{ padding-left:0px !important;}
+.myCarouselProduct>#category-carousel-inner{ border-radius:5px;}

@@ -1,4 +1,3 @@
-<?php $this->load->view('frontend/elements/header_slider'); ?>
 <!-- Page Content -->
 <div class="container">
 <!-- Categories Section -->
@@ -19,13 +18,12 @@
    <!----- Brand Carousel ------>
    <div class="row">
       <div class="span12">
+      	<h3> About Us</h3>
          <div class="col-md-10">
-            <p style="color:#090; font-size:18px; font-weight:bold;">Your query has been submited successfully.</p>
-            <p> Team Nestle professionals will contact you shortly. </p>
-         </div>
+		
+        </div>
       </div>
    </div>
    <!-- /.row -->  
 </div>
-<!-- /.container -->
-<?php $this->load->view('frontend/elements/footer'); ?>
+</div>
