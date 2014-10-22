@@ -1,0 +1,140 @@
+/*!
+ * Start Bootstrap - Modern Business HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Global Styles */
+html,
+body {
+    height: 100%;
+}
+
+body {
+   /* padding-top: 50px;  Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+.navbar-static-top{
+	height: 110px;
+}
+.img-portfolio {
+    margin-bottom: 30px;
+}
+
+.img-hover:hover {
+    opacity: 0.8;
+}
+
+/* Home Page Carousel */
+
+header.carousel {
+    /*height: 50%;*/
+	height: 100%;
+}
+
+header.carousel .item,
+header.carousel .item.active,
+header.carousel .carousel-inner {
+    height: 100%;
+}
+
+header.carousel .fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+/* 404 Page Styles */
+
+.error-404 {
+    font-size: 100px;
+}
+
+/* Pricing Page Styles */
+
+.price {
+    display: block;
+    font-size: 50px;
+    line-height: 50px;
+}
+
+.price sup {
+    top: -20px;
+    left: 2px;
+    font-size: 20px;
+}
+
+.period {
+    display: block;
+    font-style: italic;
+}
+
+/* Footer Styles */
+
+footer {
+	padding:20px 0;
+}
+
+/* Responsive Styles */
+
+@media(max-width:991px) {
+    .customer-img,
+    .img-related {
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width:767px) {
+    .img-portfolio {
+        margin-bottom: 15px;
+    }
+
+    header.carousel .carousel {
+        height: 70%;
+    }
+}
+.remove-margin{ margin:0px;}
+.center-aligned{text-align: center;}
+
+/****footer*******/
+.nav-footer{margin: 0 auto;list-style: none; float: right!important; font-size:12px; color:#919293;}
+.nav-footer >li {float: left;text-align: right; padding:0 15px;}
+.nav-footer >li a { color: #919293;}
+.nav-footer >li a:hover { color: #92002d; text-decoration:none;}
+.nav-footer> .active a{ color: #92002d;}
+.nav-footer>li:last-child{ margin-right:0px; padding-right:0px;}
+
+.images-section{ width:100%;border-radius:3px;}
+.no-image {width: 64px;height: 64px; border-radius:3px;}
+.title-link{ color:#92002d; text-decoration:none;}
+.title-link:hover{ color:#92002d; text-decoration:none;}
+.product-images-section {width: 329px;height: 200px;border-radius: 4px;border:2px solid #ececec;}
+.product-no-image {width: 64px;height: 64px;border:2px solid #ececec;border-radius:4px;}
+.images-brands-section {width: 350px;height: 200px;border-radius: 4px; border:2px solid #ececec;}
+.brands-no-image {width: 350px;height: 200px;border-radius: 4px;border:2px solid #ececec;}
+.space-top{ margin-top:10px !important}
+.floating{ float:left !important}
+.pagination .active { font-weight:bold; color:#333 !important;}
+.spacing-margin{ margin:10px}
+.error{ color:#e74c3c;font-size: 13px; font-weight:normal;}
+.esteric{color:#e74c3c;}
+#captcha-error{ display:none;color:#e74c3c;}
+#upload_Story #verification_code {
+float: left;
+width: 520px;
+margin: 10px 0 0 115px;
+height: 25px;
+color: #fc384c;
+font-size: 14px;
+font-weight: bold;
+background-color: #eeeeee;
+text-indent: 5px;
+border-radius: 0px;
+}
+.content_container p {
+color: #333333;
+line-height: 22px;
+text-align: justify;
+word-wrap: break-word;
+}
+#txtCaptcha{background-image:url(../img/captcha.jpg); color:#eee; font-weight:bold; font-size:16px; text-align:center;}
