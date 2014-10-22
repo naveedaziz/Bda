@@ -243,10 +243,108 @@
    						}
    					}
    				}
+				
+				$imagesCountsBanner = 0;
+   			    $imageToSaveBanner = array();
+				if ($_FILES['myfileBanner']['size'])
+   				{
+   
+   				// loop through the file size array
+   
+   				foreach($_FILES['myfileBanner']['size'] as $key)
+   					{
+   
+   					// check if any file size is greater than 1 mb
+   
+   					if ($key > 1048576)
+   						{
+   
+   						// if yes then set session for error message
+   
+   						$this->session->set_flashdata('file_size_error_banner', 'The file size exceeded the limit allowed and cannot be saved.');
+   
+   						// redirect back to edit product page and show error message.
+   
+   						redirect(base_url() . 'admin/edit_product/' . $id);
+   						}
+   					}
+   
+   				// loop through the REQUEST/POST images array and upload multiple images..
+   
+   				foreach($_REQUEST as $key => $value)
+   					{
+   
+   					// convert images to base64 and concatinate pic_ with each image name.
+   
+   					if (strpos($key, 'picbanner_') !== false && strpos($value, 'data:') !== false)
+   						{
+   
+   						// define upload directory path
+   
+   						$upload_dir = IMAGES_PRODUCTS_DIR;
+   
+   						// assign image name to variable image
+   
+   						$image = $value;
+   						if (strpos($value, 'data:image/jpeg') !== false)
+   							{
+   							$image = str_replace('data:image/jpeg;base64,', '', $image);
+   							$file = $upload_dir . $key . mktime() . ".jpeg";
+   							}
+   
+   						if (strpos($value, 'data:image/jpg') !== false)
+   							{
+   							$image = str_replace('data:image/jpg;base64,', '', $image);
+   							$file = $upload_dir . $key . mktime() . ".jpg";
+   							}
+   
+   						if (strpos($value, 'data:image/jpg') !== false)
+   							{
+   							$image = str_replace('data:image/jpg;base64,', '', $image);
+   							$file = $upload_dir . $key . mktime() . ".JPG";
+   							}
+   
+   						if (strpos($value, 'data:image/png') !== false)
+   							{
+   							$image = str_replace('data:image/png;base64,', '', $image);
+   							$file = $upload_dir . $key . mktime() . ".png";
+   							}
+   
+   						if (strpos($value, 'data:image/png') !== false)
+   							{
+   							$image = str_replace('data:image/png;base64,', '', $image);
+   							$file = $upload_dir . $key . mktime() . ".PNG";
+   							}
+   
+   						if (strpos($value, 'data:image/gif') !== false)
+   							{
+   							$image = str_replace('data:image/gif;base64,', '', $image);
+   							$file = $upload_dir . $key . mktime() . ".gif";
+   							}
+   
+   						$image = str_replace(' ', '+', $image);
+   						$data = base64_decode($image);
+   						$success = file_put_contents($file, $data);
+   						$imageToSaveBanner[$imagesCountsBanner] = $file;
+   						$imagesCountsBanner++;
+   						}
+   					  else
+   					if (strpos($key, 'picbanner_') !== false && strpos($value, 'data:') === false)
+   						{
+   						$imageToSaveBanner[$imagesCountsBanner] = $value;
+   						$imagesCountsBanner++;
+   						}
+   					}
+   				}
    
    			// json decode image array
    
+   		
+			
+   			// json decode image array
+   
    			$array['images'] = json_encode($imageToSave);
+			$array['banner_images'] = json_encode($imageToSaveBanner);
    
    			// get form data
    
@@ -478,10 +576,105 @@
    						}
    					}
    				}
+				
+				
+				$imagesCountsBanner = 0;
+   			    $imageToSaveBanner = array();
+				if ($_FILES['myfileBanner']['size'])
+   				{
+   
+   				// loop through the file size array
+   
+   				foreach($_FILES['myfileBanner']['size'] as $key)
+   					{
+   
+   					// check if any file size is greater than 1 mb
+   
+   					if ($key > 1048576)
+   						{
+   
+   						// if yes then set session for error message
+   
+   						$this->session->set_flashdata('file_size_error_banner', 'The file size exceeded the limit allowed and cannot be saved.');
+   
+   						// redirect back to edit product page and show error message.
+   
+   						redirect(base_url() . 'admin/edit_product/' . $id);
+   						}
+   					}
+   
+   				// loop through the REQUEST/POST images array and upload multiple images..
+   
+   				foreach($_REQUEST as $key => $value)
+   					{
+   
+   					// convert images to base64 and concatinate pic_ with each image name.
+   
+   					if (strpos($key, 'picbanner_') !== false && strpos($value, 'data:') !== false)
+   						{
+   
+   						// define upload directory path
+   
+   						$upload_dir = IMAGES_PRODUCTS_DIR;
+   
+   						// assign image name to variable image
+   
+   						$image = $value;
+   						if (strpos($value, 'data:image/jpeg') !== false)
+   							{
+   							$image = str_replace('data:image/jpeg;base64,', '', $image);
+   							$file = $upload_dir . $key . mktime() . ".jpeg";
+   							}
+   
+   						if (strpos($value, 'data:image/jpg') !== false)
+   							{
+   							$image = str_replace('data:image/jpg;base64,', '', $image);
+   							$file = $upload_dir . $key . mktime() . ".jpg";
+   							}
+   
+   						if (strpos($value, 'data:image/jpg') !== false)
+   							{
+   							$image = str_replace('data:image/jpg;base64,', '', $image);
+   							$file = $upload_dir . $key . mktime() . ".JPG";
+   							}
+   
+   						if (strpos($value, 'data:image/png') !== false)
+   							{
+   							$image = str_replace('data:image/png;base64,', '', $image);
+   							$file = $upload_dir . $key . mktime() . ".png";
+   							}
+   
+   						if (strpos($value, 'data:image/png') !== false)
+   							{
+   							$image = str_replace('data:image/png;base64,', '', $image);
+   							$file = $upload_dir . $key . mktime() . ".PNG";
+   							}
+   
+   						if (strpos($value, 'data:image/gif') !== false)
+   							{
+   							$image = str_replace('data:image/gif;base64,', '', $image);
+   							$file = $upload_dir . $key . mktime() . ".gif";
+   							}
+   
+   						$image = str_replace(' ', '+', $image);
+   						$data = base64_decode($image);
+   						$success = file_put_contents($file, $data);
+   						$imageToSaveBanner[$imagesCountsBanner] = $file;
+   						$imagesCountsBanner++;
+   						}
+   					  else
+   					if (strpos($key, 'picbanner_') !== false && strpos($value, 'data:') === false)
+   						{
+   						$imageToSaveBanner[$imagesCountsBanner] = $value;
+   						$imagesCountsBanner++;
+   						}
+   					}
+   				}
    
    			// json decode image array
    
    			$array['images'] = json_encode($imageToSave);
+			$array['banner_images'] = json_encode($imageToSaveBanner);
    
    			// get posted data from form
    

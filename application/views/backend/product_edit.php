@@ -66,6 +66,36 @@
                </div>
             </div>
             <div class="row">
+               
+               <div class="col-sm-3">
+                  <h5 class="remove-margin"><b>Choose Banner Image</b></h5>
+                  <p class="remove-margin">Image size would be max 1MB.</p>
+                  <?php if ( $this->session->flashdata('file_size_error_banner') ) { ?>
+                  <p class="error_file"><?php echo $this->session->flashdata('file_size_error_banner'); ?>  </p>
+                  <?php } ?>
+               </div>
+               <div class="col-sm-9">
+                  <div class="form-group">
+                     <div class="col-xs-12">
+                        <input id="filesBanner" type="file" name="myfileBanner[]" accept="image/*" multiple="multiple" />
+                        <?php if($row->banner_images){
+                           $string = $row->banner_images;
+                           $json_o = (array) json_decode($string);
+                           
+                           foreach($json_o as $key =>$value){ ?>
+                        <div class="edit-multiple-images">
+                           <i onclick="removeItemBanner($(this))" class="fa fa-trash-o fa-fw remove-thumb-edit"></i>
+                           <img src="<?php echo base_url().$json_o[$key]; ?>" alt="" class="thumbnail previous-thumbs">
+                           <input type="text" name="picbanner_<?php echo $key; ?>" value="<?php echo $json_o[$key]; ?>" />
+                        </div>
+                        <?php }?>
+                        <?php } ?>
+                        <output id="result_banner" />
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
                <div class="col-sm-3">
                   <h5 class="remove-margin"><b>Description</b></h5>
                </div>
