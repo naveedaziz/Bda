@@ -208,11 +208,21 @@ class Home extends CI_Controller {
    
    		$id = $this->uri->segment(3);
 		
-		$this->session->set_userdata('product_id', $id);
+		// get brands
+		
+		$table_name = 'np_general_settings';
+   		$filter = 'brand';
+   		$data['brands'] = $this->modelfrontend->getAllData($table_name, $filter);
+		
+		// get categories
+		
+		$table_name = 'np_general_settings';
+   		$filter = 'category';
+   		$data['categories'] = $this->modelfrontend->getAllData($table_name, $filter);
 		
 		// load qury view
    
-   		$this->load->view('frontend/query');
+   		$this->load->view('frontend/query', $data);
    	}
 	
 	// --------------------------------------------------------------------

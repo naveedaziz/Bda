@@ -93,7 +93,11 @@
                         <div class="col-md-12">
                           <select class="form-control" name="category_name" id="category_name">
                               <option value="">Choose Your Business</option>
-                              <option value="lahore">Lahore</option>
+                               <?php if ($categories->num_rows() > 0) { 
+        						 foreach ($categories->result() as $category){ ?>
+                              <option value="<?php echo $category->title;?>"><?php echo $category->title;?></option>
+                              <?php } ?>
+                            <?php }?>
                            </select>
                         </div>
                      </div>
@@ -103,7 +107,11 @@
                         <div class="col-md-12">
                            <select class="form-control" name="brand_name" id="brand_name">
                               <option value="">Brand</option>
-                              <option value="lahore">Lahore</option>
+                              <?php if ($brands->num_rows() > 0) { 
+        						 foreach ($brands->result() as $brand){ ?>
+                              <option value="<?php echo $brand->title;?>"><?php echo $brand->title;?></option>
+                              <?php } ?>
+                            <?php }?>
                            </select>
                         </div>
                      </div>
