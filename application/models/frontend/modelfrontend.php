@@ -28,9 +28,10 @@ class modelFrontend extends CI_Model {
    			{
 				if($filter == 'category'){
 				 $sql = "SELECT * FROM `" . $table_name . "` where type = '" . $filter . "' and title != 'Vending Solutions' and status = '1' order by id desc";
-				}else
+				}
+				else
 				{
-				$sql = "SELECT * FROM `" . $table_name . "` where type = '" . $filter . "' and status = '1' order by id desc";
+				 $sql = "SELECT * FROM `" . $table_name . "` where type = '" . $filter . "' and status = '1' order by id desc";
 				}
 			}else
    			{
@@ -54,14 +55,6 @@ class modelFrontend extends CI_Model {
    	 * @param	int
    	 * @return	void
    	 */
-   /*	public function getAllProducts($per_page,$offset = 0, $table_name, $filter)
-   	{
-   		// query executes according to the filter and table name
-		//if($offset == ''){ $offset = 0; }
-        $offset	= intval($offset);
-		$sql = "SELECT * FROM `" . $table_name . "` where category LIKE '%" . $filter . "%' and status = '1' order by id desc LIMIT ".Encode($offset).",".Encode($per_page).""; 
-		return $this->db->query($sql);
-   	}*/
 	
 	public function getAllProducts($table_name, $filter)
    	{
@@ -101,9 +94,15 @@ class modelFrontend extends CI_Model {
    	 * @param	int
    	 * @return	void
    	 */
-   	public function getRecord($table_name, $id)
+   	public function getRecord($table_name, $id )
    	{
-   		$sql = "SELECT * FROM `" . $table_name . "` where id = '" . $id . "'";
+		if($id == 'category'){
+		 $sql = "SELECT * FROM `" . $table_name . "` where type = '" . $id . "' and title = 'Vending Solutions' and status = '1' order by id desc";
+		}
+		else
+		{
+		$sql = "SELECT * FROM `" . $table_name . "` where id = '" . $id . "'";
+		}
    		$result = $this->db->query($sql);
    		$row = $result->row();
    		if (!empty($row))

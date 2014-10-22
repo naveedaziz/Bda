@@ -167,3 +167,43 @@ input[type=email], {
 .text_left{ text-align:left !important;}
 .col-md-space-bottom{ margin-bottom:10px !important; font-weight:normal;}
 select { padding:0 20px;}
+.vending-product-title{
+	position: relative;
+	z-index: 1000;
+	top: 40px;
+	left: 22px;
+	color: #92002d;
+	font-size:14px;
+	font-weight:bold;
+}
+.no_decoration{
+	text-decoration:none !important;
+}
+.learn_more{
+	position: relative;
+	z-index: 1000;
+	top: -88px;
+	left: 130px;
+}
+p.success-msg{color:#090; font-size:18px; font-weight:bold; padding:30px 0 10px 0;}
+.hot_vending-bg{ background:url(../img/hot_vending_bg.jpg) no-repeat;}
+.hot_vending{ 
+	/*background:url(../img/vending_machine-bg.jpg) no-repeat;
+	float:left; width:505px; height:576px;*/
+	position: relative;
+	z-index: 5; top: 20px;}
+.hot_vending_bottom{
+	background: url(../img/hot_vending_bottom_bg.jpg) no-repeat;
+	height: 170px;
+	position: relative;
+	z-index: 1;
+	top: 25px;
+}
+.cold-vending {
+	width: 100%;
+	background: url(../img/cold_vending.jpg) no-repeat;
+	height: 655px;
+	margin-top: 40px;
+	position: relative;
+	top: 25px;
+}

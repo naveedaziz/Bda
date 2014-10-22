@@ -30,7 +30,7 @@
            <?php if(!empty($product)) { ?> 
             <div class="col-md-12">
             	<div class="col-md-7">
-               <h2> <?php echo $product->title; ?></h2>
+               <h2><?php echo $product->title; ?></h2>
                <p class="floating"><?php echo $product->description; ?></p>
                <div class="col-md-7 col-space-top-l no-padding">
                <?php 

@@ -47,15 +47,21 @@ class Home extends CI_Controller {
 	 */
 	public function index()
 	{
+		
+		// set session page name
+   
+   		$this->session->set_userdata('page', 'home');
+		
 		// declare table name
    
    		$table_name = 'np_general_settings';
    		$filter = 'category';
+		
 	  	// get record
-   		$data['categories'] = $this->modelfrontend->getAllData($table_name, $filter);
+   		$data['categories'] = $this->modelfrontend->getAllData($table_name, $filter );
 		
    		$filter_banner = 'banner';
-		$data['banners'] = $this->modelfrontend->getAllData($table_name, $filter_banner);
+		$data['banners'] = $this->modelfrontend->getAllData($table_name, $filter );
 		
    		// load view
    
@@ -76,18 +82,18 @@ class Home extends CI_Controller {
    	{
    
    		$data = '';
-   
+		
    		// get categories
 		
 		$table_name = 'np_general_settings';
    		$filter = 'category';
-   		$data['categories'] = $this->modelfrontend->getAllData($table_name, $filter);
+   		$data['categories'] = $this->modelfrontend->getAllData($table_name, $filter );
 		
 		// get brands
 		
 		$table_name = 'np_general_settings';
    		$filter = 'brand';
-   		$data['brands'] = $this->modelfrontend->getAllData($table_name, $filter);
+   		$data['brands'] = $this->modelfrontend->getAllData($table_name, $filter );
    
    		
 		// get url parameter
@@ -98,39 +104,8 @@ class Home extends CI_Controller {
 		
    		$table_name = 'np_products';
    		$data['products'] = $this->modelfrontend->getProductCount($table_name, $filter);
-		
-   		// config pagination
-		
-   		/*$config['base_url'] = base_url().'frontend/allProducts/'.$filter;
-		$config['uri_segment'] = 4;
-		$config['total_rows'] = $data['products']->num_rows;
-		$config['per_page'] = LIMIT_PAGINATION;
-		$config['full_tag_open'] = '<div class="pagination"><ul class="pagination">';
-	    $config['full_tag_close'] = '</ul></div><!--pagination-->';
-		$config['first_link'] = '&laquo; First';
-		$config['first_tag_open'] = '<li class="prev page">';
-		$config['first_tag_close'] = '</li>';
-		$config['last_link'] = 'Last &raquo;';
-		$config['last_tag_open'] = '<li class="next page">';
-		$config['last_tag_close'] = '</li>';
-		$config['next_link'] = 'Next &rarr;';
-		$config['next_tag_open'] = '<li class="next page">';
-		$config['next_tag_close'] = '</li>';
-		$config['prev_link'] = '&larr; Previous';
-		$config['prev_tag_open'] = '<li class="prev page">';
-		$config['prev_tag_close'] = '</li>';
-		$config['cur_tag_open'] = '<li class="active"><a href="">';
-		$config['cur_tag_close'] = '</a></li>';
-		$config['num_tag_open'] = '<li class="page">';
-		$config['num_tag_close'] = '</li>';
-		$this->pagination->initialize($config); 
-		
-		$data['products'] = $this->modelfrontend->getAllProducts($config['per_page'],$this->uri->segment(4),$table_name, $filter); */
-		//print_r($data['products']); die();
-		$data['products'] = $this->modelfrontend->getAllProducts($table_name, $filter);
-		$data['page_offset'] = intval($this->uri->segment(4));
 		$data['active_category'] = $filter;
-        $this->session->set_userdata('active_category', $filter);
+ 
 		// load query detail view
    
    		$this->load->view('frontend/products', $data);
@@ -160,12 +135,41 @@ class Home extends CI_Controller {
 		
 		$table_name = 'np_products';
    		$data['product'] = $this->modelfrontend->getRecord($table_name, $id);
-   
+		
    		// load view
    
    		$this->load->view('frontend/product_detail', $data);
    		
+   	}// --------------------------------------------------------------------
+   
+   	/**
+   	 * getProductDetail
+   	 *
+   	 * get request pram from uri and get that record to display product detail
+   	 *
+   	 * @access	public
+   	 * @return	void
+   	 */
+   	public function getVendingProductDetail()
+   	{
+   
+   		$data = '';
+   		
+		// get url parameter
+   
+   		$id = $this->uri->segment(2);
+		
+		// get product
+		
+		$table_name = 'np_products';
+   		$data['product'] = $this->modelfrontend->getRecord($table_name, $id);
+		
+   		// load view
+   
+   		$this->load->view('frontend/vending_detail', $data);
+   		
    	}
+	// --------------------------------------------------------------------
 	public function getPageDetail()
    	{
    
@@ -174,15 +178,41 @@ class Home extends CI_Controller {
 		// get url parameter
    
    		$slug = $this->uri->segment(2);
-		//echo $id;die();
-		// get product
+		
+		// get pages
 		
 		$table_name = 'np_general_settings';
    		$data['page'] = $this->modelfrontend->getPageRecord($table_name, $slug);
-   		//print_r($data['page']);die();
-   		// load view
+   		
+		// load view
    
    		$this->load->view('frontend/layout/detail_template', $data);
+   		
+   	}
+   // --------------------------------------------------------------------
+   public function getVendingSolution()
+   	{
+   
+   		$data = '';
+		
+		// set session page name
+   
+   		$this->session->set_userdata('page', 'vending_solution');
+   		
+		// get categories
+		
+		$table_name = 'np_general_settings';
+   		$filter = 'category';
+		$data['category'] = $this->modelfrontend->getRecord( $table_name, $filter );
+		
+		// get products
+		$table_name = 'np_products';
+		$filter = $data['category']->id;
+	    $data['products'] = $this->modelfrontend->getAllProducts( $table_name, $filter);
+	
+		// load view
+   
+   		$this->load->view('frontend/vending_solution', $data);
    		
    	}
    // --------------------------------------------------------------------
@@ -205,13 +235,16 @@ class Home extends CI_Controller {
 		
 		$table_name = 'np_general_settings';
    		$filter = 'brand';
-   		$data['brands'] = $this->modelfrontend->getAllData($table_name, $filter);
+   		$data['brands'] = $this->modelfrontend->getAllData($table_name, $filter );
 		
 		// get categories
 		
 		$table_name = 'np_general_settings';
    		$filter = 'category';
-   		$data['categories'] = $this->modelfrontend->getAllData($table_name, $filter);
+   		$data['categories'] = $this->modelfrontend->getAllData($table_name, $filter );
+		if($this->uri->segment(3)){
+			$data['product_id'] = $this->uri->segment(3);
+		}
 		
 		// load qury view
    
@@ -232,7 +265,7 @@ class Home extends CI_Controller {
    	{
    		// load user view with data listing
    
-   		$this->load->view('/thanks');
+   		$this->load->view('frontend/thanks');
    	}
 		// --------------------------------------------------------------------
    
@@ -247,15 +280,14 @@ class Home extends CI_Controller {
    	 */
    	public function submitQuery()
    	{
-   
-   		// check if the form posted
-   		// echo 'here'; die();
    			// get form data
    
    			$array['first_name'] = Encode($this->input->post('firstname'));
 			$array['last_name'] = Encode($this->input->post('lastname'));
 			$array['product_id'] = Encode($this->input->post('product_id'));
    			$array['company_name'] = Encode($this->input->post('company'));
+			$array['category_name'] = Encode($this->input->post('category_name'));
+			$array['brand_name'] = Encode($this->input->post('brand_name'));
    			$array['city'] = Encode($this->input->post('city'));
    			$array['phone'] = Encode($this->input->post('contact'));
    			$array['email'] = Encode($this->input->post('email'));
@@ -270,7 +302,7 @@ class Home extends CI_Controller {
    
    			// redirect to brand listing page
    
-   			redirect(base_url() . '/thanks');
+   			redirect(base_url() . 'thanks');
   	}
 	// --------------------------------------------------------------------
    
@@ -286,16 +318,12 @@ class Home extends CI_Controller {
    	{
 		$this->load->library('parser');
 		$data = "";
-		$data = array(
-              'title'   => 'My Blog Title',
-              'Description' => 'Description'
-            );
-   		// load user view with data listing
+	
+		// load user view with data listing
    
    		$this->parser->parse('frontend/layout/detail_template', $data);
    	}
 		
-		// --------------------------------------------------------------------
 }   	
 // --------------------------------------------------------------------
 /* End of file home.php */
