@@ -33,7 +33,7 @@
                <a href="<?php echo base_url(); ?>frontend/brands">Vending Solutions</a>
             </li>
             <li>
-               <a href="<?php echo base_url(); ?>frontend/aboutus">About Us</a>
+               <a href="<?php echo base_url(); ?>pages/about-us">About Us</a>
             </li>
              <li class="active_enquiry">
                <a href="<?php echo base_url(); ?>frontend/query">Enquiry</a>

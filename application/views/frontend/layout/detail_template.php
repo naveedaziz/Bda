@@ -9,7 +9,7 @@
            <ol class="breadcrumb">
            <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url();?>">Home</a></span> </div>
            <div class="space">/</div>
-           <div class="breadcrums"><span class="small-text-active">About Us</span></div>
+           <div class="breadcrums"><span class="small-text-active"><?=$page->title ?></span></div>
            </ol>
             </div>
            </div> <!-- /.row -->  
@@ -19,20 +19,30 @@
     </nav> <!-- / .nav -->
 </div>
 <!-- Page Content -->
+<?  if(!empty($page->images)){ 
+            	$string = $page->images;
+            	if($string){
+            	$json_o = (array) json_decode($string);
+            	}else{
+            	$json_o = '';
+            	}
+          } ?>
 <div class="container">
     <div class="row">
        <div class="col-md-12">
              <div class="row">
-            	<div class="col-md-7">
-               <h2> About US</h2>
+            	<div <? if($json_o){?> class="col-md-7" <? }else{ ?> class="col-md-12" <? } ?>>
+               <h2><?=$page->title ?></h2>
                <p class="floating">
-               We at Nestlé Professional are dedicated to providing convenient, cost-effective and reliable food and beverage solutions for out-of-home establishments. Whether it is a café, restaurant, office, airport, university, or hospital, backed with efficient services and quality products Nestlé Professional is keen to deliver on the expectations of our valued customers. We continuously strive to understand your specific needs and are eager to develop tailor-made solutions for your respective businesses.
-               </p><p>
-               When you affiliate with us, you work with strong heritage and expertise and a partner that has the privilege of being the No.1 food & beverage solutions provider in the world. 
+             		  <?=$page->description ?>
                </p>
               </div>
               <div class="col-md-5 col-space-top">
-              <img class="images-section img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>aboutus_img.jpg" alt="About US" />
+             
+          <? if($json_o){?>
+                 <img class="images-section img-responsive" src="<?php echo base_url().$json_o[0]; ?>" alt="About US" />
+                 <?php } ?>
+             
               </div>
               </div>
              </div>

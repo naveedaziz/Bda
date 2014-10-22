@@ -1,10 +1,29 @@
 <!-- Header Carousel -->
+
 <header id="myCarousel" class="carousel slide">
    <!-- Indicators -->
    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
+   <?php if ($banners->num_rows() > 0) {
+	   $index = 0; 
+         foreach ($banners->result() as $banner){ ?>
+        <?php 
+            if(!empty($banner->images)){ 
+            	$string = $banner->images;
+            	if($string){
+            	$json_o = (array) json_decode($string);
+            	}else{
+            	$json_o = '';
+            	}
+            	if($json_o){?>
+         			 <li data-target="#myCarousel" data-slide-to="<?=$index;?>" <? if($index == 0){?> class="active"<? } ?>></li>
+         <?php $index++; }
+        	 
+		 ?>
+         <?php } ?>
+         <? } 
+} 
+?> 
+      
    </ol>
    <!-- Wrapper for slides -->
    <div class="carousel-inner">
@@ -14,24 +33,27 @@
     <p>We’ll enable you to innovate & delight your customers<br /> Call Now &nbsp;<span class="contactNo-slider"> 0800 111 111</span><p>
      <a href="<?php echo base_url(); ?>frontend/aboutus" class="contact-slider"><button class="btn btn-contact-slider">Contact</button></a>
     </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>home-banner.jpg');"></div>
-                <!--<div class="carousel-caption">
-                    <h2>Caption 1</h2>
-                </div>-->
+    <?php if ($banners->num_rows() > 0) { 
+	$index = 0; 
+         foreach ($banners->result() as $banner){ ?>
+        <?php 
+            if(!empty($banner->images)){ 
+            	$string = $banner->images;
+            	if($string){
+            	$json_o = (array) json_decode($string);
+            	}else{
+            	$json_o = '';
+            	}
+            	if($json_o){?>
+          <div  <? if($index == 0){?> class="item active"<? }else{ ?> class="item" <? } ?>>
+                <div class="fill" style="background-image:url('<?php echo base_url().$json_o[0]; ?>');"></div>
+                
             </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>home-banner.jpg');"></div>
-                <!--<div class="carousel-caption">
-                    <h2>Caption 2</h2>
-                </div>-->
-            </div>
-            <div class="item active">
-                <div class="fill" style="background-image:url('<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>home-banner.jpg');"></div>
-                <!--<div class="carousel-caption">
-                    <h2>Caption 3</h2>
-                </div>-->
-            </div>
+         <?php $index++;} ?>
+         <?php } ?>
+         <? } 
+} 
+?>
         </div>
    <!--<div class="carousel-inner">
     <div class="carousel-caption-home">

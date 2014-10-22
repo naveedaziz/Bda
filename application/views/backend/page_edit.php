@@ -1,12 +1,12 @@
 <?php $this->load->view('backend/elements/header'); ?>
-<!-- Banner content -->
+<!-- Page content -->
 <div id="page-content">
-   <form id="form-validation" action="<?php echo base_url();?>admin/update_banner" method="post" class="form-horizontal" enctype="multipart/form-data">
+   <form id="form-validation" action="<?php echo base_url();?>admin/update_page" method="post" class="form-horizontal" enctype="multipart/form-data">
       <div class="row">
          <div class="col-sm-12 col-lg-12 margin-bottom">
             <div class="row">
                <div class="col-sm-9">
-                  <h3 class="remove-margin"> <i class="fa fa-files-o fa-fw"></i> Edit Banner</h3>
+                  <h3 class="remove-margin"> <i class="fa fa-files-o fa-fw"></i> Edit Page</h3>
                </div>
                <div class="col-sm-3 align-right">
                   <div class="col-xs-12 remove-padding">
@@ -24,14 +24,14 @@
             <!-- Widget -->
             <div class="row">
                <div class="col-sm-3">
-                  <h5 class="remove-margin"><b>Banners Detail </b></h5>
-                  <p>Write a name and description and upload image for this banner.</p>
+                  <h5 class="remove-margin"><b>Pages Detail </b></h5>
+                  <p>Write a name and description and upload image for this page.</p>
                </div>
                <div class="col-sm-9">
                   <div class="form-group">
                      <div class="col-xs-12">
                         <input type="hidden" value="<?php echo $row->id; ?>" name="id" />
-                        <input type="hidden" value="banner" name="type" />
+                        <input type="hidden" value="page" name="type" />
                         <input type="text" id="title" name="title" class="form-control" value="<?php echo $row->title;?>" autocomplete="off">
                      </div>
                   </div>
@@ -94,12 +94,12 @@
             <div class="row">
                <div class="col-sm-3">
                   <h5 class="remove-margin"><b>Search Engines</b></h5>
-                  <p>Set up the banner title, meta description and handle. These help define how this product shows up on search engines.</p>
+                  <p>Set up the page title, meta description and handle. These help define how this product shows up on search engines.</p>
                </div>
                <div class="col-sm-9">
                   <div class="form-group">
                      <div class="col-xs-12">
-                        <input type="text" id="title" name="seo_title" class="form-control" placeholder="Banner title" value="<?php echo $row->seo_title; ?>" autocomplete="off">
+                        <input type="text" id="title" name="seo_title" class="form-control" placeholder="Page title" value="<?php echo $row->seo_title; ?>" autocomplete="off">
                      </div>
                   </div>
                   <div class="form-group">
@@ -123,7 +123,7 @@
             <div class="row">
                <div class="col-sm-3">
                   <h5 class="remove-margin"><b>Visibility</b></h5>
-                  <p>Control if this banner can be viewed on frontend.</p>
+                  <p>Control if this page can be viewed on frontend.</p>
                </div>
                <div class="col-sm-9">
                   <div class="form-group">
@@ -144,5 +144,5 @@
       <!-- END main contant Row -->
    </form>
 </div>
-<!-- END Banner Content -->
+<!-- END Page Content -->
 <?php $this->load->view('backend/elements/footer'); ?>
