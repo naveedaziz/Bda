@@ -32,11 +32,25 @@
             	<div class="col-md-7">
                <h2> <?php echo $product->title; ?></h2>
                <p class="floating"><?php echo $product->description; ?></p>
-              </div>
-             
+               <div class="col-md-7 col-space-top-l no-padding">
                <?php 
                   if(!empty($product->images)){ 
                   	$string = $product->images;
+                  	if($string){
+                  	$images_array = (array) json_decode($string);
+                  	}else{
+                  	$images_array = '';
+                  	}
+                  	if($images_array){
+						 foreach($images_array as $key =>$value){ ?>
+               <img class="images-section thumbs-product-detail img-responsive" src="<?php echo base_url().$images_array[$key]; ?>" alt="<?php echo $product->title; ?>" />
+            	<?php } ?>
+              <?php } } ?> 
+              </div>
+             </div>
+               <?php 
+                  if(!empty($product->banner_images)){ 
+                  	$string = $product->banner_images;
                   	if($string){
                   	$images_array = (array) json_decode($string);
                   	}else{
@@ -58,16 +72,12 @@
                             foreach($images_array as $key =>$value){ ?>
                          <div class="item">
                             <div class="fill" style="background-image:url('<?php echo base_url().$images_array[$key]; ?>');"></div>
-                            <!--<div class="carousel-caption">
-                                <h2>Caption 2</h2>
-                            </div>-->
-                        </div>
+                         </div>
                         <?php } ?>
                         <?php } ?>
               		 </div>
                 </header>
-                  
-                     <?php } } ?>
+                   <?php } } ?>
                     
                      <div class="col-md-1 col-right">
                       <a href="<?php echo base_url().'frontend/query/'.$product->id; ?>"><button class="btn btn-enquiry">ENQUIRY</button></a>

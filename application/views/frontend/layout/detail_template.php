@@ -32,7 +32,7 @@
                </p>
               </div>
               <div class="col-md-5 col-space-top">
-              <img src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>aboutus_img.jpg" alt="About US" />
+              <img class="images-section img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>aboutus_img.jpg" alt="About US" />
               </div>
               </div>
              </div>
