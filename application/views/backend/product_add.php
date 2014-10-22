@@ -54,6 +54,23 @@
             </div>
             <div class="row">
                <div class="col-sm-3">
+                  <h5 class="remove-margin"><b>Choose Banner Image</b></h5>
+                  <p class="remove-margin">Image size would be max 1MB.</p>
+                  <?php if ( $this->session->flashdata('file_size_error_banner') ) { ?>
+                  <p class="error_file"><?php echo $this->session->flashdata('file_size_error_banner'); ?>  </p>
+                  <?php } ?>
+               </div>
+               <div class="col-sm-9">
+                  <div class="form-group">
+                     <div class="col-xs-12">
+                        <input id="filesBanner" type="file" name="myfileBanner[]" accept="image/*" multiple="multiple" />
+                        <output id="result_banner" />
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-3">
                   <h5 class="remove-margin"><b>&nbsp;</b></h5>
                </div>
                <div class="col-sm-9">
