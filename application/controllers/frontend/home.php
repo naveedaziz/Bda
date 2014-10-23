@@ -92,7 +92,7 @@ class Home extends CI_Controller {
    		$filter = 'category';
    		$data['categories'] = $this->modelfrontend->getAllData($table_name, $filter );
 		
-		$filter = $this->uri->segment(3);
+		$filter = $this->uri->segment(2);
 		
 		// get single catagory
 		

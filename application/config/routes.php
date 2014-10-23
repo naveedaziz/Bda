@@ -43,9 +43,9 @@
 * Frontend routes
 */
 $route['default_controller'] = 'frontend/home';
-$route['frontend/home:any'] = 'frontend/home/index';
-$route['frontend/allProducts'] = "frontend/home/getAllProducts";
-$route['frontend/allProducts:any'] = "frontend/home/getAllProducts";
+$route['home:any'] = 'frontend/home/index';
+$route['category'] = "frontend/home/getAllProducts";
+$route['category:any'] = "frontend/home/getAllProducts";
 $route['pages:any'] = "frontend/home/getPageDetail";
 $route['search'] = "frontend/home/getSearchDetail";
 $route['search:any'] = "frontend/home/getSearchDetail";
