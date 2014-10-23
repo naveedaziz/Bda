@@ -24,8 +24,8 @@
             <!-- Widget -->
             <div class="row">
                <div class="col-sm-3">
-                  <h5 class="remove-margin"><b>Banners Detail </b></h5>
-                  <p>Write a name and description and upload image for this banner.</p>
+                  <h5 class="remove-margin"><b>Banners Caption </b></h5>
+                  <p>Write a caption and description and upload image for this banner.</p>
                </div>
                <div class="col-sm-9">
                   <div class="form-group">

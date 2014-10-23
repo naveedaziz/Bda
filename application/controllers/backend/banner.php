@@ -60,7 +60,7 @@
    
    		// check if admin has access
    
-   		isAdminHasAccess('banner');
+   		isAdminHasAccess('banners');
    	}
    
    	// --------------------------------------------------------------------
@@ -79,7 +79,7 @@
    
    		// set session banner name
    
-   		$this->session->set_userdata('banner', 'banners');
+   		$this->session->set_userdata('page', 'banners');
    
    		// declare table name and filter variable
    
@@ -175,7 +175,7 @@
    
    						// define upload directory path
    
-   						$upload_dir = IMAGES_bannerS_DIR;
+   						$upload_dir = IMAGES_BANNER_DIR;
    
    						// assign image name to variable image
    
@@ -388,7 +388,7 @@
    
    						// define upload directory path
    
-   						$upload_dir = IMAGES_bannerS_DIR;
+   						$upload_dir = IMAGES_BANNER_DIR;
    
    						// assign image name to variable image
    

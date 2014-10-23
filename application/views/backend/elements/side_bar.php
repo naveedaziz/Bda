@@ -37,7 +37,7 @@
                <a <?php if($page_name == 'pages'){?> class="active" <?php } ?> href="<?php echo base_url(); ?>admin/pages" <?php if($limited_access){ if (!in_array('page', $limited_access)) {?> class="disabled" <?php } } ?> ><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="fa fa-files-o fa-fw sidebar-nav-icon"></i>Page</a>
             </li>
              <li>
-               <a <?php if($page_name == 'banners'){?> class="active" <?php } ?> href="<?php echo base_url(); ?>admin/banners" <?php if($limited_access){ if (!in_array('banner', $limited_access)) {?> class="disabled" <?php } } ?> ><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="fa fa-files-o fa-fw sidebar-nav-icon"></i>Banners</a>
+               <a <?php if($page_name == 'banners'){?> class="active" <?php } ?> href="<?php echo base_url(); ?>admin/banners" <?php if($limited_access){ if (!in_array('banners', $limited_access)) {?> class="disabled" <?php } } ?> ><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="fa fa-files-o fa-fw sidebar-nav-icon"></i>Banners</a>
             </li>
             <!--<li>
                <a href="#"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="fa fa-link fa-fw sidebar-nav-icon"></i>Navigations</a>

@@ -53,15 +53,6 @@
                         </select>
                      </div>
                   </div>
-                  <!--<div class="form-group">
-                     <div class="col-xs-6">
-                        <div class="col-xs-2 remove-margin remove-padding"> <b>Status</b></div>
-                        <label class="switch switch-success" data-toggle="tooltip" title="Status enable/disable">
-                         <input type="checkbox" id="status" name="status" <?php if($row->status == 1){?> checked="checked" value="1" <?php } ?> >
-                          <span></span>
-                        </label> 
-                       </div>
-                     </div>-->
                   <hr />
                   <b>Invite/Send Password</b> 
                   <div class="form-group">
@@ -113,6 +104,9 @@
                                  <input type="checkbox" value="page" name="access_list[]" <?php if (in_array('page', $json_o)) {?> checked="checked" <?php } ?> id="example-inline-checkbox1"> Page
                                  </label>
                                  <label for="example-inline-checkbox1" class="checkbox-inline">
+                                 <input type="checkbox" value="banners" name="access_list[]" <?php if (in_array('banners', $json_o)) {?> checked="checked" <?php } ?> id="example-inline-checkbox1"> Banners
+                                 </label>
+                                 <label for="example-inline-checkbox1" class="checkbox-inline">
                                  <input type="checkbox" value="notification" name="access_list[]" <?php if (in_array('notification', $json_o)) {?> checked="checked" <?php } ?> id="example-inline-checkbox1"> Notification
                                  </label>
                                  <label for="example-inline-checkbox1" class="checkbox-inline">
@@ -133,6 +127,9 @@
                                  </label>
                                  <label for="example-inline-checkbox1" class="checkbox-inline">
                                  <input type="checkbox" value="page" name="access_list[]" id="example-inline-checkbox1"> Page
+                                 </label>
+                                 <label for="example-inline-checkbox1" class="checkbox-inline">
+                                 <input type="checkbox" value="banners" name="access_list[]" id="example-inline-checkbox1"> Banners
                                  </label>
                                  <label for="example-inline-checkbox1" class="checkbox-inline">
                                  <input type="checkbox" value="notification" name="access_list[]" id="example-inline-checkbox1"> Notification

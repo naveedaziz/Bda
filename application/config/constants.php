@@ -65,7 +65,7 @@ define('IMAGES_CATEGORY_DIR'		, 'assets/uploads/categories/');
 define('IMAGES_BRAND_DIR'		, 'assets/uploads/brands/');
 define('IMAGES_PAGES_DIR'		, 'assets/uploads/pages/');
 define('IMAGES_PRODUCTS_DIR'		, 'assets/uploads/products/');
-define('IMAGES_GALLERY_DIR'		, 'assets/uploads/banners/');
+define('IMAGES_BANNER_DIR'		, 'assets/uploads/banners/');
 
 
 

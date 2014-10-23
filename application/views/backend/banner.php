@@ -8,7 +8,7 @@
                <h3 class="remove-margin"> <i class="fa fa-files-o fa-fw"></i> Banners</h3>
             </div>
             <div class="col-sm-2 col-lg-2 align-right">
-               <a href="<?php echo base_url().'admin/add_banner' ?>"><button type="button" class="btn btn-sm btn-success">Add Page</button></a>
+               <a href="<?php echo base_url().'admin/add_banner' ?>"><button type="button" class="btn btn-sm btn-success">Add Banner</button></a>
             </div>
          </div>
          <hr />
