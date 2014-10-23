@@ -42,7 +42,11 @@
                      <a class="no_decoration" href="<?php echo base_url().'vending_product/'.$product->id; ?>">
                       <span class="vending-product-title"><?php echo $product->title; ?></span>
                      </a>
+                     <?php if($images_array){?>
                       <img class="thumbs-product-detail img-responsive" src="<?php echo base_url().$images_array[$key]; ?>" alt="<?php echo $product->title; ?>" />
+                     <?php }else{ ?>
+                     <img class="thumbs-vending-detail img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>default.jpg" alt="default" />
+                     <?php } ?>
                       <span class="learn_more">
                        <a href="<?php echo base_url().'vending_product/'.$product->id; ?>">
                         <button class="btn btn-enquiry">LEARN MORE</button>

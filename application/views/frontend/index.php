@@ -20,16 +20,16 @@
             	$json_o = '';
             	}
             	if($json_o){?>
-         <a href="<?php echo base_url().'frontend/allProducts/'.$category->id; ?>">
+         <a href="<?php echo base_url().'category/'.$category->id; ?>">
          <img class="images-section img-responsive" src="<?php echo base_url().$json_o[0]; ?>" alt="<?php echo $category->title; ?>">
          </a>
          <?php }else{ ?>
-         <a href="<?php echo base_url().'frontend/allProducts/'.$category->id; ?>">
-         <img class="no-image img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>default.png" alt="">
+         <a href="<?php echo base_url().'category/'.$category->id; ?>">
+         <img class="category_default img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>default.jpg" alt="">
          </a>
          <?php } ?>
          <?php } ?>
-         <h4> <a href="<?php echo base_url().'frontend/allProducts/'.$category->id; ?>" class="title-link"><?php echo $category->title; ?></a></h4>
+         <h4> <a href="<?php echo base_url().'category/'.$category->id; ?>" class="title-link"><?php echo $category->title; ?></a></h4>
       </div>
       <?php } ?>
       

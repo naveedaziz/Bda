@@ -92,7 +92,7 @@ class Home extends CI_Controller {
    		$filter = 'category';
    		$data['categories'] = $this->modelfrontend->getAllData($table_name, $filter );
 		
-		$filter = $this->uri->segment(3);
+		$filter = $this->uri->segment(2);
 		
 		// get single catagory
 		
@@ -138,7 +138,7 @@ class Home extends CI_Controller {
    		
 		// get url parameter
    
-   		$id = $this->uri->segment(3);
+   		$id = $this->uri->segment(2);
 		
 		// get product
 		
@@ -277,7 +277,7 @@ class Home extends CI_Controller {
    	{
 		// get url parameter
    
-   		$id = $this->uri->segment(3);
+   		$id = $this->uri->segment(2);
 		
 		// get brands
 		
@@ -290,7 +290,7 @@ class Home extends CI_Controller {
 		$table_name = 'np_general_settings';
    		$filter = 'category';
    		$data['categories'] = $this->modelfrontend->getAllData($table_name, $filter );
-		if($this->uri->segment(3)){
+		if($this->uri->segment(2)){
 			$data['product_id'] = $this->uri->segment(3);
 		}
 		
@@ -352,21 +352,8 @@ class Home extends CI_Controller {
    
    			redirect(base_url() . 'thanks');
   	}
-	// --------------------------------------------------------------------
-   
-   	/**
-   	 * About US
-   	 *
-   	 * Load About US view
-   	 *
-   	 * @access	public
-   	 * @return	void
-   	 */
-   	public function aboutus()
-   	{
-		$this->load->library('parser');
-		$data = "";
 	
+<<<<<<< HEAD
 		// load user view with data listing
    
    		$this->parser->parse('frontend/layout/detail_template', $data);
@@ -391,6 +378,8 @@ class Home extends CI_Controller {
 		//echo $this->email->print_debugger();
 	}
 		
+=======
+>>>>>>> 2984450310b10d05124d8ec071307dec3c624013
 }   	
 // --------------------------------------------------------------------
 /* End of file home.php */

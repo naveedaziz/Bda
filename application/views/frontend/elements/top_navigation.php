@@ -38,7 +38,7 @@
                <a href="<?php echo base_url(); ?>pages/about-us">About Us</a>
             </li>
              <li class="active_enquiry">
-               <a href="<?php echo base_url(); ?>frontend/query">Enquiry</a>
+               <a href="<?php echo base_url(); ?>enquiry">Enquiry</a>
             </li>
             
           </ul>
