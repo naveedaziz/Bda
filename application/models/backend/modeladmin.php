@@ -179,6 +179,13 @@
    			return true;
    			}
    	}
+	public function updateSiteSittings($table_name, $data)
+   	{
+   		
+   			$this->db->update($table_name, $data);
+   			return true;
+   			
+   	}
    
    	// --------------------------------------------------------------------
    

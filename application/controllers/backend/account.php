@@ -78,6 +78,11 @@
    		$this->session->set_userdata( 'page'	, 'account_setting' ); 
    		//get all account
    		$data[ 'results' ]  = $this->modeladmin->getAllData( $table_name, $filter ); 
+		
+		$table_name = 'np_site_settings';
+   	    $filter 	= '';
+		$data[ 'siteSettings' ]  = $this->modeladmin->getAllData( $table_name, $filter )->row(); 
+		//print_r($data[ 'siteSettings' ]);die();
    		//load user view with data listing
    		$this->load->view( 'backend/account', $data );
    	}
@@ -190,7 +195,7 @@
    	{
    		   // get form data
    		    $id	    					= Encode($this->input->post('id'));
-         		$array['first_name']	    = Encode($this->input->post('first_name'));
+         	$array['first_name']	= Encode($this->input->post('first_name'));
    			$array['last_name']		    = Encode($this->input->post('last_name'));
    			$array['city']				= Encode($this->input->post('city'));
    			$array['access_limited']	= Encode($this->input->post('access_limited'));
@@ -231,8 +236,19 @@
    			redirect(base_url().'admin/account_setting');
    		
          }
+	public function updateSiteSettings()
+   	{
+   			// set table name and filters
+   			$table_name					= 'np_site_settings';
+			$array['seo_meta_title']	= Encode($this->input->post('seo_meta_title'));
+   			$array['seo_meta_description']		    = Encode($this->input->post('seo_meta_description'));
+   			$this->modeladmin->updateSiteSittings( $table_name, $array);
+   			redirect(base_url().'admin/account_setting');
+   		
+         }
    
    }
+   
 
 // --------------------------------------------------------------------
 /* End of file account.php */

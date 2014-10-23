@@ -129,6 +129,7 @@ $route['admin/insert_account'] = "backend/account/insert";
 $route['admin/edit_account:any'] = "backend/account/edit";
 $route['admin/update_account'] = "backend/account/update";
 $route['admin/update_account_owner'] = "backend/account/updateAccountOwner";
+$route['admin/update_site_settings'] = "backend/account/updateSiteSettings";
 $route['admin/delete_account:any'] = "backend/account/delete";
 
 $route['admin/logout'] = "backend/admin/logout";
