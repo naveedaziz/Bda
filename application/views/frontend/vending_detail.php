@@ -50,16 +50,20 @@
 <!-- /.container -->
 <?php }else{ ?>
 <!-- Page Content -->
-<div class="cold-vending">
 <div class="container">
    <!----- Brand Carousel ------>
       <div class="row">
            <?php if(!empty($product)) { ?> 
             <div class="col-md-12">
-              <div class="col-md-7">
-               <h2 class="remove-margin"><?php echo $product->title; ?></h2>
+              <div class="col-md-6">
+               <h2><?php echo $product->title; ?></h2>
                <p class="floating"><?php echo $product->description; ?></p>
              </div>
+              <div class="col-md-6 col-space-top-l">
+               <div class="cold_vending">
+                <img class="img-responsive cold-vending-mc" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>cold_vending.png" />
+               </div>
+              </div>
              </div>
             <?php }
                else { ?>
@@ -67,8 +71,7 @@
             <?php } ?>
          </div>
 </div>
-</div>
-<!--<div class="ful-col-banner hot_vending_bottom"></div>-->
+<div class="ful-col-banner cold_vending_bottom"></div>
 <!-- /.container -->
 <?php } ?>
 <?php $this->load->view('frontend/elements/footer'); ?>
