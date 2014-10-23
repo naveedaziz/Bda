@@ -99,6 +99,31 @@
                </form>
             </div>
          </div>
+         <hr />
+         <div class="row">
+            <div class="col-sm-3">
+               <h4>Site Settings</h4>
+             </div>
+            <div class="col-sm-9">
+               <form action="<?php echo base_url();?>admin/update_site_settings" method="post">
+                  <div class="row">
+                     <div class="col-sm-3">
+                        <b>Site Meta Title</b>
+                        <input value="<?=$siteSettings->seo_meta_title?>" class="form-control" name="seo_meta_title" id="seo_meta_title">
+                     </div>
+                     <div class="col-sm-3">
+                        <b>Site Meta Discription</b>
+                        <input value="<?=$siteSettings->seo_meta_description?>" class="form-control" name="seo_meta_description" id="seo_meta_description">
+                     </div>
+                     
+                     <div class="col-sm-3">
+                        <br/>
+                        <button class="btn btn-success" type="submit"> Save </button>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
       </div>
    </div>
    <!---popup add notification--->             

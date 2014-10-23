@@ -1,23 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0" />
-      <meta name="name" content="description" />
-	  <meta name="description" content="Nestle Professionals is a online store for their professional." />
-	  <meta name="author" content="Nestle Professionals" />
-	  <meta property="og:image" content="" />
-	  <meta property="og:title" content="Nestle Professionals - Ecommerce Site for all Professionals, Online Store." />
-	  <meta property="og:site_name" content="Nestle Professionals" />
-      
-	  <meta property="twitter:card" content="summary" />
-	  <meta property="twitter:title" content="Nestle Professionals" />
-	  <meta property="twitter:description" content="Nestle Professionals" />
-	  <meta property="og:image" content="" />
-	  <meta property="twitter:site" content="Nestle Professionals" />
+      <?php $this->load->view('frontend/elements/meta'); ?>
 				
-      <title>Nestle Professionals</title>
+    
       <!---- google font ---->
       <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
        <!-- Theme CSS -->

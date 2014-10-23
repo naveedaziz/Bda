@@ -36,6 +36,15 @@ class modelFrontend extends CI_Model {
    		$results = $this->db->query($sql);
    		return $results;
    	}
+	public function getSeoData($table_name)
+   	{
+   		$results = '';
+   		 $sql = "SELECT * FROM `" . $table_name . "";
+   			
+   
+   		$results = $this->db->query($sql);
+   		return $results->row();
+   	}
    
    	// --------------------------------------------------------------------
 	

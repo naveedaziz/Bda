@@ -31,6 +31,7 @@ class Home extends CI_Controller {
    	  $this->load->library('session');
 	  $this->load->library('pagination');
 	  $this->load->model('frontend/modelfrontend');
+	  $_SESSION['site_meta'] = $this->modelfrontend->getSeoData('np_site_settings');	  
 	  date_default_timezone_set('Asia/Karachi');
     }
 	
@@ -47,6 +48,7 @@ class Home extends CI_Controller {
 	 */
 	public function index()
 	{
+		$_SESSION['meta_state'] = 'home';
 		// declare table name
    
    		$table_name = 'np_general_settings';
