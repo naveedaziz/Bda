@@ -254,9 +254,11 @@ class Home extends CI_Controller {
 		$data['category'] = $this->modelfrontend->getRecord( $table_name, $filter );
 		
 		// get products
-		$table_name = 'np_products';
-		$filter = $data['category']->id;
-	    $data['products'] = $this->modelfrontend->getAllProducts( $table_name, $filter);
+		if($data['category']){
+			$table_name = 'np_products';
+			$filter = $data['category']->id;
+			$data['products'] = $this->modelfrontend->getAllProducts( $table_name, $filter);
+		}
 	
 		// load view
    
@@ -351,17 +353,15 @@ class Home extends CI_Controller {
    			// redirect to brand listing page
    
    			redirect(base_url() . 'thanks');
+			
   	}
-	
-<<<<<<< HEAD
 		// load user view with data listing
-   
-   		$this->parser->parse('frontend/layout/detail_template', $data);
-   	}
+	
 	public function sendEmailTemplate(){
 		$data = '123';
 		$message = $this->load->view('frontend/email', $data, true);
 		$this->sendEMail($from,$to,$cc,$bcc,$subject,$message); 
+		$this->parser->parse('frontend/layout/detail_template', $data);
 	}
 	public function sendEMail($from,$to,$cc,$bcc,$subject,$message){
 		/*
@@ -378,8 +378,7 @@ class Home extends CI_Controller {
 		//echo $this->email->print_debugger();
 	}
 		
-=======
->>>>>>> 2984450310b10d05124d8ec071307dec3c624013
+
 }   	
 // --------------------------------------------------------------------
 /* End of file home.php */

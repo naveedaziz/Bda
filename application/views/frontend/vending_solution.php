@@ -59,7 +59,7 @@
              </div>
            </div>
             <?php } else { ?>
-            <p> <?php echo 'No Record Found!'; ?> </p>
+            <p class="no-record-found"> <?php echo 'No Record Found!'; ?> </p>
             <?php } ?>
 </div>
 <?php $this->load->view('frontend/elements/footer'); ?>
