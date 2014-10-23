@@ -81,7 +81,7 @@ a .btn-enquiry{ text-decoration:none;color:#92002d;}
     width:100%;
 	margin: 25px 0 0 0;
     position:relative;
-    bottom:0px;
+    bottom:0;
 }
 .small-text,.small-text a, .small-text a:hover {color:#919293; font-size:12px;}
 .copy-right{ color:#919293; font-size:12px;}
@@ -244,3 +244,14 @@ font-weight: normal;}
 	display:none;
 }
 }
+#footer {
+	height: 50px;
+	background: #f6f6f6;
+	border-top: 3px solid #92002d;
+	position: absolute;
+	bottom: 3;
+	width: 100%;
+	margin: 25px 0 0px 0;
+	padding: 20px 0;
+}
+#myCarousel>.category-carousel-inner{ overflow: hidden !important;}

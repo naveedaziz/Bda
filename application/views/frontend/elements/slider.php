@@ -50,7 +50,7 @@
                 <div class="carousel-caption container">
                    <?php echo $banner->title;?>
                     <p><?php echo $banner->description;?></p>
-                     <a href="<?php echo base_url(); ?>frontend/aboutus" class="contact-slider"><button class="btn btn-contact-slider">Contact</button></a>
+                     <a href="<?php echo base_url(); ?>pages/contact" class="contact-slider"><button class="btn btn-contact-slider">Contact</button></a>
                   </div>
             </div>
          <?php $index++;} ?>
