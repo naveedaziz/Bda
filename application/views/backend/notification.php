@@ -44,17 +44,17 @@
                   <?php if ($results->num_rows() > 0) { 
                      foreach ($results->result() as $row){ ?>
                   <tr>
-                     <td> <a href="<?php echo base_url().'admin/edit_notification/'.$row->id; ?>"> <?php echo $row->first_name.' '.$row->last_name; ?> </a></td>
+                     <td> <a href="<?php echo base_url().'edit_notification/'.$row->id; ?>"> <?php echo $row->first_name.' '.$row->last_name; ?> </a></td>
                      <td><b>Send email to </b><?php if($row->email){ echo $row->email; } ?></td>
                      <td class="text-center">
-                        <a href="<?php echo base_url().'admin/change_notification_status/'.$row->id.'/'.$row->status; ?>" class="no_underline">
+                        <a href="<?php echo base_url().'change_notification_status/'.$row->id.'/'.$row->status; ?>" class="no_underline">
                         <span class="label label-success"><?php if($row->status == 1){ echo 'Enable'; } ?></span> 
                         <span class="label label-primary"><?php if($row->status == 0){ echo 'Disable'; } ?></span>
                         </a>
                      </td>
                      <td class="text-center">
                         <div class="btn-group">
-                           <a href="<?php echo base_url().'admin/edit_notification/'.$row->id; ?>" data-toggle="tooltip" title="Edit" class="btn btn-xs btn-default"><i class="fa fa-pencil"></i></a>
+                           <a href="<?php echo base_url().'edit_notification/'.$row->id; ?>" data-toggle="tooltip" title="Edit" class="btn btn-xs btn-default"><i class="fa fa-pencil"></i></a>
                            <a href="javascript:void(0);" onclick="deleteItem(<?php echo $row->id; ?>,'delete_notification/');" data-toggle="tooltip" title="Delete" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
                         </div>
                      </td>
@@ -82,7 +82,7 @@
                   <!-- END Modal Header -->
                   <!-- Modal Body -->
                   <div class="modal-body">
-                     <form id="form-validation" action="<?php echo base_url();?>admin/insert_notification" method="post" class="form-horizontal form-bordered" >
+                     <form id="form-validation" action="<?php echo base_url();?>insert_notification" method="post" class="form-horizontal form-bordered" >
                         <fieldset>
                            <legend>Subscriber Information</legend>
                            <div class="form-group">

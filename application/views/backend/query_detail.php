@@ -10,7 +10,7 @@
             <div class="col-sm-3 align-right">
                <div class="col-xs-12 remove-padding">
                   <button type="button" class="btn btn-sm btn-primary" onclick="window.history.back()">Cancel</button>
-                  <?php if(!empty($row)){?> <a href="<?php echo base_url().'admin/exportQuery/'.$row->id; ?>"><button type="button" class="btn btn-sm btn-success">Export Query</button></a> <?php } ?>
+                  <?php if(!empty($row)){?> <a href="<?php echo base_url().'export_query/'.$row->id; ?>"><button type="button" class="btn btn-sm btn-success">Export Query</button></a> <?php } ?>
                </div>
             </div>
          </div>
@@ -59,24 +59,24 @@
                      </tr>
                      <tr>
                         <td> <b>Category Name:</b> </td>
-                        <td> <?php if($row->category_name){ ?> <a href="<?php //echo base_url().'admin/edit_brand/'.$row->brandID; ?>"> <?php echo $row->category_name; ?></a> <?php } ?> </td>
+                        <td> <?php if($row->category_name){ ?> <a href="<?php //echo base_url().'edit_brand/'.$row->brandID; ?>"> <?php echo $row->category_name; ?></a> <?php } ?> </td>
                      </tr>
                      <?php if(!$row->brandName && $row->brand_name){ ?>
                      <tr>
                         <td> <b>Brand Name:</b> </td>
-                        <td> <?php if($row->brand_name){ ?> <a href="<?php //echo base_url().'admin/edit_brand/'.$row->brandID; ?>"> <?php echo $row->brand_name; ?></a> <?php } ?> </td>
+                        <td> <?php if($row->brand_name){ ?> <a href="<?php //echo base_url().'edit_brand/'.$row->brandID; ?>"> <?php echo $row->brand_name; ?></a> <?php } ?> </td>
                      </tr>
                      <?php }?>
                      <?php if($row->productTitle){ ?>
                      <tr>
                         <td> <b>Product Name:</b> </td>
-                        <td> <?php if($row->productTitle){?> <a href="<?php echo base_url().'admin/edit_product/'.$row->product_id; ?>"> <?php echo $row->productTitle; ?></a> <?php } ?> </td>
+                        <td> <?php if($row->productTitle){?> <a href="<?php echo base_url().'edit_product/'.$row->product_id; ?>"> <?php echo $row->productTitle; ?></a> <?php } ?> </td>
                      </tr>
                     <?php }?>
                     <?php if($row->brandName && !$row->brand_name){ ?>
                      <tr>
                         <td> <b>Brand Name:</b> </td>
-                        <td> <?php if($row->brandName){ ?> <a href="<?php echo base_url().'admin/edit_brand/'.$row->brandID; ?>"> <?php echo $row->brandName; ?></a> <?php } ?> </td>
+                        <td> <?php if($row->brandName){ ?> <a href="<?php echo base_url().'edit_brand/'.$row->brandID; ?>"> <?php echo $row->brandName; ?></a> <?php } ?> </td>
                      </tr>
                      <?php }?>
                      <?php }else{?> 

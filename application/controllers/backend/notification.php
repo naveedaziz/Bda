@@ -135,7 +135,7 @@
    
    			// redirect to notification listing page
    
-   			redirect(base_url() . 'admin/notifications');
+   			redirect(base_url() . 'notifications');
    			}
    		  else
    			{
@@ -146,7 +146,7 @@
    
    			// redirect back to notification and show error
    
-   			redirect(base_url() . 'admin/notifications');
+   			redirect(base_url() . 'notifications');
    			}
    	}
    
@@ -166,7 +166,7 @@
    
    		// get url parameter
    
-   		$id = $this->uri->segment(3);
+   		$id = $this->uri->segment(2);
    
    		// get table name
    
@@ -178,7 +178,7 @@
    
    		// load list notification
    
-   		redirect(base_url() . 'admin/notifications');
+   		redirect(base_url() . 'notifications');
    	}
    
    	// --------------------------------------------------------------------
@@ -197,7 +197,7 @@
    
    		// get url parameter
    
-   		$id = $this->uri->segment(3);
+   		$id = $this->uri->segment(2);
    
    		// get table name
    
@@ -215,7 +215,7 @@
    			}
    		  else
    			{
-   			redirect(base_url() . 'admin/notifications');
+   			redirect(base_url() . 'notifications');
    			}
    	}
    
@@ -248,7 +248,7 @@
    
    		// redirect to notification listing page
    
-   		redirect(base_url() . 'admin/notifications');
+   		redirect(base_url() . 'notifications');
    	}
    
    	// --------------------------------------------------------------------
@@ -271,7 +271,7 @@
    
    		// get id from url parameter
    
-   		$id = $this->uri->segment(3);
+   		$id = $this->uri->segment(2);
    
    		// get status from url parameter
    
@@ -294,7 +294,7 @@
    
    		// redirect to products listing page
    
-   		redirect(base_url() . 'admin/notifications');
+   		redirect(base_url() . 'notifications');
    	}
    }
 // --------------------------------------------------------------------

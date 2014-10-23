@@ -15,7 +15,7 @@
    <!-- Login Block -->
    <div class="block push-bit">
       <!-- Login Form -->
-      <form name="login" method="post" id="form-validation" class="form-horizontal form-bordered form-control-borderless" action="<?php echo base_url();?>admin/doLogin">
+      <form name="login" method="post" id="form-validation" class="form-horizontal form-bordered form-control-borderless" action="<?php echo base_url();?>login">
          <div class="form-group">
             <div class="col-xs-12">
                <div class="input-group">

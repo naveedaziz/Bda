@@ -159,7 +159,7 @@
    
    						// redirect back to edit page and display error
    
-   						redirect(base_url() . 'admin/add_page');
+   						redirect(base_url() . 'add_page');
    						}
    					}
    
@@ -254,7 +254,7 @@
    
    			// redirect to page listing page
    
-   			redirect(base_url() . 'admin/pages');
+   			redirect(base_url() . 'pages');
    			}
    		  else
    			{
@@ -278,7 +278,7 @@
    
    		// get url parameter
    
-   		$id = $this->uri->segment(3);
+   		$id = $this->uri->segment(2);
    
    		// get table name
    
@@ -290,7 +290,7 @@
    
    		// redirect to listing page
    
-   		redirect(base_url() . 'admin/pages');
+   		redirect(base_url() . 'pages');
    	}
    
    	/**
@@ -311,7 +311,7 @@
    
    		// get url parameter
    
-   		$id = $this->uri->segment(3);
+   		$id = $this->uri->segment(2);
    
    		// get page record of the given id
    
@@ -325,7 +325,7 @@
    			}
    		  else
    			{
-   			redirect(base_url() . 'admin/pages');
+   			redirect(base_url() . 'pages');
    			}
    	}
    
@@ -372,7 +372,7 @@
    
    						// redirect back to edit page page and show error message.
    
-   						redirect(base_url() . 'admin/edit_page/' . $id);
+   						redirect(base_url() . 'edit_page/' . $id);
    						}
    					}
    
@@ -467,11 +467,11 @@
    
    			// redirect to page listing page
    
-   			redirect(base_url() . 'admin/pages');
+   			redirect(base_url() . 'pages');
    			}
    		  else
    			{
-   			redirect(base_url() . 'admin/pages');
+   			redirect(base_url() . 'pages');
    			}
    	}
    
@@ -495,7 +495,7 @@
    
    		// get id from url parameter
    
-   		$id = $this->uri->segment(3);
+   		$id = $this->uri->segment(2);
    
    		// get status from url parameter
    
@@ -518,7 +518,7 @@
    
    		// redirect to page listing page
    
-   		redirect(base_url() . 'admin/pages');
+   		redirect(base_url() . 'pages');
    	}
    }
 // --------------------------------------------------------------------
