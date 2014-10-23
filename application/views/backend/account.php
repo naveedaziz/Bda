@@ -43,14 +43,14 @@
                   <?php if ($results->num_rows() > 0) { 
                      foreach ($results->result() as $row){ ?>
                   <tr>
-                     <td><a href="<?php echo base_url().'admin/edit_account/'.$row->id; ?>"> <?php echo $row->first_name.' '.$row->last_name; ?> </a></td>
+                     <td><a href="<?php echo base_url().'edit_account/'.$row->id; ?>"> <?php echo $row->first_name.' '.$row->last_name; ?> </a></td>
                      <td><?php if($row->email){ echo $row->email; } ?></td>
                      <td class="text-center"> <?php if($row->city){ echo $row->city; } ?> </td>
                      <td class="text-center"> <?php if($row->super_access == 1){ echo 'Account owner'; }else{ ?> Moderator <?php } ?></td>
                      <td class="text-center">
-                        <!-- <a href="<?php //echo base_url().'admin/delete_account/'.$row->id; ?>"><i class='fa fa-trash-o fa-fw icon-listing'></i></a>-->
+                        <!-- <a href="<?php //echo base_url().'delete_account/'.$row->id; ?>"><i class='fa fa-trash-o fa-fw icon-listing'></i></a>-->
                         <div class="btn-group">
-                           <a href="<?php echo base_url().'admin/edit_account/'.$row->id; ?>" data-toggle="tooltip" title="Edit" class="btn btn-xs btn-default"><i class="fa fa-pencil"></i></a>
+                           <a href="<?php echo base_url().'edit_account/'.$row->id; ?>" data-toggle="tooltip" title="Edit" class="btn btn-xs btn-default"><i class="fa fa-pencil"></i></a>
                            <?php if(!$row->super_access == 1){ ?>
                            <a href="javascript:void(0);" onclick="deleteItem(<?php echo $row->id; ?>,'delete_account/');" data-toggle="tooltip" title="Delete" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
                            <?php } ?>
@@ -80,7 +80,7 @@
                <p>You can transfer ownership of admin to another user. If you do this they will have complete control of the admin. Your account will turn into a regular staff account.</p>
             </div>
             <div class="col-sm-9">
-               <form action="<?php echo base_url();?>admin/update_account_owner" method="post">
+               <form action="<?php echo base_url();?>update_account_owner" method="post">
                   <div class="row">
                      <div class="col-sm-3">
                         <b>Select account owner</b>
@@ -105,7 +105,7 @@
                <h4>Site Settings</h4>
              </div>
             <div class="col-sm-9">
-               <form action="<?php echo base_url();?>admin/update_site_settings" method="post">
+               <form action="<?php echo base_url();?>update_site_settings" method="post">
                   <div class="row">
                      <div class="col-sm-3">
                         <b>Site Meta Title</b>
@@ -137,7 +137,7 @@
             <!-- END Modal Header -->
             <!-- Modal Body -->
             <div class="modal-body">
-               <form id="form-validation" action="<?php echo base_url();?>admin/insert_account" method="post" class="form-horizontal form-bordered" >
+               <form id="form-validation" action="<?php echo base_url();?>insert_account" method="post" class="form-horizontal form-bordered" >
                   <fieldset>
                      <legend>Subscriber Information</legend>
                      <div class="form-group">

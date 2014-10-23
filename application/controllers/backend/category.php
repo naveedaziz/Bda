@@ -161,7 +161,7 @@
    						
    						// redirect back to edit page and display error
    						
-   						redirect(base_url() . 'admin/add_category');
+   						redirect(base_url() . 'add_category');
    					}
    				}
    
@@ -254,11 +254,11 @@
    
    			// redirect to category listing page
    
-   			redirect(base_url() . 'admin/categories');
+   			redirect(base_url() . 'categories');
    		}
    		else
    		{
-   			redirect(base_url() . 'admin/add_category');
+   			redirect(base_url() . 'add_category');
    		}
    	}
    
@@ -278,7 +278,7 @@
    
    		// get url parameter
    
-   		$id = $this->uri->segment(3);
+   		$id = $this->uri->segment(2);
    
    		// get table name
    
@@ -290,7 +290,7 @@
    
    		// redirect to category listing page
    
-   		redirect(base_url() . 'admin/categories');
+   		redirect(base_url() . 'categories');
    	}
    
    	// --------------------------------------------------------------------
@@ -313,7 +313,7 @@
    
    		// get url parameter
    
-   		$id = $this->uri->segment(3);
+   		$id = $this->uri->segment(2);
    
    		// get category record of the given id
    
@@ -326,7 +326,7 @@
    		}
    		else
    		{
-   			redirect(base_url() . 'admin/categories');
+   			redirect(base_url() . 'categories');
    		}
    	}
    
@@ -371,7 +371,7 @@
    						
    						// redirect back to edit category page and show error message.
    						
-   						redirect(base_url() . 'admin/edit_category/' . $id);
+   						redirect(base_url() . 'edit_category/' . $id);
    					}
    				}
    
@@ -461,11 +461,11 @@
    
    			// redirect to category listing page
    
-   			redirect(base_url() . 'admin/categories');
+   			redirect(base_url() . 'categories');
    		}
    		else
    		{
-   			redirect(base_url() . 'admin/categories');
+   			redirect(base_url() . 'categories');
    		}
    	}
    
@@ -489,7 +489,7 @@
    
    		// get id from url parameter
    
-   		$id = $this->uri->segment(3);
+   		$id = $this->uri->segment(2);
    
    		// get status from url parameter
    
@@ -512,7 +512,7 @@
    
    		// redirect to category listing page
    
-   		redirect(base_url() . 'admin/categories');
+   		redirect(base_url() . 'categories');
    	}
    }
 // --------------------------------------------------------------------

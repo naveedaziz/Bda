@@ -291,7 +291,7 @@ class Home extends CI_Controller {
    		$filter = 'category';
    		$data['categories'] = $this->modelfrontend->getAllData($table_name, $filter );
 		if($this->uri->segment(2)){
-			$data['product_id'] = $this->uri->segment(3);
+			$data['product_id'] = $this->uri->segment(2);
 		}
 		
 		// load qury view

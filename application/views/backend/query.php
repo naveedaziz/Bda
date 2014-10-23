@@ -8,7 +8,7 @@
                <h3 class="remove-margin"> <i class="fa fa-envelope-o fa-fw sidebar-nav-icon"></i> Queries </h3>
             </div>
             <div class="col-sm-2 col-lg-2 align-right">
-               <a href="<?php echo base_url().'admin/exportUsers' ?>"><button type="button" class="btn btn-sm btn-success">Export Queries</button></a>
+               <a href="<?php echo base_url().'export_queries' ?>"><button type="button" class="btn btn-sm btn-success">Export Queries</button></a>
             </div>
          </div>
          <hr />
@@ -43,10 +43,10 @@
                      }?>
                   <tr>
                      <td class="text-center"> <?php echo $i; ?> </td>
-                     <td class="text-center"> <a href="<?php echo base_url().'admin/query_detail/'.$row->id; ?>"><?php echo $row->id; ?></a> </td>
+                     <td class="text-center"> <a href="<?php echo base_url().'query_detail/'.$row->id; ?>"><?php echo $row->id; ?></a> </td>
                      <td> <?php echo $created_date; ?> </td>
                      <td> <?php echo $row->city; ?> </td>
-                     <td> <a href="<?php echo base_url().'admin/query_detail/'.$row->id; ?>"> <?php echo $row->first_name.' '.$row->last_name; ?> </a> </td>
+                     <td> <a href="<?php echo base_url().'query_detail/'.$row->id; ?>"> <?php echo $row->first_name.' '.$row->last_name; ?> </a> </td>
                      <td> <?php echo $row->phone; ?> </td>
                   </tr>
                   <?php } ?>

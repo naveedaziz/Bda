@@ -172,7 +172,7 @@
    
    						// redirect back to add product page
    
-   						redirect(base_url() . 'admin/add_product');
+   						redirect(base_url() . 'add_product');
    						}
    					}
    
@@ -265,7 +265,7 @@
    
    						// redirect back to edit product page and show error message.
    
-   						redirect(base_url() . 'admin/edit_product/' . $id);
+   						redirect(base_url() . 'edit_product/' . $id);
    						}
    					}
    
@@ -374,11 +374,11 @@
    
    			// redirect to product listing page
    
-   			redirect(base_url() . 'admin/products');
+   			redirect(base_url() . 'products');
    			}
    		  else
    			{
-   			redirect(base_url() . 'admin/add_product');
+   			redirect(base_url() . 'add_product');
    			}
    	}
    
@@ -398,7 +398,7 @@
    
    		// get url parameter
    
-   		$id = $this->uri->segment(3);
+   		$id = $this->uri->segment(2);
    
    		// get table name
    
@@ -410,7 +410,7 @@
    
    		// redirect to product listing
    
-   		redirect(base_url() . 'admin/products');
+   		redirect(base_url() . 'products');
    	}
    
    	// --------------------------------------------------------------------
@@ -429,7 +429,7 @@
    
    		// get url parameter
    
-   		$id = $this->uri->segment(3);
+   		$id = $this->uri->segment(2);
    
    		// declare table name
    
@@ -458,7 +458,7 @@
    			}
    		  else
    			{
-   			redirect(base_url() . 'admin/products');
+   			redirect(base_url() . 'products');
    			}
    	}
    
@@ -505,7 +505,7 @@
    
    						// redirect back to edit product page and show error message.
    
-   						redirect(base_url() . 'admin/edit_product/' . $id);
+   						redirect(base_url() . 'edit_product/' . $id);
    						}
    					}
    
@@ -599,7 +599,7 @@
    
    						// redirect back to edit product page and show error message.
    
-   						redirect(base_url() . 'admin/edit_product/' . $id);
+   						redirect(base_url() . 'edit_product/' . $id);
    						}
    					}
    
@@ -704,11 +704,11 @@
    
    			// redirect to product listing page
    
-   			redirect(base_url() . 'admin/products');
+   			redirect(base_url() . 'products');
    			}
    		  else
    			{
-   			redirect(base_url() . 'admin/products');
+   			redirect(base_url() . 'products');
    			}
    	}
    
@@ -732,7 +732,7 @@
    
    		// get id from url parameter
    
-   		$id = $this->uri->segment(3);
+   		$id = $this->uri->segment(2);
    
    		// get status from url parameter
    
@@ -755,7 +755,7 @@
    
    		// redirect to products listing page
    
-   		redirect(base_url() . 'admin/products');
+   		redirect(base_url() . 'products');
    	}
   }
    

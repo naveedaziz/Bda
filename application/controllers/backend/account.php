@@ -124,11 +124,11 @@
    			  //call model to insert notification data
    			  $this->modeladmin->insert($table_name,$array);
    			  //redirect to account listing page
-   			  redirect(base_url().'admin/account_setting');
+   			  redirect(base_url().'account_setting');
    			}else{
    				// set flash message for email already exists.
    				$this->session->set_flashdata('error_message','Email already exist. Please try again with different email address.');
-   				 redirect(base_url().'admin/account_setting');
+   				 redirect(base_url().'account_setting');
    			}
    			 
    }
@@ -146,13 +146,13 @@
    	public function delete()
    	{
    		    //get url parameter
-   			$id = $this->uri->segment(3);
+   			$id = $this->uri->segment(2);
    			//get table name
    			$table_name	= 'np_admin_users';
    		   //call model to delete record
    		    $this->modeladmin->delete( $table_name, $id ); 
    		   //load listing view
-   		      redirect(base_url().'admin/account_setting');
+   		      redirect(base_url().'account_setting');
    	}
        
    	// --------------------------------------------------------------------
@@ -168,7 +168,7 @@
    	public function edit()
    	{
    		    //get url parameter
-   			$id = $this->uri->segment(3);
+   			$id = $this->uri->segment(2);
    			//get table name
    			$table_name	= 'np_admin_users';
    			//get notification record of the given id
@@ -177,7 +177,7 @@
    		     //load account edit view
    		    $this->load->view( 'backend/account_edit', $data);
    		   }else{
-   			  redirect(base_url().'admin/account_setting');
+   			  redirect(base_url().'account_setting');
    		   }
    	}
    	
@@ -205,7 +205,7 @@
    			//call model to update data
    			$this->modeladmin->update( $table_name, $array, $id );
    			 //redirect to listing page
-   			redirect(base_url().'admin/account_setting');
+   			redirect(base_url().'account_setting');
    		
          }
    // --------------------------------------------------------------------
@@ -233,7 +233,7 @@
    			//call model to insert notification data
    			$this->modeladmin->update( $table_name, $array, $id );
    			 //redirect to notification listing page
-   			redirect(base_url().'admin/account_setting');
+   			redirect(base_url().'account_setting');
    		
          }
 	public function updateSiteSettings()
@@ -243,7 +243,7 @@
 			$array['seo_title']	= Encode($this->input->post('seo_title'));
    			$array['seo_description']		    = Encode($this->input->post('seo_description'));
    			$this->modeladmin->updateSiteSittings( $table_name, $array);
-   			redirect(base_url().'admin/account_setting');
+   			redirect(base_url().'account_setting');
    		
          }
    

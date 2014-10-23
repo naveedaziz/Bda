@@ -1,7 +1,7 @@
 <?php $this->load->view('backend/elements/header'); ?>
 <!-- Page content -->
 <div id="page-content">
-   <form id="form-validation" action="<?php echo base_url();?>admin/update_account" method="post" class="form-horizontal" enctype="multipart/form-data">
+   <form id="form-validation" action="<?php echo base_url();?>update_account" method="post" class="form-horizontal" enctype="multipart/form-data">
       <input type="hidden" value="<?php echo $row->id; ?>" name="id" />
       <div class="row">
          <div class="col-sm-12 margin-bottom">

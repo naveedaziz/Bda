@@ -8,7 +8,7 @@
    <!-- Login Block -->
    <div class="block push-bit">
       <!-- Login Form -->
-      <form id="profile-setting" action="<?php echo base_url();?>admin/resetPassword" method="post" class="form-horizontal form-bordered">
+      <form id="profile-setting" action="<?php echo base_url();?>reset_password" method="post" class="form-horizontal form-bordered">
          <input type="hidden" value="<?php echo $this->session->userdata('admin_id');?>" name="admin_id" />
          <fieldset>
             <legend>Vital Info</legend>
