@@ -25,6 +25,9 @@ h1, .h1, h2, .h2, h3, .h3,h4, .h4{color: #92002d !important; font-weight:bold; f
 	margin-left: 156px;
 	font-weight: bold;
 }
+.marginBottom{
+	margin-bottom:60px;
+}
 /******* Top Search-bar *******/
 .search_top{ margin-top:20px; float:right;}
 .search_top input[type="text"] {
