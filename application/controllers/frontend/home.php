@@ -353,6 +353,33 @@ class Home extends CI_Controller {
    			redirect(base_url() . 'thanks');
   	}
 	
+<<<<<<< HEAD
+		// load user view with data listing
+   
+   		$this->parser->parse('frontend/layout/detail_template', $data);
+   	}
+	public function sendEmailTemplate(){
+		$data = '123';
+		$message = $this->load->view('frontend/email', $data, true);
+		$this->sendEMail($from,$to,$cc,$bcc,$subject,$message); 
+	}
+	public function sendEMail($from,$to,$cc,$bcc,$subject,$message){
+		/*
+		$this->load->library('email', $config);
+		$this->email->set_newline("\r\n");
+		$this->email->from('hrm@bramerz.pk', 'MUNA LIZA HRM');
+		$this->email->to($to); 
+		$this->email->cc($cc); 
+		$this->email->bcc($bcc);
+		$this->email->subject($subject);
+		$this->email->message($message);	
+		//echo $message;
+		$this->email->send();*/
+		//echo $this->email->print_debugger();
+	}
+		
+=======
+>>>>>>> 2984450310b10d05124d8ec071307dec3c624013
 }   	
 // --------------------------------------------------------------------
 /* End of file home.php */
