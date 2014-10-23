@@ -38,7 +38,7 @@
 	     <ul id="myTab" class="nav nav-tabs nav-justified tabs-categories">
           <?php if ($categories->num_rows() > 0) { 
            foreach ($categories->result() as $category){ ?>
-            <li <?php if($category->id === $active_category){?> class="active" <?php } ?>><a href="<?php echo base_url().'frontend/allProducts/'.$category->id; ?>"><?php echo $category->title;?></a></li>
+            <li <?php if($category->id === $active_category){?> class="active" <?php } ?>><a href="<?php echo base_url().'category/'.$category->id; ?>"><?php echo $category->title;?></a></li>
           <?php }  ?>
         <?php }?>
         
@@ -123,15 +123,15 @@
                                 $json_o = '';
                                 }
                                 if($json_o){?>
-                         <a href="<?php echo base_url().'frontend/product_detail/'.$product->id; ?>">
+                         <a href="<?php echo base_url().'product/'.$product->id; ?>">
                          <img class="images-section img-responsive" src="<?php echo base_url().$json_o[0]; ?>" alt="">
                          </a>
                          <?php }else{ ?>
-                         <a href="<?php echo base_url().'frontend/product_detail/'.$product->id; ?>">
+                         <a href="<?php echo base_url().'product/'.$product->id; ?>">
                          <img class="product-images-section img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>ldefault.png" alt="">
                          </a>
                          <?php } ?>
-                         <h4 class="title"><a href="<?php echo base_url().'frontend/product_detail/'.$product->id; ?>"><?php echo $product->title;?></a></h4>
+                         <h4 class="title"><a href="<?php echo base_url().'product/'.$product->id; ?>"><?php echo $product->title;?></a></h4>
                          <?php } ?>
                 </div>
                 <?php } } ?>
@@ -151,15 +151,15 @@
                                 $json_o = '';
                                 }
                                 if($json_o){?>
-                         <a href="<?php echo base_url().'frontend/product_detail/'.$product->id; ?>">
+                         <a href="<?php echo base_url().'product/'.$product->id; ?>">
                          <img class="images-section img-responsive" src="<?php echo base_url().$json_o[0]; ?>" alt="">
                          </a>
                          <?php }else{ ?>
-                         <a href="<?php echo base_url().'frontend/product_detail/'.$product->id; ?>">
+                         <a href="<?php echo base_url().'product/'.$product->id; ?>">
                          <img class="product-images-section img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>ldefault.png" alt="">
                          </a>
                          <?php } ?>
-                         <h4 class="title"><a href="<?php echo base_url().'frontend/product_detail/'.$product->id; ?>"><?php echo $product->title;?></a></h4>
+                         <h4 class="title"><a href="<?php echo base_url().'product/'.$product->id; ?>"><?php echo $product->title;?></a></h4>
                          <?php } ?>
                     </div>
                     <?php  } ?>
@@ -201,4 +201,4 @@
     </nav> <!-- / .nav -->
 </div>
 <!-- /.container -->
-<?php $this->load->view('frontend/elements/footer'); ?>>>>>
+<?php $this->load->view('frontend/elements/footer'); ?>>>>>>>

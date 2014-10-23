@@ -51,13 +51,11 @@ $route['search'] = "frontend/home/getSearchDetail";
 $route['search:any'] = "frontend/home/getSearchDetail";
 $route['vending_solution'] = "frontend/home/getVendingSolution";
 $route['vending_product:any'] = "frontend/home/getVendingProductDetail";
-$route['frontend/products'] = 'frontend/home/allProducts';
-$route['frontend/product_detail:any'] = 'frontend/home/getProductDetail';
-$route['frontend/query'] = 'frontend/home/query';
-$route['frontend/query:any'] = 'frontend/home/query';
+$route['product:any'] = 'frontend/home/getProductDetail';
+$route['enquiry'] = 'frontend/home/query';
+$route['enquiry:any'] = 'frontend/home/query';
 $route['frontend/submitQuery'] = 'frontend/home/submitQuery';
 $route['thanks'] = 'frontend/home/thanks';
-$route['frontend/aboutus'] = 'frontend/home/aboutus';
 $route['404_override'] = '';
 
 

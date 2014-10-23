@@ -9,7 +9,7 @@
            <ol class="breadcrumb">
            <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url();?>">Home</a></span> </div>
            <div class="space">/</div>
-           <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url().'frontend/allProducts/'.$this->session->userdata('category_id'); ?>"><?php echo $this->session->userdata('category'); ?></a></span> </div>	
+           <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url().'category/'.$this->session->userdata('category_id'); ?>"><?php echo $this->session->userdata('category'); ?></a></span> </div>	
            <div class="space">/</div>
            <div class="breadcrums">
            <span class="small-text-active">
@@ -81,7 +81,7 @@
                    <?php } } ?>
                     
                      <div class="col-md-1 col-right">
-                      <a href="<?php echo base_url().'frontend/query/'.$product->id; ?>"><button class="btn btn-enquiry">ENQUIRY</button></a>
+                      <a href="<?php echo base_url().'enquiry/'.$product->id; ?>"><button class="btn btn-enquiry">ENQUIRY</button></a>
                      </div>
                   </div>
                   
