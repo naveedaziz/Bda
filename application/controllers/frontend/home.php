@@ -64,8 +64,8 @@ class Home extends CI_Controller {
    		$data['categories'] = $this->modelfrontend->getAllData($table_name, $filter );
 		
    		$filter_banner = 'banner';
-		$data['banners'] = $this->modelfrontend->getAllData($table_name, $filter );
-		
+		$data['banners'] = $this->modelfrontend->getAllData($table_name, $filter_banner );
+		//print_r($data['banners']);die();
    		// load view
    
    		$this->load->view('frontend/index', $data);
@@ -210,6 +210,38 @@ class Home extends CI_Controller {
    		$this->load->view('frontend/layout/detail_template', $data);
    		
    	}
+	
+	public function getSearchDetail(){
+		$data = '';
+		
+   		// get categories
+		
+		$table_name = 'np_general_settings';
+   		$filter = 'category';
+   		$data['categories'] = $this->modelfrontend->getAllData($table_name, $filter );
+		
+		$filter = $this->uri->segment(3);
+		
+		// get single catagory
+		
+		$data['catagory'] = $this->modelfrontend->getRecord($table_name, $filter);
+		
+		 
+   		
+		// get url parameter
+   
+   		
+		
+		// get products
+		
+   		$table_name = 'np_products';
+   		$data['products'] = $this->modelfrontend->getProductCount($table_name, $filter);
+		$data['active_category'] = $filter;
+   		
+		// load view
+   
+   		$this->load->view('frontend/search', $data);
+	}
    // --------------------------------------------------------------------
    public function getVendingSolution()
    	{
