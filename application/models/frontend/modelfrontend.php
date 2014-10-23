@@ -41,6 +41,22 @@ class modelFrontend extends CI_Model {
    		$results = $this->db->query($sql);
    		return $results;
    	}
+	public function getSearchRecord($filter)
+   	{
+   		$results = '';
+		if($filter){
+			
+			$sql = "SELECT * FROM `np_products` where (title LIKE '%" . $filter . "%' or  description LIKE '%" . $filter . "%') and status = '1'";
+		}else{
+			
+			$sql = "SELECT * FROM `np_products` where status = '1'";
+		}
+				
+   
+   		$results = $this->db->query($sql);
+   		return $results;
+   	}
+	
 	public function getSeoData($table_name)
    	{
    		$results = '';
