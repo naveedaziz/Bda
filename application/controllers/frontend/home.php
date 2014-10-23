@@ -353,10 +353,7 @@ class Home extends CI_Controller {
    			// redirect to brand listing page
    
    			redirect(base_url() . 'thanks');
-			
-  	}
-		// load user view with data listing
-	
+	}
 	public function sendEmailTemplate(){
 		$data = '123';
 		$message = $this->load->view('frontend/email', $data, true);
@@ -378,7 +375,6 @@ class Home extends CI_Controller {
 		//echo $this->email->print_debugger();
 	}
 		
-
 }   	
 // --------------------------------------------------------------------
 /* End of file home.php */
