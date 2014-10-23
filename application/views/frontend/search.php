@@ -70,26 +70,6 @@
      </div>
 </div>
 <!----  brand products----->
-<div class="ful-col-product">
-    <nav>
-       <div class="container">
-        <div class="row clearfix">
-           <div class="col-md-12 column">
-            <div class="row">
-             <div class="col-md-6">
-           	  <h4 class="msg-bottom">THESE HOTELS & RESTURANT USING HORECA PRODUCTS</h4>
-             </div>
-             <div class="col-md-6">
-           	  <img class="thumbs-product" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>products-thumbs.jpg" alt="" />
-              <img class="thumbs-product" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>products-thumbs.jpg" alt="" />
-              <img class="thumbs-product" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>products-thumbs.jpg" alt="" />
-              <img class="thumbs-product" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>products-thumbs.jpg" alt="" />
-             </div>
-            </div> <!-- /.row -->  
-           </div> <!-- / .col-md-12 column -->
-       </div> <!-- / .row clearfix -->
-       </div> <!--- / .container --->
-    </nav> <!-- / .nav -->
-</div>
+
 <!-- /.container -->
-<?php $this->load->view('frontend/elements/footer'); ?>>>>>>>
+<?php $this->load->view('frontend/elements/footer'); ?>
