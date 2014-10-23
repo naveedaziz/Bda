@@ -109,11 +109,11 @@
                   <div class="row">
                      <div class="col-sm-3">
                         <b>Site Meta Title</b>
-                        <input value="<?=$siteSettings->seo_meta_title?>" class="form-control" name="seo_meta_title" id="seo_meta_title">
+                        <input value="<?=$siteSettings->seo_title?>" class="form-control" name="seo_title" id="seo_title">
                      </div>
                      <div class="col-sm-3">
                         <b>Site Meta Discription</b>
-                        <input value="<?=$siteSettings->seo_meta_description?>" class="form-control" name="seo_meta_description" id="seo_meta_description">
+                        <input value="<?=$siteSettings->seo_description?>" class="form-control" name="seo_description" id="seo_description">
                      </div>
                      
                      <div class="col-sm-3">

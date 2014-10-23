@@ -240,8 +240,8 @@
    	{
    			// set table name and filters
    			$table_name					= 'np_site_settings';
-			$array['seo_meta_title']	= Encode($this->input->post('seo_meta_title'));
-   			$array['seo_meta_description']		    = Encode($this->input->post('seo_meta_description'));
+			$array['seo_title']	= Encode($this->input->post('seo_title'));
+   			$array['seo_description']		    = Encode($this->input->post('seo_description'));
    			$this->modeladmin->updateSiteSittings( $table_name, $array);
    			redirect(base_url().'admin/account_setting');
    		

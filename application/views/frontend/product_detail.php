@@ -35,6 +35,7 @@
                <div class="col-md-7 col-space-top-l no-padding">
                <?php 
                   if(!empty($product->images)){ 
+				 
                   	$string = $product->images;
                   	if($string){
                   	$images_array = (array) json_decode($string);

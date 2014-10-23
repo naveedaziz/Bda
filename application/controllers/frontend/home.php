@@ -31,7 +31,8 @@ class Home extends CI_Controller {
    	  $this->load->library('session');
 	  $this->load->library('pagination');
 	  $this->load->model('frontend/modelfrontend');
-	  $_SESSION['site_meta'] = $this->modelfrontend->getSeoData('np_site_settings');	  
+	  $_SESSION['site_meta'] = $this->modelfrontend->getSeoData('np_site_settings');	
+	  $_SESSION['site_meta']->images = base_url().DEFAULT_LOGO;  
 	  date_default_timezone_set('Asia/Karachi');
     }
 	
@@ -49,9 +50,6 @@ class Home extends CI_Controller {
 	public function index()
 	{
 
-		$_SESSION['meta_state'] = 'home';
-
-		
 		// set session page name
    
    		$this->session->set_userdata('page', 'home');
@@ -85,7 +83,7 @@ class Home extends CI_Controller {
    	 */
    	public function getAllProducts()
    	{
-   
+   		
    		$data = '';
 		
    		// get categories
@@ -94,16 +92,22 @@ class Home extends CI_Controller {
    		$filter = 'category';
    		$data['categories'] = $this->modelfrontend->getAllData($table_name, $filter );
 		
-		// get brands
+		$filter = $this->uri->segment(3);
 		
-		$table_name = 'np_general_settings';
-   		$filter = 'brand';
-   		$data['brands'] = $this->modelfrontend->getAllData($table_name, $filter );
-   
+		// get single catagory
+		
+		$data['catagory'] = $this->modelfrontend->getRecord($table_name, $filter);
+		
+		$_SESSION['site_meta'] = $data['catagory'];
+		$imageDefault = (array) json_decode($_SESSION['site_meta']->images);
+		
+		if(isset($imageDefault[0])){
+			$_SESSION['site_meta']->images = base_url().$imageDefault[0];
+		}  
    		
 		// get url parameter
    
-   		$filter = $this->uri->segment(3);
+   		
 		
 		// get products
 		
@@ -140,6 +144,18 @@ class Home extends CI_Controller {
 		
 		$table_name = 'np_products';
    		$data['product'] = $this->modelfrontend->getRecord($table_name, $id);
+		$data['product_detail'] = $this->modelfrontend->getRecord($table_name, $id);
+		
+		
+		$_SESSION['site_meta'] = $data['product_detail'];
+		
+		$imageDefault = (array) json_decode($_SESSION['site_meta']->images);
+		
+		if(isset($imageDefault[0])){
+			
+			$_SESSION['site_meta']->images = base_url().$imageDefault[0];
+			
+		}
 		
    		// load view
    

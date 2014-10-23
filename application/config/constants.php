@@ -48,6 +48,7 @@ define('ASSETS_FRONTEND_CSS_DIR' ,  'assets/frontend/css/');
 define('ASSETS_FRONTEND_JS_DIR' ,  'assets/frontend/js/');
 define('ASSETS_FRONTEND_FONTAWESOME_DIR' ,  'assets/frontend/font-awesome-4.1.0/');
 define('ASSETS_FRONTEND_IMAGE_DIR' ,  'assets/frontend/img/');
+define('DEFAULT_LOGO' ,  'assets/frontend/img/logo.png');
 define('LIMIT_PAGINATION' ,  '10');
 define('CAPTCHA_DIR' ,  'captcha');
 
