@@ -201,4 +201,4 @@
     </nav> <!-- / .nav -->
 </div>
 <!-- /.container -->
-<?php $this->load->view('frontend/elements/footer'); ?>>>
+<?php $this->load->view('frontend/elements/footer'); ?>>>>>
