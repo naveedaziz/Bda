@@ -200,6 +200,8 @@ class Home extends CI_Controller {
    
    		$slug = $this->uri->segment(2);
 		
+		$this->session->set_userdata('page', $slug);
+		
 		// get pages
 		
 		$table_name = 'np_general_settings';
