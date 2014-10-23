@@ -62,6 +62,8 @@
 				},
 				company: "required",
 				city: "required",
+				category_name: "required",
+				brand_name: "required",
 				contact: {
 					required: true,
 					number: true

@@ -168,7 +168,6 @@
                   </div>
                		 <div class="row text-center">
                   	 <div class="col-lg-12">
-                      <?php //echo $this->pagination->create_links(); ?> 
                    </div>
                 </div>
                 <?php } else { ?>
@@ -202,4 +201,4 @@
     </nav> <!-- / .nav -->
 </div>
 <!-- /.container -->
-<?php $this->load->view('frontend/elements/footer'); ?>
+<?php $this->load->view('frontend/elements/footer'); ?>>>

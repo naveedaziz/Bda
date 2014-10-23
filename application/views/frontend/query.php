@@ -32,7 +32,7 @@
               </div>
 
             <form id="form-validation" action="<?php echo base_url();?>frontend/submitQuery" method="post" class="form-horizontal form-bordered">
-               <input type="hidden" value="<?php echo $this->session->userdata('product_id');?>" name="product_id" />
+               <input type="hidden" value="<?php if(isset($product_id)){ echo $product_id; }?>" name="product_id" />
                <div class="row">
                <div class="col-lg-8 centered-text">
                   <div class="col-lg-6">
@@ -91,6 +91,7 @@
                  <div class="col-lg-6">
                      <div class="form-group">
                         <div class="col-md-12">
+                        <div class="tab-pane fade active in" id="product">
                           <select class="form-control" name="category_name" id="category_name">
                               <option value="">Choose Your Business</option>
                                <?php if ($categories->num_rows() > 0) { 
@@ -99,6 +100,13 @@
                               <?php } ?>
                             <?php }?>
                            </select>
+                           </div>
+                        <div class="tab-pane fade" id="vending">
+                          <select class="form-control" name="category_name" id="category_name">
+                              <option value="">Choose Your Business</option>
+                              <option value="Vending Machine">Vending Machine</option>
+                           </select>
+                           </div>
                         </div>
                      </div>
                   </div>

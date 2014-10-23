@@ -26,11 +26,11 @@
        </div>
        </div>
      <ul class="nav navbar-nav navbar-right">
-      		<li class="active">
+      		<li <?php if($this->session->userdata('page') == 'home'){?> class="active" <?php } ?>>
                <a href="<?php echo base_url(); ?>">Home</a>
             </li>
-            <li>
-               <a href="<?php echo base_url(); ?>frontend/brands">Vending Solutions</a>
+            <li <?php if($this->session->userdata('page') == 'vending_solution'){?> class="active" <?php } ?>>
+               <a href="<?php echo base_url(); ?>vending_solution">Vending Solutions</a>
             </li>
             <li>
                <a href="<?php echo base_url(); ?>pages/about-us">About Us</a>

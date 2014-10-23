@@ -1,31 +1,34 @@
-<?php $this->load->view('frontend/elements/header_slider'); ?>
+<?php $this->load->view('frontend/elements/header'); ?>
+<div class="ful-col">
+    <nav>
+       <div class="container">
+        <div class="row clearfix">
+           <div class="col-md-12 column">
+            <div class="row">
+            <div class="col-md-6">
+           <ol class="breadcrumb">
+           <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url();?>">Home</a></span> </div>
+           <div class="space">/</div>
+           <div class="breadcrums"><span class="small-text-active">Thanks</span></div>
+           </ol>
+            </div>
+           </div> <!-- /.row -->  
+           </div> <!-- / .col-md-12 column -->
+       </div> <!-- / .row clearfix -->
+       </div> <!--- / .container -->
+    </nav> <!-- / .nav -->
+</div>
 <!-- Page Content -->
 <div class="container">
 <!-- Categories Section -->
-<div class="row">
-   <div class="row">
-      <div class="col-lg-12">
-         <h1 class="page-header">Nestle
-            <small>Brands</small>
-         </h1>
-         <ol class="breadcrumb">
-            <li><a href="<?php echo base_url(); ?>">Home</a>
-            </li>
-            <li class="active">Brands</li>
-         </ol>
-      </div>
-   </div>
-   <!-- /.row -->
-   <!----- Brand Carousel ------>
-   <div class="row">
+<div class="row"> <!-- /.row -->
       <div class="span12">
          <div class="col-md-10">
-            <p style="color:#090; font-size:18px; font-weight:bold;">Your query has been submited successfully.</p>
+            <p class="success-msg">Your enquiry has been submited successfully.</p>
             <p> Team Nestle professionals will contact you shortly. </p>
          </div>
       </div>
-   </div>
-   <!-- /.row -->  
+   </div> <!-- /.row -->  
 </div>
 <!-- /.container -->
 <?php $this->load->view('frontend/elements/footer'); ?>
