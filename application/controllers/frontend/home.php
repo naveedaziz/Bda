@@ -200,6 +200,8 @@ class Home extends CI_Controller {
    
    		$slug = $this->uri->segment(2);
 		
+		$this->session->set_userdata('page', $slug);
+		
 		// get pages
 		
 		$table_name = 'np_general_settings';
@@ -215,18 +217,11 @@ class Home extends CI_Controller {
 		$data = '';
 		
    		// get categories
+		$filter = Encode($this->input->post('search_string'));
+		$data['search_string'] = $filter;
+		$data['search_data'] = $this->modelfrontend->getSearchRecord($filter);
 		
-		$table_name = 'np_general_settings';
-   		$filter = 'category';
-   		$data['categories'] = $this->modelfrontend->getAllData($table_name, $filter );
-		
-		$filter = $this->uri->segment(3);
-		
-		// get single catagory
-		
-		$data['catagory'] = $this->modelfrontend->getRecord($table_name, $filter);
-		
-		 
+		//print_r($data['search_data']->row());die();
    		
 		// get url parameter
    

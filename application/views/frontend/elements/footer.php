@@ -10,23 +10,23 @@
                   </div>
                   <div class="col-md-10">
                      <ul class="nav-footer">
-                        <li class="active">
-                           <a href="<?php echo base_url(); ?>frontend/aboutus">About</a>  
+                        <li <?php if($this->session->userdata('page') == 'about-us'){?> class="active" <?php } ?>>
+                           <a href="<?php echo base_url(); ?>pages/about-us">About</a>  
                         </li>
-                        <li>
-                           <a href="<?php echo base_url(); ?>">Contact</a>
+                        <li <?php if($this->session->userdata('page') == 'contact'){?> class="active" <?php } ?>>
+                           <a href="<?php echo base_url(); ?>pages/contact">Contact</a>
                         </li>
-                        <li>
-                           <a href="<?php echo base_url(); ?>"> Terms & Conditions</a> 
+                        <li <?php if($this->session->userdata('page') == 'terms-and-conditions'){?> class="active" <?php } ?>>
+                           <a href="<?php echo base_url(); ?>pages/terms-and-conditions"> Terms & Conditions</a> 
                         </li>
-                        <li>
-                           <a href="<?php echo base_url(); ?>">Privacy</a>
+                        <li <?php if($this->session->userdata('page') == 'privacy'){?> class="active" <?php } ?>>
+                           <a href="<?php echo base_url(); ?>pages/privacy">Privacy</a>
                         </li>
-                        <li>
-                           <a href="<?php echo base_url(); ?>">Credit Reporting Policy</a>
+                        <li <?php if($this->session->userdata('page') == 'credit-reporting-policy'){?> class="active" <?php } ?>>
+                           <a href="<?php echo base_url(); ?>pages/credit-reporting-policy">Credit Reporting Policy</a>
                         </li>
-                        <li>
-                           <a href="<?php echo base_url(); ?>">Sitemap</a>
+                        <li <?php if($this->session->userdata('page') == 'sitemap'){?> class="active" <?php } ?>>
+                           <a href="<?php echo base_url(); ?>pages/sitemap">Sitemap</a>
                         </li>
                      </ul>
                   </div>
