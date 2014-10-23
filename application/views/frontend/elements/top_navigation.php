@@ -10,25 +10,24 @@
          <span class="icon-bar"></span>
          </button>
          <a class="navbar-brand" href="<?php echo base_url(); ?>">
-        <img src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>logo.png" alt="logo" class="img-responsive" />
+         <img src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>logo.png" alt="logo" class="img-responsive" />
          </a>
-          <!-- <div class="slogan">MAKING MORE POSSIBLE</div>-->
-          <img class="slogan img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>slogan.png" alt="MAKING MORE POSSIBLE" />
+         <!-- <div class="slogan">MAKING MORE POSSIBLE</div>-->
+         <img class="slogan img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>slogan.png" alt="MAKING MORE POSSIBLE" />
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+         <div class="row remove-margin">
+            <div class="search_top">
+               <div class="input-group">
+                  <form action="search" method="post">
+                     <input required="required" type="text" class="form-control search-box" id="search" name="search_string" value="<? if(isset($search_string)){ echo $search_string; }?>" >
+                     <button class="btn btn-search" type="submit"><i class="fa fa-search search-icon"></i></button>
+                  </form>
+               </div>
+            </div>
          </div>
-
-     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <div class="row remove-margin">
-      <div class="search_top">
-        <div class="input-group">
-          <form action="search" method="post">
-                <input required="required" type="text" class="form-control search-box" id="search" name="search_string" value="<? if(isset($search_string)){ echo $search_string; }?>" >
-                 <button class="btn btn-search" type="submit"><i class="fa fa-search search-icon"></i></button>
-             </form>
-        </div>
-       </div>
-       </div>
-     <ul class="nav navbar-nav navbar-right">
-      		<li <?php if($this->session->userdata('page') == 'home'){?> class="active" <?php } ?>>
+         <ul class="nav navbar-nav navbar-right">
+            <li <?php if($this->session->userdata('page') == 'home'){?> class="active" <?php } ?>>
                <a href="<?php echo base_url(); ?>">Home</a>
             </li>
             <li <?php if($this->session->userdata('page') == 'vending_solution'){?> class="active" <?php } ?>>
@@ -37,11 +36,10 @@
             <li>
                <a href="<?php echo base_url(); ?>pages/about-us">About Us</a>
             </li>
-             <li class="active_enquiry">
+            <li class="active_enquiry">
                <a href="<?php echo base_url(); ?>enquiry">Enquiry</a>
             </li>
-            
-          </ul>
+         </ul>
       </div>
       <!-- /.navbar-collapse -->
    </div>

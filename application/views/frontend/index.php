@@ -32,7 +32,6 @@
          <h4> <a href="<?php echo base_url().'category/'.$category->id; ?>" class="title-link"><?php echo $category->title; ?></a></h4>
       </div>
       <?php } ?>
-      
       <?php } else { ?>
       <p> <?php echo 'No Record Found!'; ?> </p>
       <?php } ?>

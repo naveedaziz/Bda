@@ -25,6 +25,7 @@
                      <th class="text-center">Image</th>
                      <th>Title</th>
                      <th>Description</th>
+                     <th>Type</th>
                      <th class="text-center">Status</th>
                      <th class="text-center">Action</th>
                   </tr>
@@ -50,7 +51,8 @@
                         <?php } ?>
                      </td>
                      <td> <a href="<?php echo base_url().'edit_product/'.$row->id; ?>"> <?php echo $row->title; ?> </a></td>
-                     <td><?php if($row->description){ echo substr($row->description, 0, 50).'...';}else{ echo '&nbsp;' ;} ?></td>
+                     <td><?php if($row->description){ echo substr($row->description, 0, 30).'...';}else{ echo '&nbsp;' ;} ?></td>
+                     <td><?php echo $row->type; ?></td>
                      <td class="text-center">
                         <a href="<?php echo base_url().'change_product_status/'.$row->id.'/'.$row->status; ?>" class="no_underline">
                         <span class="label label-success"><?php if($row->status == 1){ echo 'Active'; } ?></span>

@@ -2,7 +2,7 @@
    /**
     * @Filename: modeladmin.php
     * Location: ./application/models/backend/modeladmin.php
-    * Function: modelAdmin class handles all the queries of admin. 
+    * Function: modelAdmin class handles all the queries of admin.
     * It also contains the functions of get all data, insert, update and delete records.
     * @Author: Anum Ishtiaq
     * @Creator: Bramerz.pk
@@ -18,7 +18,9 @@
    
    // --------------------------------------------------------------------
    
-   class modelAdmin extends CI_Model{
+   class modelAdmin extends CI_Model
+   
+   {
    	/**
    	 * Constructor
    	 *
@@ -46,16 +48,14 @@
    	 */
    	public function adminLogin($email, $password)
    	{
-   	    $query = "SELECT * FROM np_admin_users WHERE email = '" . $email . "' and password = '" . $password . "'"; 
+   		$query = "SELECT * FROM np_admin_users WHERE email = '" . $email . "' and password = '" . $password . "'";
    		$record = $this->db->query($query);
-   		if ($record->num_rows() == 1)
-   			{
+   		if ($record->num_rows() == 1) {
    			return $record->row();
-   			}
-   		  else
-   			{
+   		}
+   		else {
    			return false;
-   			}
+   		}
    	}
    
    	// --------------------------------------------------------------------
@@ -90,12 +90,11 @@
    	 */
    	public function update($table_name, $data, $id)
    	{
-   		if ($id)
-   			{
+   		if ($id) {
    			$this->db->where('id', $id);
    			$this->db->update($table_name, $data);
    			return true;
-   			}
+   		}
    	}
    
    	// --------------------------------------------------------------------
@@ -117,22 +116,20 @@
    
    		// query executes according to the filter and table name
    
-   		if ($table_name == 'np_general_settings')
-   			{
+   		if ($table_name == 'np_general_settings') {
    			$sql = "SELECT * FROM `" . $table_name . "` where type = '" . $filter . "' order by id desc";
-   			}
-  	 	  else if ((!empty($filter)) && $table_name == 'np_admin_users')
-   			{
+   		}
+   		else
+   		if ((!empty($filter)) && $table_name == 'np_admin_users') {
    			$sql = "SELECT * FROM `" . $table_name . "` where id = '" . $filter . "' order by id desc";
-   			}
-   		 else if( $table_name == 'np_query')
-			{
-			$sql = "SELECT q.* , s.title as brandName, s.id as brandID, p.id as productID, p.title as productTitle,p.brand as productBrand FROM `np_query` as q left join np_products as p on p.id = q.product_id left join np_general_settings as s on s.id = p.brand order by q.id desc";
-			}
-			else
-   			{
+   		}
+   		else
+   		if ($table_name == 'np_query') {
+   			$sql = "SELECT q.* , s.title as brandName, s.id as brandID, p.id as productID, p.title as productTitle,p.brand as productBrand FROM `np_query` as q left join np_products as p on p.id = q.product_id left join np_general_settings as s on s.id = p.brand order by q.id desc";
+   		}
+   		else {
    			$sql = "SELECT * FROM `" . $table_name . "` order by id desc";
-   			}
+   		}
    
    		$results = $this->db->query($sql);
    		return $results;
@@ -172,19 +169,29 @@
    	 */
    	public function updateAdminOwner($table_name, $data, $filter)
    	{
-   		if ($filter)
-   			{
+   		if ($filter) {
    			$this->db->where('super_access', $filter);
    			$this->db->update($table_name, $data);
    			return true;
-   			}
+   		}
    	}
-	public function updateSiteSittings($table_name, $data)
+   
+   	// --------------------------------------------------------------------
+   
+   	/**
+   	 * updateSiteSittings
+   	 *
+   	 * This function update theme settings.
+   	 *
+   	 * @access	public
+   	 * @param	array
+   	 * @param	int
+   	 * @return	void
+   	 */
+   	public function updateSiteSittings($table_name, $data)
    	{
-   		
-   			$this->db->update($table_name, $data);
-   			return true;
-   			
+   		$this->db->update($table_name, $data);
+   		return true;
    	}
    
    	// --------------------------------------------------------------------
@@ -201,24 +208,21 @@
    	 */
    	public function getRecord($table_name, $id)
    	{
-   		if( $table_name == 'np_query')
-		{
-	    $sql = "SELECT q.* , s.title as brandName, s.id as brandID, p.id as productID, p.title as productTitle,p.brand as productBrand FROM `np_query` as q left join np_products as p on p.id = q.product_id left join np_general_settings as s on s.id = p.brand where q.id = '" . $id . "'";
-		}
-		else
-		{
-		$sql = "SELECT * FROM `" . $table_name . "` where id = '" . $id . "'";
-		}
+   		if ($table_name == 'np_query') {
+   			$sql = "SELECT q.* , s.title as brandName, s.id as brandID, p.id as productID, p.title as productTitle,p.brand as productBrand FROM `np_query` as q left join np_products as p on p.id = q.product_id left join np_general_settings as s on s.id = p.brand where q.id = '" . $id . "'";
+   		}
+   		else {
+   			$sql = "SELECT * FROM `" . $table_name . "` where id = '" . $id . "'";
+   		}
+   
    		$result = $this->db->query($sql);
    		$row = $result->row();
-   		if (!empty($row))
-   			{
+   		if (!empty($row)) {
    			return $row;
-   			}
-   		  else
-   			{
+   		}
+   		else {
    			return false;
-   			}
+   		}
    	}
    
    	// --------------------------------------------------------------------
@@ -240,7 +244,10 @@
    		$results = $this->db->query($sql);
    		return $results;
    	}
-  }
-// --------------------------------------------------------------------
-/* End of file modeladmin.php */
-/* Location: ./application/models/backend/modeladmin.php */
+   }
+   
+   // --------------------------------------------------------------------
+   
+   /* End of file modeladmin.php */
+   /* Location: ./application/models/backend/modeladmin.php */
+   ?>

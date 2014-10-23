@@ -1,11 +1,39 @@
 <?php
-class modelFrontend extends CI_Model {
-
-    public function __construct() {
-		parent::__construct();
-    }
-	
-	// --------------------------------------------------------------------
+   /**
+    * @Filename: modelfrontend.php
+    * Location: ./application/models/frontend/modelfrontend.php
+    * Function: modelFrontend class handles all the queries of front end.
+    * It also contains the functions of get all data and post enquiry data.
+    * @Author: Anum Ishtiaq
+    * @Creator: Bramerz.pk
+    *
+    */
+   
+   // --------------------------------------------------------------------
+   
+   /**
+    * This modelFrontend class extends CI_Model
+    * @see main_class
+    */
+   
+   // --------------------------------------------------------------------
+   
+   class modelFrontend extends CI_Model
+   
+   {
+   	/**
+   	 * Constructor
+   	 *
+   	 */
+   
+   	// --------------------------------------------------------------------
+   
+   	public function __construct()
+   	{
+   		parent::__construct();
+   	}
+   
+   	// --------------------------------------------------------------------
    
    	/**
    	 * Get all data
@@ -24,51 +52,70 @@ class modelFrontend extends CI_Model {
    
    		// query executes according to the filter and table name
    
-   		if ($table_name == 'np_general_settings')
-   			{
-				if($filter == 'category'){
-				 $sql = "SELECT * FROM `" . $table_name . "` where type = '" . $filter . "' and title != 'Vending Solutions' and status = '1' order by id desc";
-				}
-				else
-				{
-				 $sql = "SELECT * FROM `" . $table_name . "` where type = '" . $filter . "' and status = '1' order by id desc";
-				}
-			}else
-   			{
-   			$sql = "SELECT * FROM `" . $table_name . "` where status = '1' order by id desc";
+   		if ($table_name == 'np_general_settings') {
+   			if ($filter == 'category') {
+   				$sql = "SELECT * FROM `" . $table_name . "` where type = '" . $filter . "' and title != 'Vending Solutions' and status = '1' order by id desc";
    			}
+   			else {
+   				$sql = "SELECT * FROM `" . $table_name . "` where type = '" . $filter . "' and status = '1' order by id desc";
+   			}
+   		}
+   		else {
+   			$sql = "SELECT * FROM `" . $table_name . "` where status = '1' order by id desc";
+   		}
    
    		$results = $this->db->query($sql);
    		return $results;
    	}
-	public function getSearchRecord($filter)
+   
+   	// --------------------------------------------------------------------
+   
+   	/**
+   	 * getSearchRecord
+   	 *
+   	 * This function takes filter as param and search tile or description from table np_products.
+   	 *
+   	 * @access	public
+   	 * @param	array
+   	 * @param	int
+   	 * @return	void
+   	 */
+   	public function getSearchRecord($filter)
    	{
    		$results = '';
-		if($filter){
-			
-			$sql = "SELECT * FROM `np_products` where (title LIKE '%" . $filter . "%' or  description LIKE '%" . $filter . "%') and status = '1'";
-		}else{
-			
-			$sql = "SELECT * FROM `np_products` where status = '1'";
-		}
-				
+   		if ($filter) {
+   			$sql = "SELECT * FROM `np_products` where (title LIKE '%" . $filter . "%' or  description LIKE '%" . $filter . "%') and status = '1'";
+   		}
+   		else {
+   			$sql = "SELECT * FROM `np_products` where status = '1'";
+   		}
    
    		$results = $this->db->query($sql);
    		return $results;
    	}
-	
-	public function getSeoData($table_name)
+   
+   	// --------------------------------------------------------------------
+   
+   	/**
+   	 * getSeoData
+   	 *
+   	 * This function takes param of table name and get seo data.
+   	 *
+   	 * @access	public
+   	 * @param	array
+   	 * @param	int
+   	 * @return	void
+   	 */
+   	public function getSeoData($table_name)
    	{
    		$results = '';
-   		 $sql = "SELECT * FROM `" . $table_name . "";
-   			
-   
+   		$sql = "SELECT * FROM `" . $table_name . "";
    		$results = $this->db->query($sql);
    		return $results->row();
    	}
    
    	// --------------------------------------------------------------------
-	
+   
    	/**
    	 * Get all products
    	 *
@@ -80,15 +127,17 @@ class modelFrontend extends CI_Model {
    	 * @param	int
    	 * @return	void
    	 */
-	
-	public function getAllProducts($table_name, $filter)
+   	public function getAllProducts($table_name, $filter)
    	{
+   
    		// query executes according to the filter and table name
-		$sql = "SELECT * FROM `" . $table_name . "` where category LIKE '%" . $filter . "%' and status = '1' order by id desc"; 
-		return $this->db->query($sql);
+   
+   		$sql = "SELECT * FROM `" . $table_name . "` where category LIKE '%" . $filter . "%' and status = '1' order by id desc";
+   		return $this->db->query($sql);
    	}
-		// --------------------------------------------------------------------
-	
+   
+   	// --------------------------------------------------------------------
+   
    	/**
    	 * Get all products
    	 *
@@ -100,14 +149,16 @@ class modelFrontend extends CI_Model {
    	 * @param	int
    	 * @return	void
    	 */
-   	public function getProductCount( $table_name, $filter )
+   	public function getProductCount($table_name, $filter)
    	{
+   
    		// query executes according to the filter and table name
    
    		$sql = "SELECT * FROM `" . $table_name . "` where category LIKE '%" . $filter . "%' and status = '1'";
    		return $this->db->query($sql);
    	}
-   // --------------------------------------------------------------------
+   
+   	// --------------------------------------------------------------------
    
    	/**
    	 * getRecord
@@ -119,41 +170,51 @@ class modelFrontend extends CI_Model {
    	 * @param	int
    	 * @return	void
    	 */
-   	public function getRecord($table_name, $id )
+   	public function getRecord($table_name, $id)
    	{
-		if($id == 'category'){
-		 $sql = "SELECT * FROM `" . $table_name . "` where type = '" . $id . "' and title = 'Vending Solutions' and status = '1' order by id desc";
-		}
-		else
-		{
-		$sql = "SELECT * FROM `" . $table_name . "` where id = '" . $id . "'";
-		}
+   		if ($id == 'category') {
+   			$sql = "SELECT * FROM `" . $table_name . "` where type = '" . $id . "' and title = 'Vending Solutions' and status = '1' order by id desc";
+   		}
+   		else {
+   			$sql = "SELECT * FROM `" . $table_name . "` where id = '" . $id . "'";
+   		}
+   
    		$result = $this->db->query($sql);
    		$row = $result->row();
-   		if (!empty($row))
-   			{
+   		if (!empty($row)) {
    			return $row;
-   			}
-   		  else
-   			{
+   		}
+   		else {
    			return false;
-   			}
+   		}
    	}
-	
-	public function getPageRecord($table_name, $slug)
+   
+   	// --------------------------------------------------------------------
+   
+   	/**
+   	 * Add pages data
+   	 * getPageRecord
+   	 *
+   	 * This function takes table name and page slug to get page data from database.
+   	 *
+   	 * @access	public
+   	 * @param	array
+   	 * @param	int
+   	 * @return	void
+   	 */
+   	public function getPageRecord($table_name, $slug)
    	{
-   		 $sql = "SELECT * FROM `" . $table_name . "` where seo_url = '" . $slug . "' and type = 'page'";
+   		$sql = "SELECT * FROM `" . $table_name . "` where seo_url = '" . $slug . "' and type = 'page'";
    		$result = $this->db->query($sql);
    		$row = $result->row();
-   		if (!empty($row))
-   			{
+   		if (!empty($row)) {
    			return $row;
-   			}
-   		  else
-   			{
+   		}
+   		else {
    			return false;
-   			}
+   		}
    	}
+   
    	// --------------------------------------------------------------------
    
    	/**
@@ -171,30 +232,15 @@ class modelFrontend extends CI_Model {
    		$sql = "SELECT * FROM `" . $table_name . "` where brand = '" . $id . "'";
    		$result = $this->db->query($sql);
    		$row = $result->row();
-   		if (!empty($row))
-   			{
+   		if (!empty($row)) {
    			return $row;
-   			}
-   		  else
-   			{
+   		}
+   		else {
    			return false;
-   			}
+   		}
    	}
+   
    	// --------------------------------------------------------------------
-	function itemList($per_page,$offset = 0,$table_name, $filter)
-	{
-		$offset	= intval($offset);
-		if ($table_name == 'np_general_settings')
-   		{
-		$sql= "SELECT * FROM `" . $table_name . "` where type = '" . $filter . "' and status = '1' order by id desc
-			   LIMIT ".Encode($offset).",".Encode($per_page).""; 
-		}else{
-		$sql= "SELECT * FROM `" . $table_name . "` where status = '1' order by id desc
-			   LIMIT ".Encode($offset).",".Encode($per_page)."";	
-		}
-		return $this->db->query($sql);
-	}
-	// --------------------------------------------------------------------
    
    	/**
    	 * Add data
@@ -210,6 +256,10 @@ class modelFrontend extends CI_Model {
    	{
    		$this->db->insert($table_name, $fields);
    	}
-
-}
-?>
+   }
+   
+   // --------------------------------------------------------------------
+   
+   /* End of file modelfrontend.php */
+   /* Location: ./application/models/frontend/modelfrontend.php */
+   ?>
