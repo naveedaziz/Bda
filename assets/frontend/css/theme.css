@@ -265,3 +265,17 @@ footer{
 	left: 0;
 	width: 100%;
 }
+.category_default{ 
+	height:170px !important; 
+	width:298px !important; 
+	border-radius:4px;
+}
+.product-images-section {
+	height: 148px !important;
+	width: 206px !important;
+	border-radius: 4px;
+}
+.thumbs-vending-detail{
+	height: 576px !important;
+	width: 571px !important;
+	border-radius: 4px;}

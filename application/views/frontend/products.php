@@ -78,12 +78,13 @@
                             foreach($json_o as $key =>$value){ ?>
                          <div class="item">
                             <div class="fill" style="background-image:url('<?php echo base_url().$json_o[$key]; ?>');"></div>
-                            <!--<div class="carousel-caption">
-                                <h2>Caption 2</h2>
-                            </div>-->
                         </div>
                         <?php } ?>
-                        <?php } ?>
+                        <?php }else{ ?>
+						  <div class="item">
+                           <div class="fill" style="background-image:url('<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>default.jpg');"></div>
+                          </div>
+						  <?php } ?>
                 <?php }   ?>
                     
                </div>
@@ -128,7 +129,7 @@
                          </a>
                          <?php }else{ ?>
                          <a href="<?php echo base_url().'product/'.$product->id; ?>">
-                         <img class="product-images-section img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>ldefault.png" alt="">
+                         <img class="product-images-section img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>default.jpg" alt="">
                          </a>
                          <?php } ?>
                          <h4 class="title"><a href="<?php echo base_url().'product/'.$product->id; ?>"><?php echo $product->title;?></a></h4>
@@ -156,7 +157,7 @@
                          </a>
                          <?php }else{ ?>
                          <a href="<?php echo base_url().'product/'.$product->id; ?>">
-                         <img class="product-images-section img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>ldefault.png" alt="">
+                         <img class="product-images-section img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>default.jpg" alt="">
                          </a>
                          <?php } ?>
                          <h4 class="title"><a href="<?php echo base_url().'product/'.$product->id; ?>"><?php echo $product->title;?></a></h4>
@@ -201,4 +202,4 @@
     </nav> <!-- / .nav -->
 </div>
 <!-- /.container -->
-<?php $this->load->view('frontend/elements/footer'); ?>>>>>>>
+<?php $this->load->view('frontend/elements/footer'); ?>

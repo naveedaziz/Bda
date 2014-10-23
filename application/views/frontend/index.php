@@ -25,7 +25,7 @@
          </a>
          <?php }else{ ?>
          <a href="<?php echo base_url().'category/'.$category->id; ?>">
-         <img class="no-image img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>default.jpg" alt="">
+         <img class="category_default img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>default.jpg" alt="">
          </a>
          <?php } ?>
          <?php } ?>

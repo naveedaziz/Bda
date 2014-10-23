@@ -44,9 +44,11 @@
                   	}
                   	if($images_array){
 						 foreach($images_array as $key =>$value){ ?>
-               <img class="images-section thumbs-product-detail img-responsive" src="<?php echo base_url().$images_array[$key]; ?>" alt="<?php echo $product->title; ?>" />
+              			  <img class="images-section thumbs-product-detail img-responsive" src="<?php echo base_url().$images_array[$key]; ?>" alt="<?php echo $product->title; ?>" />
             	<?php } ?>
-              <?php } } ?> 
+              <?php } ?>
+			  			  <img class="product-images-section img-responsive thumbs-product-detail img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>default.jpg" alt="">
+			  <?php } ?> 
               </div>
              </div>
                <?php 
