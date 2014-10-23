@@ -351,12 +351,8 @@ class Home extends CI_Controller {
    			// redirect to brand listing page
    
    			redirect(base_url() . 'thanks');
-  	}
-	
-<<<<<<< HEAD
+
 		// load user view with data listing
-   
-   		$this->parser->parse('frontend/layout/detail_template', $data);
    	}
 	public function sendEmailTemplate(){
 		$data = '123';
@@ -378,8 +374,6 @@ class Home extends CI_Controller {
 		//echo $this->email->print_debugger();
 	}
 		
-=======
->>>>>>> 2984450310b10d05124d8ec071307dec3c624013
 }   	
 // --------------------------------------------------------------------
 /* End of file home.php */
