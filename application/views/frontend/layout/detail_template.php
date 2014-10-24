@@ -35,11 +35,10 @@
 <div class="container">
    <div class="row">
       <div class="col-md-12">
-         <div class="row">
-            <div <?php if($json_o){?> class="col-md-7" <?php }else{ ?> class="col-md-12" <?php } ?>>
+            <div <?php if($json_o){?> class="col-md-7 content_pages" <?php }else{ ?> class="col-md-12 content_pages" <?php } ?>>
                <h2><?php echo $page->title; ?></h2>
                <p class="floating">
-                  <?php echo $page->description ?>
+                  <?php echo $page->description; ?>
                </p>
             </div>
             <div class="col-md-5 col-space-top">
@@ -47,7 +46,6 @@
                <img class="images-section img-responsive" src="<?php echo base_url().$json_o[0]; ?>" alt="About US" />
                <?php } ?>
             </div>
-         </div>
       </div>
    </div>
 </div>

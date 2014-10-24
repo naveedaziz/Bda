@@ -12,8 +12,6 @@
          <a class="navbar-brand" href="<?php echo base_url(); ?>">
          <img src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>logo.png" alt="logo" class="img-responsive" />
          </a>
-         <!-- <div class="slogan">MAKING MORE POSSIBLE</div>-->
-         <img class="slogan img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>slogan.png" alt="MAKING MORE POSSIBLE" />
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
          <div class="row remove-margin">

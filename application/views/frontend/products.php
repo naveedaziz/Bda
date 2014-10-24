@@ -56,12 +56,10 @@
 <div class="ful-col-banner">
    <div class="container" id="category-inner">
       <div class="row clearfix">
-         <div class="col-md-12 column">
-            <div class="row">
-               <?php if ($categories->num_rows() > 0) { 
+            <?php if ($categories->num_rows() > 0) { 
                   foreach ($categories->result() as $category){ 
                   if($category->seo_url === $active_category){ ?>
-               <div class="col-md-7">
+               <div class="col-md-6">
                   <header id="myCarousel" class="carousel slide myCarouselContent">
                      <!-- Indicators -->
                      <ol class="carousel-indicators">
@@ -104,16 +102,12 @@
                      </div>
                   </header>
                </div>
-               <div class="col-md-5 column">
+               <div class="col-md-6 column category-slider-col-content">
                   <h3><?php echo $category->title; ?></h3>
                   <p><?php echo $category->description; ?></p>
                </div>
                <?php } } } ?>
-            </div>
-            <!-- /.row -->  
-         </div>
-         <!-- / .col-md-12 column -->
-      </div>
+       </div>
       <!-- / .row clearfix -->
    </div>
    <!--- / .container -->
@@ -132,8 +126,8 @@
                      <?php foreach ($products->result() as $product){
                         if($product->type == 'beverages'){ ?>
                      <div class="col-md-3 col-margin">
-                        <?php if(!empty($product->images)){ 
-                           $string = $product->images;
+                        <?php if(!empty($product->banner_images)){ 
+                           $string = $product->banner_images;
                            if($string){
                            $json_o = (array) json_decode($string);
                            }else{
@@ -160,8 +154,8 @@
                      <?php foreach ($products->result() as $product){
                         if($product->type == 'food'){ ?>
                      <div class="col-md-3 col-margin">
-                        <?php if(!empty($product->images)){ 
-                           $string = $product->images;
+                        <?php if(!empty($product->banner_images)){ 
+                           $string = $product->banner_images;
                            if($string){
                            $json_o = (array) json_decode($string);
                            }else{
@@ -218,7 +212,7 @@
                            }
                           if($json_o){
                            foreach($json_o as $key =>$value){ ?>
-                     <img class="thumbs-product" src="<?php echo base_url().$json_o[$key]; ?>" alt="<?php echo $category->id; ?>" />
+                     <img class="thumbs-product img-responsive" src="<?php echo base_url().$json_o[$key]; ?>" alt="<?php echo $category->id; ?>" />
                        <?php } ?>
 					 <?php } ?>
                    <?php } ?>
@@ -237,4 +231,4 @@
 <?php } ?>
 <?php } } ?>
 <!-- /.container -->
-<?php $this->load->view('frontend/elements/footer'); ?>>>
+<?php $this->load->view('frontend/elements/footer'); ?>
