@@ -1,6 +1,6 @@
 <!-- Footer -->
+<div class="ful-col">
 <footer>
-   <div id="footer">
       <div class="container">
          <div class="row clearfix">
             <div class="col-md-12 column">
@@ -34,8 +34,8 @@
             </div>
          </div>
       </div>
-   </div>
 </footer>
+</div>
 <!-- /.container -->
 <?php $this->load->view('frontend/elements/footer_resources'); ?>
 </body>
