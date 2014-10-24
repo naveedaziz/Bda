@@ -5,21 +5,6 @@
    
    $(document).ready(function() {
 	   $('#category-carousel-inner div:first').addClass('active');
-	/*$(document).on('click','.chkbox',function(){
-      var id=this.value;
-		//alert(id);
-       $.ajax({
-        type: "POST",
-        context: "application/json",
-        data: {id:id},
-        url: "http://localhost/np/frontend/getBrands",
-        success: function(msg) 
-        {
-            //alert('result from controller');
-			//console.log(msg);
-        }
-    })
-   });    */
    
     	// captcha code
 		var a = Math.ceil(Math.random() * 10)+ '';

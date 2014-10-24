@@ -1,7 +1,7 @@
 <?php $this->load->view('backend/elements/header'); ?>
 <!-- Product content -->
 <div id="page-content">
-   <form id="form-validation" action="<?php echo base_url();?>insert_product" method="post" class="form-horizontal" enctype="multipart/form-data">
+   <form id="form-validation" action="<?php echo base_url();?>admin/insert_product" method="post" class="form-horizontal" enctype="multipart/form-data">
       <div class="row">
          <div class="col-sm-12 col-lg-12 margin-bottom">
             <div class="row">

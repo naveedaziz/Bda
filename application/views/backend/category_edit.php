@@ -1,7 +1,7 @@
 <?php $this->load->view('backend/elements/header'); ?>
 <!-- Page content -->
 <div id="page-content">
-   <form id="form-validation" action="<?php echo base_url();?>update_category" method="post" class="form-horizontal" enctype="multipart/form-data">
+   <form id="form-validation" action="<?php echo base_url();?>admin/update_category" method="post" class="form-horizontal" enctype="multipart/form-data">
       <div class="row">
          <div class="col-sm-12 col-lg-12 margin-bottom">
             <div class="row">
@@ -61,6 +61,35 @@
                         <?php }?>
                         <?php } ?>
                         <output id="result" />
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-3">
+                  <h5 class="remove-margin"><b>Choose Banner Image</b></h5>
+                  <p class="remove-margin">Image size would be max 1MB.</p>
+                  <?php if ( $this->session->flashdata('file_size_error_banner') ) { ?>
+                  <p class="error_file"><?php echo $this->session->flashdata('file_size_error_banner'); ?>  </p>
+                  <?php } ?>
+               </div>
+               <div class="col-sm-9">
+                  <div class="form-group">
+                     <div class="col-xs-12">
+                        <input id="filesBanner" type="file" name="hotel_images[]" accept="image/*" multiple="multiple" />
+                        <?php if($row->hotel_images){ 
+                           $string = $row->hotel_images;
+                           $json_o = (array) json_decode($string);
+                           
+                           foreach($json_o as $key =>$value){ ?>
+                        <div class="edit-multiple-images">
+                           <i onclick="removeItemBanner($(this))" class="fa fa-trash-o fa-fw remove-thumb-edit"></i>
+                           <img src="<?php echo base_url().$json_o[$key]; ?>" alt="" class="thumbnail previous-thumbs">
+                           <input type="text" name="picbanner_<?php echo $key; ?>" value="<?php echo $json_o[$key]; ?>" />
+                        </div>
+                        <?php }?>
+                        <?php } ?>
+                        <output id="result_banner" />
                      </div>
                   </div>
                </div>

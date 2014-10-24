@@ -134,7 +134,7 @@
    		
    		$imagesCounts = 0;
    		$imageToSave = array();
-   		
+		
    		// check if the form posted
    		
    		if ($this->input->post('submit'))
@@ -161,7 +161,7 @@
    						
    						// redirect back to edit page and display error
    						
-   						redirect(base_url() . 'add_category');
+   						redirect(base_url() . 'admin/add_category');
    					}
    				}
    
@@ -231,9 +231,104 @@
    				}
    			}
    
-   			// json decode image array
+   			//Hotel Images
+			$imagesCountsHotel = 0;
+   			$imageToSaveHotel = array();
+			if ($_FILES['hotel_images']['size'])
+   			{
    
-   			$array['images'] = json_encode($imageToSave);
+   				// loop through the file size array
+   
+   				foreach($_FILES['myfileBanner']['size'] as $key)
+   					{
+   
+   					// check if any file size is greater than 1 mb
+   
+   					if ($key > 1048576)
+   						{
+   
+   						// if yes then set session for error message
+   
+   						$this->session->set_flashdata('file_size_error_banner', 'The file size exceeded the limit allowed and cannot be saved.');
+   
+   						// redirect back to edit product page and show error message.
+   
+   						redirect(base_url() . 'admin/edit_category/' . $id);
+   						}
+   					}
+   
+   				// loop through the REQUEST/POST images array and upload multiple images..
+   
+   				foreach($_REQUEST as $key => $value)
+   					{
+   
+   					// convert images to base64 and concatinate pic_ with each image name.
+   
+   					if (strpos($key, 'picbanner_') !== false && strpos($value, 'data:') !== false)
+   						{
+   
+   						// define upload directory path
+   
+   						$upload_dir = IMAGES_PRODUCTS_DIR;
+   
+   						// assign image name to variable image
+   
+   						$image = $value;
+   						if (strpos($value, 'data:image/jpeg') !== false)
+   							{
+   							$image = str_replace('data:image/jpeg;base64,', '', $image);
+   							$file = $upload_dir . $key . mktime() . ".jpeg";
+   							}
+   
+   						if (strpos($value, 'data:image/jpg') !== false)
+   							{
+   							$image = str_replace('data:image/jpg;base64,', '', $image);
+   							$file = $upload_dir . $key . mktime() . ".jpg";
+   							}
+   
+   						if (strpos($value, 'data:image/jpg') !== false)
+   							{
+   							$image = str_replace('data:image/jpg;base64,', '', $image);
+   							$file = $upload_dir . $key . mktime() . ".JPG";
+   							}
+   
+   						if (strpos($value, 'data:image/png') !== false)
+   							{
+   							$image = str_replace('data:image/png;base64,', '', $image);
+   							$file = $upload_dir . $key . mktime() . ".png";
+   							}
+   
+   						if (strpos($value, 'data:image/png') !== false)
+   							{
+   							$image = str_replace('data:image/png;base64,', '', $image);
+   							$file = $upload_dir . $key . mktime() . ".PNG";
+   							}
+   
+   						if (strpos($value, 'data:image/gif') !== false)
+   							{
+   							$image = str_replace('data:image/gif;base64,', '', $image);
+   							$file = $upload_dir . $key . mktime() . ".gif";
+   							}
+   
+   						$image = str_replace(' ', '+', $image);
+   						$data = base64_decode($image);
+   						$success = file_put_contents($file, $data);
+   						$imageToSaveHotel[$imagesCountsHotel] = $file;
+   						$imagesCountsHotel++;
+   						}
+   					  else
+   					if (strpos($key, 'picbanner_') !== false && strpos($value, 'data:') === false)
+   						{
+   						$imageToSaveHotel[$imagesCountsHotel] = $value;
+   						$imagesCountsHotel++;
+   						}
+   					}
+   				}
+   
+   			// json decode image array
+   			
+			$array['images'] = json_encode($imageToSave);
+   			$array['hotel_images'] = json_encode($imageToSaveHotel);
    
    			// get form data
    
@@ -254,11 +349,11 @@
    
    			// redirect to category listing page
    
-   			redirect(base_url() . 'categories');
+   			redirect(base_url() . 'admin/categories');
    		}
    		else
    		{
-   			redirect(base_url() . 'add_category');
+   			redirect(base_url() . 'admin/add_category');
    		}
    	}
    
@@ -278,7 +373,7 @@
    
    		// get url parameter
    
-   		$id = $this->uri->segment(2);
+   		$id = $this->uri->segment(3);
    
    		// get table name
    
@@ -290,7 +385,7 @@
    
    		// redirect to category listing page
    
-   		redirect(base_url() . 'categories');
+   		redirect(base_url() . 'admin/categories');
    	}
    
    	// --------------------------------------------------------------------
@@ -313,7 +408,7 @@
    
    		// get url parameter
    
-   		$id = $this->uri->segment(2);
+   		$id = $this->uri->segment(3);
    
    		// get category record of the given id
    
@@ -326,7 +421,7 @@
    		}
    		else
    		{
-   			redirect(base_url() . 'categories');
+   			redirect(base_url() . 'admin/categories');
    		}
    	}
    
@@ -371,7 +466,7 @@
    						
    						// redirect back to edit category page and show error message.
    						
-   						redirect(base_url() . 'edit_category/' . $id);
+   						redirect(base_url() . 'admin/edit_category/' . $id);
    					}
    				}
    
@@ -440,10 +535,105 @@
    					}
    				}
    			}
+			
+			
+			$imagesCountsHotel = 0;
+   			$imageToSaveHotel = array();
+			if ($_FILES['hotel_images']['size'])
+   				{
+   
+   				// loop through the file size array
+   
+   				foreach($_FILES['myfileBanner']['size'] as $key)
+   					{
+   
+   					// check if any file size is greater than 1 mb
+   
+   					if ($key > 1048576)
+   						{
+   
+   						// if yes then set session for error message
+   
+   						$this->session->set_flashdata('file_size_error_banner', 'The file size exceeded the limit allowed and cannot be saved.');
+   
+   						// redirect back to edit product page and show error message.
+   
+   						redirect(base_url() . 'admin/edit_category/' . $id);
+   						}
+   					}
+   
+   				// loop through the REQUEST/POST images array and upload multiple images..
+   
+   				foreach($_REQUEST as $key => $value)
+   					{
+   
+   					// convert images to base64 and concatinate pic_ with each image name.
+   
+   					if (strpos($key, 'picbanner_') !== false && strpos($value, 'data:') !== false)
+   						{
+   
+   						// define upload directory path
+   
+   						$upload_dir = IMAGES_PRODUCTS_DIR;
+   
+   						// assign image name to variable image
+   
+   						$image = $value;
+   						if (strpos($value, 'data:image/jpeg') !== false)
+   							{
+   							$image = str_replace('data:image/jpeg;base64,', '', $image);
+   							$file = $upload_dir . $key . mktime() . ".jpeg";
+   							}
+   
+   						if (strpos($value, 'data:image/jpg') !== false)
+   							{
+   							$image = str_replace('data:image/jpg;base64,', '', $image);
+   							$file = $upload_dir . $key . mktime() . ".jpg";
+   							}
+   
+   						if (strpos($value, 'data:image/jpg') !== false)
+   							{
+   							$image = str_replace('data:image/jpg;base64,', '', $image);
+   							$file = $upload_dir . $key . mktime() . ".JPG";
+   							}
+   
+   						if (strpos($value, 'data:image/png') !== false)
+   							{
+   							$image = str_replace('data:image/png;base64,', '', $image);
+   							$file = $upload_dir . $key . mktime() . ".png";
+   							}
+   
+   						if (strpos($value, 'data:image/png') !== false)
+   							{
+   							$image = str_replace('data:image/png;base64,', '', $image);
+   							$file = $upload_dir . $key . mktime() . ".PNG";
+   							}
+   
+   						if (strpos($value, 'data:image/gif') !== false)
+   							{
+   							$image = str_replace('data:image/gif;base64,', '', $image);
+   							$file = $upload_dir . $key . mktime() . ".gif";
+   							}
+   
+   						$image = str_replace(' ', '+', $image);
+   						$data = base64_decode($image);
+   						$success = file_put_contents($file, $data);
+   						$imageToSaveHotel[$imagesCountsHotel] = $file;
+   						$imagesCountsHotel++;
+   						}
+   					  else
+   					if (strpos($key, 'picbanner_') !== false && strpos($value, 'data:') === false)
+   						{
+   						$imageToSaveHotel[$imagesCountsHotel] = $value;
+   						$imagesCountsHotel++;
+   						}
+   					}
+   				}
    
    			// json decode image array
    
    			$array['images'] = json_encode($imageToSave);
+   			$array['hotel_images'] = json_encode($imageToSaveHotel);
    			$array['title'] = Encode($this->input->post('title'));
    			$array['description'] = Encode($this->input->post('description'));
    			$array['type'] = Encode($this->input->post('type'));
@@ -461,11 +651,11 @@
    
    			// redirect to category listing page
    
-   			redirect(base_url() . 'categories');
+   			redirect(base_url() . 'admin/categories');
    		}
    		else
    		{
-   			redirect(base_url() . 'categories');
+   			redirect(base_url() . 'admin/categories');
    		}
    	}
    
@@ -489,7 +679,7 @@
    
    		// get id from url parameter
    
-   		$id = $this->uri->segment(2);
+   		$id = $this->uri->segment(3);
    
    		// get status from url parameter
    
@@ -512,7 +702,7 @@
    
    		// redirect to category listing page
    
-   		redirect(base_url() . 'categories');
+   		redirect(base_url() . 'admin/categories');
    	}
    }
 // --------------------------------------------------------------------
