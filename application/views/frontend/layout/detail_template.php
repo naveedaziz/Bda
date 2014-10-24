@@ -36,14 +36,14 @@
    <div class="row">
       <div class="col-md-12">
          <div class="row">
-            <div <?php if($json_o){?> class="col-md-7" <? }else{ ?> class="col-md-12" <? } ?>>
+            <div <?php if($json_o){?> class="col-md-7" <?php }else{ ?> class="col-md-12" <?php } ?>>
                <h2><?php echo$page->title; ?></h2>
                <p class="floating">
                   <?php echo $page->description ?>
                </p>
             </div>
             <div class="col-md-5 col-space-top">
-               <? if($json_o){?>
+               <?php if($json_o){?>
                <img class="images-section img-responsive" src="<?php echo base_url().$json_o[0]; ?>" alt="About US" />
                <?php } ?>
             </div>

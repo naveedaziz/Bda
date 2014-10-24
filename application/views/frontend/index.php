@@ -1,7 +1,6 @@
 <?php $this->load->view('frontend/elements/header_slider'); ?>
 <!-- Page Content -->
-<div class="container marginBottom">
-   <!-- Categories Section -->
+<div class="container">
    <div class="row">
       <div class="col-lg-12">
          <h3>

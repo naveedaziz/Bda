@@ -43,15 +43,15 @@
                            $json_o = '';
                            }
                            if($json_o){?>
-                        <a href="<?php echo base_url().'frontend/product_detail/'.$product->id; ?>">
+                        <a href="<?php echo base_url().'product_detail/'.$product->id; ?>">
                         <img class="images-section img-responsive" src="<?php echo base_url().$json_o[0]; ?>" alt="">
                         </a>
                         <?php }else{ ?>
-                        <a href="<?php echo base_url().'frontend/product_detail/'.$product->id; ?>">
+                        <a href="<?php echo base_url().'product_detail/'.$product->id; ?>">
                         <img class="product-images-section img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>ldefault.png" alt="">
                         </a>
                         <?php } ?>
-                        <h4 class="title"><a href="<?php echo base_url().'frontend/product_detail/'.$product->id; ?>"><?php echo $product->title;?></a></h4>
+                        <h4 class="title"><a href="<?php echo base_url().'product_detail/'.$product->id; ?>"><?php echo $product->title;?></a></h4>
                         <?php } ?>
                      </div>
                      <?php } ?>

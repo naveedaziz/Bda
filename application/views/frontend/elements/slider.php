@@ -4,9 +4,8 @@
    <ol class="carousel-indicators">
       <?php if ($banners->num_rows() > 0) {
          $index = 0; 
-              foreach ($banners->result() as $banner){ ?>
-      <?php 
-         if(!empty($banner->images)){ 
+         foreach ($banners->result() as $banner){ 
+         if(!isset($banner->images)){ 
          	$string = $banner->images;
          	if($string){
          	$json_o = (array) json_decode($string);
@@ -14,13 +13,11 @@
          	$json_o = '';
          	}
          	if($json_o){?>
-      <li data-target="#myCarousel" data-slide-to="<?=$index;?>" <? if($index == 0){?> class="active"<? } ?>></li>
-      <?php $index++; }
-         ?>
+      <li data-target="#myCarousel" data-slide-to="<?php echo $index;?>" <?php if($index == 0){?> class="active"<?php } ?>></li>
+      <?php $index++; }?>
       <?php } ?>
-      <? } 
-         } 
-         ?> 
+      <?php } ?>
+      <?php }  ?> 
    </ol>
    <!-- Wrapper for slides -->
    <div class="carousel-inner">

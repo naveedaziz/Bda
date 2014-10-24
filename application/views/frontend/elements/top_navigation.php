@@ -20,7 +20,7 @@
             <div class="search_top">
                <div class="input-group">
                   <form action="search" method="post">
-                     <input required="required" type="text" class="form-control search-box" id="search" name="search_string" value="<? if(isset($search_string)){ echo $search_string; }?>" >
+                     <input required="required" type="text" class="form-control search-box" id="search" name="search_string" value="<?php if(isset($search_string)){ echo $search_string; }?>" >
                      <button class="btn btn-search" type="submit"><i class="fa fa-search search-icon"></i></button>
                   </form>
                </div>
