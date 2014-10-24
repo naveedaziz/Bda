@@ -56,8 +56,8 @@ $route['enquiry'] = 'frontend/home/query';
 $route['enquiry:any'] = 'frontend/home/query';
 $route['frontend/submitQuery'] = 'frontend/home/submitQuery';
 $route['thanks'] = 'frontend/home/thanks';
-$route['404_override'] = '';
-
+$route['404_override'] = 'frontend/home/notFound';
+$route[':any'] = 'frontend/home/404_override';
 
 
 /**

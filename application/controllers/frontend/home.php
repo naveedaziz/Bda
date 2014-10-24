@@ -99,19 +99,28 @@ class Home extends CI_Controller
 		// get single catagory
 
 		$data['catagory'] = $this->modelfrontend->getRecord($table_name, $filter);
-		if ($data['catagory']) {
+		//print_r($data['catagory']);die();
+		if (isset($data['catagory']) && isset($data['catagory']->title)) {
 			$_SESSION['site_meta'] = $data['catagory'];
 			$imageDefault = (array)json_decode($_SESSION['site_meta']->images);
 			if (isset($imageDefault[0])) {
 				$_SESSION['site_meta']->images = base_url() . $imageDefault[0];
 			}
+		}else{
+			redirect(base_url() . '404_override');
 		}
-
+		
 		// get url parameter
 		// get products
 
 		$table_name = 'np_products';
-		$data['products'] = $this->modelfrontend->getProductCount($table_name, $filter);
+		if(isset($data['catagory']->id)){
+			$filterCatagory = $data['catagory']->id;
+		}else{
+			$filterCatagory = false;
+		}
+		$data['products'] = $this->modelfrontend->getProductCount($table_name, $filterCatagory);
+		//print_r($data['products']);die();
 		$data['active_category'] = $filter;
 
 		// load query detail view
@@ -142,12 +151,14 @@ class Home extends CI_Controller
 		$table_name = 'np_products';
 		$data['product'] = $this->modelfrontend->getRecord($table_name, $id);
 		$data['product_detail'] = $this->modelfrontend->getRecord($table_name, $id);
-		if ($data['product_detail']) {
+		if (isset($data['product_detail']) && isset($data['product_detail']->title)) {
 			$_SESSION['site_meta'] = $data['product_detail'];
 			$imageDefault = (array)json_decode($_SESSION['site_meta']->images);
 			if (isset($imageDefault[0])) {
 				$_SESSION['site_meta']->images = base_url() . $imageDefault[0];
 			}
+		}else{
+			redirect(base_url() . '404_override');
 		}
 
 		// load view
@@ -195,6 +206,17 @@ class Home extends CI_Controller
 
 		$table_name = 'np_general_settings';
 		$data['page'] = $this->modelfrontend->getPageRecord($table_name, $slug);
+		
+		$data['page_detail'] = $this->modelfrontend->getPageRecord($table_name, $slug);
+		if (isset($data['page_detail']) && isset($data['page_detail']->title)) {
+			$_SESSION['site_meta'] = $data['page_detail'];
+			$imageDefault = (array)json_decode($_SESSION['site_meta']->images);
+			if (isset($imageDefault[0])) {
+				$_SESSION['site_meta']->images = base_url() . $imageDefault[0];
+			}
+		}else{
+			redirect(base_url() . '404_override');
+		}
 
 		// load view
 
@@ -239,7 +261,17 @@ class Home extends CI_Controller
 		$table_name = 'np_general_settings';
 		$filter = 'category';
 		$data['category'] = $this->modelfrontend->getRecord($table_name, $filter);
-
+		
+		$data['category_detail'] = $this->modelfrontend->getRecord($table_name, $filter);
+		if (isset($data['category_detail']) && isset($data['category_detail']->title)) {
+			$_SESSION['site_meta'] = $data['category_detail'];
+			$imageDefault = (array)json_decode($_SESSION['site_meta']->images);
+			if (isset($imageDefault[0])) {
+				$_SESSION['site_meta']->images = base_url() . $imageDefault[0];
+			}
+		}else{
+			redirect(base_url() . '404_override');
+		}
 		// get products
 
 		if ($data['category']) {
@@ -345,6 +377,8 @@ class Home extends CI_Controller
 		// redirect to thanks page
 
 		redirect(base_url() . 'thanks');
+		
+		
 	}
 
 	// --------------------------------------------------------------------
@@ -395,6 +429,9 @@ class Home extends CI_Controller
 
 		// echo $this->email->print_debugger();
 
+	}
+	function notFound (){
+		$this->load->view('frontend/not_found');
 	}
 }
 

@@ -84,7 +84,7 @@
    	{
    		$results = '';
    		if ($filter) {
-   			$sql = "SELECT * FROM `np_products` where (title LIKE '%" . $filter . "%' or  description LIKE '%" . $filter . "%') and status = '1'";
+			$sql = "SELECT * FROM `np_products` where (title LIKE '%" . $filter . "%' or  description LIKE '%" . $filter . "%') and status = '1'";
    		}
    		else {
    			$sql = "SELECT * FROM `np_products` where status = '1'";
@@ -176,7 +176,7 @@
    			$sql = "SELECT * FROM `" . $table_name . "` where type = '" . $id . "' and title = 'Vending Solutions' and status = '1' order by id desc";
    		}
    		else {
-   			$sql = "SELECT * FROM `" . $table_name . "` where id = '" . $id . "'";
+   			$sql = "SELECT * FROM `" . $table_name . "` where seo_url = '" . $id . "'";
    		}
    
    		$result = $this->db->query($sql);
