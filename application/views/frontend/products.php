@@ -13,11 +13,12 @@
                            <span class="small-text-active">
                            <?php if ($categories->num_rows() > 0) { 
                               foreach ($categories->result() as $category){ 
-                              if($category->id === $active_category){
+                              if($category->seo_url === $active_category){
                                echo $category->title;
                               if($this->session->userdata('category') != $category->title) 
                               $this->session->set_userdata('category', $category->title); 
                               $this->session->set_userdata('category_id', $category->id); 
+							  $this->session->set_userdata('category_seo_url', $category->seo_url); 
                               } ?>
                            <?php } } ?>
                            </span>
@@ -43,7 +44,7 @@
          <ul id="myTab" class="nav nav-tabs nav-justified tabs-categories">
             <?php if ($categories->num_rows() > 0) { 
                foreach ($categories->result() as $category){ ?>
-            <li <?php if($category->id === $active_category){?> class="active" <?php } ?>><a href="<?php echo base_url().'category/'.$category->id; ?>"><?php echo $category->title;?></a></li>
+            <li <?php if($category->seo_url === $active_category){?> class="active" <?php } ?>><a href="<?php echo base_url().'category/'.$category->seo_url; ?>"><?php echo $category->title;?></a></li>
             <?php }  ?>
             <?php }?>
          </ul>
@@ -59,7 +60,7 @@
             <div class="row">
                <?php if ($categories->num_rows() > 0) { 
                   foreach ($categories->result() as $category){ 
-                  if($category->id === $active_category){ ?>
+                  if($category->seo_url === $active_category){ ?>
                <div class="col-md-7">
                   <header id="myCarousel" class="carousel slide myCarouselContent">
                      <!-- Indicators -->
@@ -139,15 +140,15 @@
                            $json_o = '';
                            }
                            if($json_o){?>
-                        <a href="<?php echo base_url().'product/'.$product->id; ?>">
+                        <a href="<?php echo base_url().'product/'.$product->seo_url; ?>">
                         <img class="images-section img-responsive" src="<?php echo base_url().$json_o[0]; ?>" alt="">
                         </a>
                         <?php }else{ ?>
-                        <a href="<?php echo base_url().'product/'.$product->id; ?>">
+                        <a href="<?php echo base_url().'product/'.$product->seo_url; ?>">
                         <img class="product-images-section img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>default.jpg" alt="">
                         </a>
                         <?php } ?>
-                        <h4 class="title"><a href="<?php echo base_url().'product/'.$product->id; ?>"><?php echo $product->title;?></a></h4>
+                        <h4 class="title"><a href="<?php echo base_url().'product/'.$product->seo_url; ?>"><?php echo $product->title;?></a></h4>
                         <?php } ?>
                      </div>
                      <?php } } ?>
@@ -167,11 +168,11 @@
                            $json_o = '';
                            }
                            if($json_o){?>
-                        <a href="<?php echo base_url().'product/'.$product->id; ?>">
+                        <a href="<?php echo base_url().'product/'.$product->seo_url; ?>">
                         <img class="images-section img-responsive" src="<?php echo base_url().$json_o[0]; ?>" alt="">
                         </a>
                         <?php }else{ ?>
-                        <a href="<?php echo base_url().'product/'.$product->id; ?>">
+                        <a href="<?php echo base_url().'product/'.$product->seo_url; ?>">
                         <img class="product-images-section img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>default.jpg" alt="">
                         </a>
                         <?php } ?>
@@ -222,4 +223,4 @@
    <!-- / .nav -->
 </div>
 <!-- /.container -->
-<?php $this->load->view('frontend/elements/footer'); ?>
+<?php $this->load->view('frontend/elements/footer'); ?>>>

@@ -9,7 +9,7 @@
                      <ol class="breadcrumb">
                         <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url();?>">Home</a></span> </div>
                         <div class="space">/</div>
-                        <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url().'category/'.$this->session->userdata('category_id'); ?>"><?php echo $this->session->userdata('category'); ?></a></span> </div>
+                        <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url().'category/'.$this->session->userdata('category_seo_url'); ?>"><?php echo $this->session->userdata('category'); ?></a></span> </div>
                         <div class="space">/</div>
                         <div class="breadcrums">
                            <span class="small-text-active">

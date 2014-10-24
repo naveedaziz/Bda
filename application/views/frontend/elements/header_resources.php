@@ -5,7 +5,7 @@
 				
     
       <!---- google font ---->
-      <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+     <!-- <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>-->
        <!-- Theme CSS -->
       <link type="text/css" href="<?php echo base_url().ASSETS_FRONTEND_CSS_DIR;?>theme.css" rel="stylesheet">
       <!-- Bootstrap Core CSS -->

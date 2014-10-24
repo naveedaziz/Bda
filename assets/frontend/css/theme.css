@@ -261,6 +261,31 @@ font-weight: normal;}
 footer{
 	width: 100%;
 }
+.NotFoundPage>h2{
+		text-align: center !important;
+		font-weight: bold !important;
+		font-size: 27px !important;
+}
+.NotFoundPage{
+	background:url(../img/error_404.jpg) center no-repeat;
+	padding:20px;
+}
+.NotFoundPage>h1{
+	text-align: center !important;
+	font-size: 100px !important;
+	font-weight: bold !important;
+}
+.NotFoundPage>h3, .NotFoundPage>p{
+	text-align: center !important;
+}
+.NotFoundPage .btn-search{
+	display: block;
+	left: 90%;
+	top: -33px;
+}
+.NotFoundPage>span{
+	color:#92002d !important
+}
 .category_default{ 
 	height:170px !important; 
 	width:298px !important; 
@@ -277,7 +302,10 @@ footer{
 	border-radius: 4px;
 }
 .no-record-found{ padding:20px 0;}
-@media screen and (min-width: 768px)
+@media screen and (min-width: 768px){
 .carousel-caption {
 left: 0 !important;
 }
+}
+
+
