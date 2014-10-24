@@ -37,7 +37,7 @@
       <div class="col-md-12">
          <div class="row">
             <div <?php if($json_o){?> class="col-md-7" <?php }else{ ?> class="col-md-12" <?php } ?>>
-               <h2><?php echo$page->title; ?></h2>
+               <h2><?php echo $page->title; ?></h2>
                <p class="floating">
                   <?php echo $page->description ?>
                </p>
