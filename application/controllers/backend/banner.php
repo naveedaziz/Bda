@@ -159,7 +159,7 @@
    
    						// redirect back to edit banner and display error
    
-   						redirect(base_url() . 'add_banner');
+   						redirect(base_url() . 'admin/add_banner');
    						}
    					}
    
@@ -254,7 +254,7 @@
    
    			// redirect to banner listing banner
    
-   			redirect(base_url() . 'banners');
+   			redirect(base_url() . 'admin/banners');
    			}
    		  else
    			{
@@ -278,7 +278,7 @@
    
    		// get url parameter
    
-   		$id = $this->uri->segment(2);
+   		$id = $this->uri->segment(3);
    
    		// get table name
    
@@ -290,7 +290,7 @@
    
    		// redirect to listing banner
    
-   		redirect(base_url() . 'banners');
+   		redirect(base_url() . 'admin/banners');
    	}
    
    	/**
@@ -311,7 +311,7 @@
    
    		// get url parameter
    
-   		$id = $this->uri->segment(2);
+   		$id = $this->uri->segment(3);
    
    		// get banner record of the given id
    
@@ -325,7 +325,7 @@
    			}
    		  else
    			{
-   			redirect(base_url() . 'banners');
+   			redirect(base_url() . 'admin/banners');
    			}
    	}
    
@@ -372,7 +372,7 @@
    
    						// redirect back to edit banner banner and show error message.
    
-   						redirect(base_url() . 'edit_banner/' . $id);
+   						redirect(base_url() . 'admin/edit_banner/' . $id);
    						}
    					}
    
@@ -467,11 +467,11 @@
    
    			// redirect to banner listing banner
    
-   			redirect(base_url() . 'banners');
+   			redirect(base_url() . 'admin/banners');
    			}
    		  else
    			{
-   			redirect(base_url() . 'banners');
+   			redirect(base_url() . 'admin/banners');
    			}
    	}
    
@@ -495,7 +495,7 @@
    
    		// get id from url parameter
    
-   		$id = $this->uri->segment(2);
+   		$id = $this->uri->segment(3);
    
    		// get status from url parameter
    
@@ -518,7 +518,7 @@
    
    		// redirect to banner listing banner
    
-   		redirect(base_url() . 'banners');
+   		redirect(base_url() . 'admin/banners');
    	}
    }
 // --------------------------------------------------------------------

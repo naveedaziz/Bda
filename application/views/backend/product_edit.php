@@ -1,7 +1,7 @@
 <?php $this->load->view('backend/elements/header'); ?>
 <!-- Product content -->
 <div id="page-content">
-   <form id="form-validation" action="<?php echo base_url();?>update_product" method="post" class="form-horizontal" enctype="multipart/form-data">
+   <form id="form-validation" action="<?php echo base_url();?>admin/update_product" method="post" class="form-horizontal" enctype="multipart/form-data">
       <div class="row">
          <div class="col-sm-12 col-lg-12 margin-bottom">
             <div class="row">
@@ -66,7 +66,6 @@
                </div>
             </div>
             <div class="row">
-               
                <div class="col-sm-3">
                   <h5 class="remove-margin"><b>Choose Banner Image</b></h5>
                   <p class="remove-margin">Image size would be max 1MB.</p>

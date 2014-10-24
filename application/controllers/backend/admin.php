@@ -63,7 +63,7 @@
    
    			// session isset load queries
    
-   			redirect(base_url() . 'query');
+   			redirect(base_url() . 'admin/query');
    			}
    		  else
    			{
@@ -156,7 +156,7 @@
 		   $this->session->set_userdata('admin_id', $admin_row->id);
 		   $this->session->set_userdata('first_name', $admin_row->first_name);
 		   $this->session->set_userdata('last_name', $admin_row->last_name);
-		   redirect(base_url() . 'update_password_admin');
+		   redirect(base_url() . 'admin/update_password_admin');
 		   }
 		   else
 					{
@@ -174,7 +174,7 @@
 			$table_name = 'np_admin_users';
 			$admin_data['last_logged_in'] = date('Y-m-d H:i:s');
 			$this->modeladmin->update($table_name, $admin_data, $admin_row->id);
-			redirect(base_url() . 'query');
+			redirect(base_url() . 'admin/query');
 			}
 			 else
 			{
@@ -346,7 +346,6 @@
    	 */
    	public function queryDetail()
    	{
-   
    		// check if user hass access to query
    
    		isAdminHasAccess('query');
@@ -362,7 +361,7 @@
    
    		// get url parameter
    
-   		$id = $this->uri->segment(2);
+   		$id = $this->uri->segment(3); 
    
    		// check if session isset
    
@@ -512,7 +511,7 @@
    
    		// get url parameter
    
-   		$id = $this->uri->segment(2);
+   		$id = $this->uri->segment(3);
    
    		// check if session isset
    

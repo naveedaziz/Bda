@@ -1,7 +1,7 @@
 <?php $this->load->view('backend/elements/header'); ?>
 <!-- Page content -->
 <div id="page-content">
-   <form id="form-validation" action="<?php echo base_url();?>insert_category" method="post" class="form-horizontal" enctype="multipart/form-data">
+   <form id="form-validation" action="<?php echo base_url();?>admin/insert_category" method="post" class="form-horizontal" enctype="multipart/form-data">
       <input type="hidden" value="category" name="type" />
       <div class="row">
          <div class="col-sm-12 col-lg-12 margin-bottom">
@@ -49,6 +49,23 @@
                      <div class="col-xs-12">
                         <input id="files" type="file" name="myfile[]" accept="image/*" multiple="multiple" />
                         <output id="result" />
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-3">
+                  <h5 class="remove-margin"><b>Choose Hotel Images</b></h5>
+                  <p class="remove-margin">Image size would be max 1MB.</p>
+                  <?php if ( $this->session->flashdata('file_size_error') ) { ?>
+                  <p class="error_file"><?php echo $this->session->flashdata('file_size_error'); ?>  </p>
+                  <?php } ?>
+               </div>
+               <div class="col-sm-9">
+                  <div class="form-group">
+                     <div class="col-xs-12">
+                        <input id="filesBanner" type="file" name="hotel_images[]" accept="image/*" multiple="multiple" />
+                        <output id="result_banner" />
                      </div>
                   </div>
                </div>

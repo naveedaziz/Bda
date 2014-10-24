@@ -162,7 +162,7 @@
    						
    						// redirect back to edit page and display error
    						
-   						redirect(base_url() . 'add_brand');
+   						redirect(base_url() . 'admin/add_brand');
    					}
    				}
    
@@ -256,11 +256,11 @@
    
    			// redirect to brand listing page
    
-   			redirect(base_url() . 'brands');
+   			redirect(base_url() . 'admin/brands');
    		}
    		else
    		{
-   			redirect(base_url() . 'add_brand');
+   			redirect(base_url() . 'admin/add_brand');
    		}
    	}
    
@@ -284,7 +284,7 @@
    
    		// get url parameter
    
-   		$id = $this->uri->segment(2);
+   		$id = $this->uri->segment(3);
    
    		// call to delete model
    
@@ -292,7 +292,7 @@
    
    		// redirect to brand listing page
    
-   		redirect(base_url() . 'brands');
+   		redirect(base_url() . 'admin/brands');
    	}
    
    	// --------------------------------------------------------------------
@@ -315,7 +315,7 @@
    
    		// get url parameter
    
-   		$id = $this->uri->segment(2);
+   		$id = $this->uri->segment(3);
    
    		// get brand record of the given id
    
@@ -329,7 +329,7 @@
    		}
    		else
    		{
-   			redirect(base_url() . 'brands');
+   			redirect(base_url() . 'admin/brands');
    		}
    	}
    
@@ -375,7 +375,7 @@
    						
    						// redirect back to edit brand page and show error message.
    						
-   						redirect(base_url() . 'edit_brand/' . $id);
+   						redirect(base_url() . 'admin/edit_brand/' . $id);
    					}
    				}
                    
@@ -469,11 +469,11 @@
    
    			// redirect to brand listing page
    
-   			redirect(base_url() . 'brands');
+   			redirect(base_url() . 'admin/brands');
    		}
    		else
    		{
-   			redirect(base_url() . 'brands');
+   			redirect(base_url() . 'admin/brands');
    		}
    	}
    
@@ -497,7 +497,7 @@
    
    		// get id from url parameter
    
-   		$id = $this->uri->segment(2);
+   		$id = $this->uri->segment(3);
    
    		// get status from url parameter
    
@@ -520,7 +520,7 @@
    
    		// redirect to brand listing page
    
-   		redirect(base_url() . 'brands');
+   		redirect(base_url() . 'admin/brands');
    	}
    }
 // --------------------------------------------------------------------

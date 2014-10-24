@@ -8,7 +8,7 @@
                <h3 class="remove-margin"> <i class="fa fa-files-o fa-fw"></i> Pages</h3>
             </div>
             <div class="col-sm-2 col-lg-2 align-right">
-               <a href="<?php echo base_url().'add_page' ?>"><button type="button" class="btn btn-sm btn-success">Add Page</button></a>
+               <a href="<?php echo base_url().'admin/add_page' ?>"><button type="button" class="btn btn-sm btn-success">Add Page</button></a>
             </div>
          </div>
          <hr />
@@ -49,17 +49,17 @@
                         <?php } ?>
                         <?php } ?>
                      </td>
-                     <td> <a href="<?php echo base_url().'edit_page/'.$row->id; ?>"> <?php echo $row->title; ?> </a></td>
+                     <td> <a href="<?php echo base_url().'admin/edit_page/'.$row->id; ?>"> <?php echo $row->title; ?> </a></td>
                      <td><?php if($row->description){ echo substr($row->description, 0, 50).'...';}else{ echo '&nbsp;' ;} ?></td>
                      <td class="text-center">
-                        <a href="<?php echo base_url().'change_page_status/'.$row->id.'/'.$row->status; ?>" class="no_underline">
+                        <a href="<?php echo base_url().'admin/change_page_status/'.$row->id.'/'.$row->status; ?>" class="no_underline">
                         <span class="label label-success"><?php if($row->status == 1){ echo 'Active'; } ?></span>
                         <span class="label label-primary"><?php if($row->status == 0){ echo 'Inactive'; } ?></span>
                         </a>
                      </td>
                      <td class="text-center">
                         <div class="btn-group">
-                           <a href="<?php echo base_url().'edit_page/'.$row->id; ?>" data-toggle="tooltip" title="Edit" class="btn btn-xs btn-default"><i class="fa fa-pencil"></i></a>
+                           <a href="<?php echo base_url().'admin/edit_page/'.$row->id; ?>" data-toggle="tooltip" title="Edit" class="btn btn-xs btn-default"><i class="fa fa-pencil"></i></a>
                            <a href="javascript:void(0);" onclick="deleteItem(<?php echo $row->id; ?>,'delete_page/');" data-toggle="tooltip" title="Delete" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
                         </div>
                      </td>

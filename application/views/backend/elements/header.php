@@ -38,7 +38,7 @@
                   </a>
                </li>
                <li class="divider"></li>
-               <li><a href="<?php echo base_url(); ?>admin/logout"><i class="fa fa-ban fa-fw pull-right"></i> Logout</a></li>
+               <li><a href="<?php echo base_url();?>admin/logout"><i class="fa fa-ban fa-fw pull-right"></i> Logout</a></li>
             </ul>
          </li>
          <!-- END User Dropdown -->

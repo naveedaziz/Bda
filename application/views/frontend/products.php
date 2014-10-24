@@ -196,6 +196,9 @@
    </div>
 </div>
 <!----  brand products----->
+<?php if ($categories->num_rows() > 0) { 
+     foreach ($categories->result() as $category){ 
+         if($category->id === $active_category){ ?>
 <div class="ful-col-product">
    <nav>
       <div class="container">
@@ -203,14 +206,23 @@
             <div class="col-md-12 column">
                <div class="row">
                   <div class="col-md-6">
-                     <h4 class="msg-bottom">THESE HOTELS & RESTURANT USING HORECA PRODUCTS</h4>
+                     <h4 class="msg-bottom">THESE <?php echo $category->title; ?> PRODUCTS</h4>
                   </div>
                   <div class="col-md-6">
-                     <img class="thumbs-product" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>products-thumbs.jpg" alt="" />
-                     <img class="thumbs-product" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>products-thumbs.jpg" alt="" />
-                     <img class="thumbs-product" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>products-thumbs.jpg" alt="" />
-                     <img class="thumbs-product" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>products-thumbs.jpg" alt="" />
-                  </div>
+                  <?php if(!empty($category->hotel_images)){ 
+                           $string = $category->hotel_images;
+                           if($string){
+                           $json_o = (array) json_decode($string);
+                           }else{
+                           $json_o = '';
+                           }
+                          if($json_o){
+                           foreach($json_o as $key =>$value){ ?>
+                     <img class="thumbs-product" src="<?php echo base_url().$json_o[$key]; ?>" alt="<?php echo $category->id; ?>" />
+                       <?php } ?>
+					 <?php } ?>
+                   <?php } ?>
+                   </div>
                </div>
                <!-- /.row -->  
             </div>
@@ -222,5 +234,7 @@
    </nav>
    <!-- / .nav -->
 </div>
+<?php } ?>
+<?php } } ?>
 <!-- /.container -->
 <?php $this->load->view('frontend/elements/footer'); ?>>>

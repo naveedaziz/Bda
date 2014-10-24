@@ -91,7 +91,7 @@
    			}
    		  else
    			{
-   			redirect(base_url() . 'unauthorized');
+   			redirect(base_url() . 'admin/unauthorized');
    			}
    		}
    	}
