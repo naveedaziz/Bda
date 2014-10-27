@@ -3,20 +3,12 @@
    <nav>
       <div class="container">
          <div class="row clearfix">
-            <div class="col-md-12 column">
-               <div class="row">
-                  <div class="col-md-6">
-                     <ol class="breadcrumb">
+             <ol class="breadcrumb">
                         <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url();?>">Home</a></span> </div>
                         <div class="space">/</div>
                         <div class="breadcrums"><span class="small-text-active">Enquiry</span></div>
                      </ol>
-                  </div>
-               </div>
-               <!-- /.row -->  
-            </div>
-            <!-- / .col-md-12 column -->
-         </div>
+             </div>
          <!-- / .row clearfix -->
       </div>
       <!--- / .container -->
@@ -107,7 +99,7 @@
                            <div class="tab-pane fade" id="vending">
                               <select class="form-control" name="category_name" id="category_name">
                                  <option value="">Choose Your Business</option>
-                                 <option value="Vending Machine">Vending Machine</option>
+                                 <option value="Vending Machine" selected="selected">Vending Machine</option>
                               </select>
                            </div>
                         </div>

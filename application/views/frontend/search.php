@@ -25,50 +25,31 @@
 </div>
 <!-- Page Content -->
 <div class="container">
-   <!-- Categories Section -->
-   <div class="row">
-      <div class="span12">
-         <div id="myTabContent" class="tab-content">
-            <div class="tab-pane fade active in" id="service-one">
-               <div class="row">
-                  <div class="col-lg-12">
-                     <?php if ($search_data->num_rows() > 0) { ?>
-                     <?php foreach ($search_data->result() as $product){ ?>
-                     <div class="col-md-3 col-margin">
-                        <?php if(!empty($product->images)){ 
-                           $string = $product->images;
-                           if($string){
-                           $json_o = (array) json_decode($string);
-                           }else{
-                           $json_o = '';
-                           }
-                           if($json_o){?>
-                        <a href="<?php echo base_url().'product_detail/'.$product->id; ?>">
-                        <img class="images-section img-responsive" src="<?php echo base_url().$json_o[0]; ?>" alt="">
-                        </a>
-                        <?php }else{ ?>
-                        <a href="<?php echo base_url().'product_detail/'.$product->id; ?>">
-                        <img class="product-images-section img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>ldefault.png" alt="">
-                        </a>
-                        <?php } ?>
-                        <h4 class="title"><a href="<?php echo base_url().'product_detail/'.$product->id; ?>"><?php echo $product->title;?></a></h4>
-                        <?php } ?>
-                     </div>
+ <div class="row">
+  <div class="col-lg-12">
+   <h2>SEARCH RESULT FOR : <?php if(isset($search_string)){ echo $search_string; }?></h2>
+                   <?php if ($search_data->num_rows() > 0) {  ?>
+                     <div class="result_count">About <?php echo $search_data->num_rows; ?> results found </div>
+                     <?php foreach ($search_data->result() as $product){  ?>
+                     <div class="results">
+                <a class="p-title" href="<?php echo base_url().'product/'.$product->seo_url; ?>"><h3><?php echo $product->title;?></h3></a>
+                <p><?php echo substr($product->description, 0, 130);?></p>
+                <div class="read_more-col col-md-6"><a href="<?php echo base_url().'product/'.$product->seo_url; ?>" class="read_more">Read More</a></div>
+            </div>
                      <?php } ?>
-                  </div>
-               </div>
-               <div class="row text-center">
-                  <div class="col-lg-12">
-                  </div>
-               </div>
                <?php } else { ?>
                <p class="col-margin"> <?php echo 'No Record Found!'; ?> </p>
                <?php } ?>
-            </div>
-         </div>
-      </div>
-   </div>
+   <div class="col-md-8 new_search_col">
+        <h3>NEED A NEW SEARCH?</h3>
+        <p>If you didn't find what you were looking for, try a new search!</p>
+         <form action="search" method="post">
+          <input required="required" type="text" class="form-control search-box" id="search" name="search_string" value="">
+          <button class="btn btn-search btn-search-new" type="submit"><i class="fa fa-search search-icon"></i></button>
+         </form>
+        </div>
+  </div>
+ </div>
 </div>
-<!----  brand products----->
 <!-- /.container -->
 <?php $this->load->view('frontend/elements/footer'); ?>

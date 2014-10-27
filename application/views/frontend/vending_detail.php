@@ -1,12 +1,10 @@
 <?php $this->load->view('frontend/elements/header'); ?>
+<?php if(!empty($product) && $product->title == 'Hot Vending'){?>
 <div class="ful-col">
    <nav>
       <div class="container">
          <div class="row clearfix">
-            <div class="col-md-12 column">
-               <div class="row">
-                  <div class="col-md-6">
-                     <ol class="breadcrumb">
+           <ol class="breadcrumb">
                         <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url();?>">Home</a></span> </div>
                         <div class="space">/</div>
                         <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url().'vending_solution/'; ?>">Vending Solutions</a></span> </div>
@@ -17,22 +15,15 @@
                            </span>
                         </div>
                      </ol>
-                  </div>
-               </div>
-               <!-- /.row -->  
             </div>
-            <!-- / .col-md-12 column -->
-         </div>
          <!-- / .row clearfix -->
       </div>
       <!--- / .container -->
    </nav>
    <!-- / .nav -->
 </div>
-<?php if(!empty($product) && $product->title == 'Hot Vending'){?>
 <!-- Page Content -->
 <div class="container">
-   <!----- Brand Carousel ------>
    <div class="row">
       <?php if(!empty($product)) { ?> 
       <div class="col-md-12">
@@ -55,10 +46,31 @@
 <div class="ful-col-banner hot_vending_bottom"></div>
 <!-- /.container -->
 <?php }else{ ?>
+<div class="ful-col">
+   <nav>
+      <div class="container">
+         <div class="row clearfix">
+            <ol class="breadcrumb">
+                        <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url();?>">Home</a></span> </div>
+                        <div class="space">/</div>
+                        <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url().'vending_solution/'; ?>">Vending Solutions</a></span> </div>
+                        <div class="space">/</div>
+                        <div class="breadcrums">
+                           <span class="small-text-active">
+                           Cold Vending Machine
+                           </span>
+                        </div>
+                     </ol>
+             </div>
+         <!-- / .row clearfix -->
+      </div>
+      <!--- / .container -->
+   </nav>
+   <!-- / .nav -->
+</div>
 <!-- Page Content -->
 <div class="container">
-   <!----- Brand Carousel ------>
-   <div class="row">
+ <div class="row">
       <?php if(!empty($product)) { ?> 
       <div class="col-md-12">
          <div class="col-md-6">

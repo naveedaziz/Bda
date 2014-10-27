@@ -3,20 +3,12 @@
    <nav>
       <div class="container">
          <div class="row clearfix">
-            <div class="col-md-12 column">
-               <div class="row">
-                  <div class="col-md-6">
-                     <ol class="breadcrumb">
+              <ol class="breadcrumb">
                         <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url();?>">Home</a></span> </div>
                         <div class="space">/</div>
                         <div class="breadcrums"><span class="small-text-active">Vending Solutions</span></div>
                      </ol>
-                  </div>
-               </div>
-               <!-- /.row -->  
-            </div>
-            <!-- / .col-md-12 column -->
-         </div>
+           </div>
          <!-- / .row clearfix -->
       </div>
       <!--- / .container -->
@@ -43,7 +35,7 @@
              	if($images_array){
             foreach($images_array as $key =>$value){ ?>
          <div class="col-md-6 col-space-top-l">
-            <a class="no_decoration" href="<?php echo base_url().'vending_product/'.$product->id; ?>">
+            <a class="no_decoration" href="<?php echo base_url().'vending_product/'.$product->seo_url; ?>">
             <span class="vending-product-title"><?php echo $product->title; ?></span>
             </a>
             <?php if($images_array){?>
@@ -51,11 +43,13 @@
             <?php }else{ ?>
             <img class="thumbs-vending-detail img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>default.jpg" alt="default" />
             <?php } ?>
-            <span class="learn_more">
-            <a href="<?php echo base_url().'vending_product/'.$product->id; ?>">
+            <div class="learn-mor-col">
+            <div class="learn_more">
+            <a href="<?php echo base_url().'vending_product/'.$product->seo_url; ?>">
             <button class="btn btn-enquiry">LEARN MORE</button>
             </a>
-            </span>
+            </div>
+           </div>
          </div>
          <?php } ?>
          <?php } } ?> 

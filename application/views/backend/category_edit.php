@@ -67,7 +67,7 @@
             </div>
             <div class="row">
                <div class="col-sm-3">
-                  <h5 class="remove-margin"><b>Choose Banner Image</b></h5>
+                  <h5 class="remove-margin"><b>Choose Hotel Images</b></h5>
                   <p class="remove-margin">Image size would be max 1MB.</p>
                   <?php if ( $this->session->flashdata('file_size_error_banner') ) { ?>
                   <p class="error_file"><?php echo $this->session->flashdata('file_size_error_banner'); ?>  </p>

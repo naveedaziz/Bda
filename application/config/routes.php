@@ -58,12 +58,10 @@ $route['frontend/submitQuery'] = 'frontend/home/submitQuery';
 $route['thanks'] = 'frontend/home/thanks';
 $route['404_override'] = 'frontend/home/notFound';
 
-
-
 /**
 * Admin routes
 */
-$route['admin']	= "backend/admin/index";
+
 $route['admin'] = "backend/admin/index";
 $route['admin/login'] = "backend/admin/doLogin";
 $route['admin/update_password_admin'] = "backend/admin/updatePasswordAdmin";
@@ -131,9 +129,9 @@ $route['admin/update_account'] = "backend/account/update";
 $route['admin/update_account_owner'] = "backend/account/updateAccountOwner";
 $route['admin/update_site_settings'] = "backend/account/updateSiteSettings";
 $route['admin/delete_account:any'] = "backend/account/delete";
-
 $route['admin/logout'] = "backend/admin/logout";
 $route[':any'] = 'frontend/home/notFound';
+
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

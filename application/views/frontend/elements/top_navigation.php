@@ -1,6 +1,10 @@
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
    <div class="container">
+   
+    <a class="navbar-brand" href="<?php echo base_url(); ?>">
+         <img src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>logo.png" alt="logo" class="img-responsive" />
+         </a>
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -9,11 +13,7 @@
          <span class="icon-bar"></span>
          <span class="icon-bar"></span>
          </button>
-         <a class="navbar-brand" href="<?php echo base_url(); ?>">
-         <img src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>logo.png" alt="logo" class="img-responsive" />
-         </a>
-         <!-- <div class="slogan">MAKING MORE POSSIBLE</div>-->
-         <img class="slogan img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>slogan.png" alt="MAKING MORE POSSIBLE" />
+        
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
          <div class="row remove-margin">
@@ -27,13 +27,13 @@
             </div>
          </div>
          <ul class="nav navbar-nav navbar-right">
-            <li <?php if($this->session->userdata('page') == 'home'){?> class="active" <?php } ?>>
+            <li <?php if($this->session->userdata('page') == 'home' && !isset($search_string)){?> class="active" <?php } ?>>
                <a href="<?php echo base_url(); ?>">Home</a>
             </li>
-            <li <?php if($this->session->userdata('page') == 'vending_solution'){?> class="active" <?php } ?>>
+            <li <?php if($this->session->userdata('page') == 'vending_solution' && !isset($search_string)){?> class="active" <?php } ?>>
                <a href="<?php echo base_url(); ?>vending_solution">Vending Solutions</a>
             </li>
-            <li>
+            <li <?php if($this->session->userdata('page') == 'about-us' && !isset($search_string)){?> class="active" <?php } ?>>
                <a href="<?php echo base_url(); ?>pages/about-us">About Us</a>
             </li>
             <li class="active_enquiry">

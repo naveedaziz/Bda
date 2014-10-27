@@ -77,36 +77,7 @@
                   </div>
                </div>
             </div>
-            <hr />
-            <div class="row">
-               <div class="col-sm-3">
-                  <h5 class="remove-margin"><b>Search Engines</b></h5>
-                  <p>Set up the banner title, meta description and handle. These help define how this product shows up on search engines.</p>
-               </div>
-               <div class="col-sm-9">
-                  <div class="form-group">
-                     <div class="col-xs-12">
-                        <input type="text" id="seo_title" name="seo_title" class="form-control" placeholder="Banner title" autocomplete="off">
-                     </div>
-                  </div>
-                  <div class="form-group">
-                     <div class="col-xs-12">
-                        <input type="text" id="seo_description" name="seo_description" class="form-control" placeholder="Meta description" autocomplete="off">
-                     </div>
-                  </div>
-                  <div class="form-group">
-                     <div class="col-xs-12">
-                        <input type="text" id="seo_url" name="seo_url" class="form-control" placeholder="URL & Handle" autocomplete="off">
-                     </div>
-                  </div>
-                  <div class="form-group">
-                     <div class="col-xs-12">
-                        <input type="text" id="seo_tags" name="seo_tags" class="form-control" placeholder="Meta tags" autocomplete="off">
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <hr />
+             <hr />
             <div class="row">
                <div class="col-sm-3">
                   <h5 class="remove-margin"><b>Visibility</b></h5>

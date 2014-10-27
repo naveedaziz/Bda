@@ -3,20 +3,12 @@
    <nav>
       <div class="container">
          <div class="row clearfix">
-            <div class="col-md-12 column">
-               <div class="row">
-                  <div class="col-md-6">
-                     <ol class="breadcrumb">
+              <ol class="breadcrumb">
                         <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url();?>">Home</a></span> </div>
                         <div class="space">/</div>
                         <div class="breadcrums"><span class="small-text-active">Thanks</span></div>
                      </ol>
-                  </div>
-               </div>
-               <!-- /.row -->  
-            </div>
-            <!-- / .col-md-12 column -->
-         </div>
+              </div>
          <!-- / .row clearfix -->
       </div>
       <!--- / .container -->
@@ -28,11 +20,10 @@
    <!-- Categories Section -->
    <div class="row">
       <!-- /.row -->
-      <div class="span12">
-         <div class="col-md-10">
+      <div class="span12 thanks-page">
             <p class="success-msg">Your enquiry has been submited successfully.</p>
             <p> Team Nestle professionals will contact you shortly. </p>
-         </div>
+              <a href="<?php echo base_url(); ?>">Go Back To Home</a>
       </div>
    </div>
    <!-- /.row -->  

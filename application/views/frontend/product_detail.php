@@ -3,25 +3,18 @@
    <nav>
       <div class="container">
          <div class="row clearfix">
-            <div class="col-md-12 column">
-               <div class="row">
-                  <div class="col-md-6">
-                     <ol class="breadcrumb">
+            <ol class="breadcrumb">
                         <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url();?>">Home</a></span> </div>
                         <div class="space">/</div>
                         <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url().'category/'.$this->session->userdata('category_seo_url'); ?>"><?php echo $this->session->userdata('category'); ?></a></span> </div>
-                        <div class="space">/</div>
+                       <?php if($this->session->userdata('category')){?> <div class="space">/</div> <?php } ?>
                         <div class="breadcrums">
                            <span class="small-text-active">
                            <?php if ($product) { echo $product->title; } ?>
                            </span>
                         </div>
                      </ol>
-                  </div>
-               </div>
-               <!-- /.row -->  
-            </div>
-            <!-- / .col-md-12 column -->
+              <!-- / .col-md-12 column -->
          </div>
          <!-- / .row clearfix -->
       </div>
@@ -34,11 +27,10 @@
    <!----- Brand Carousel ------>
    <div class="row">
       <?php if(!empty($product)) { ?> 
-      <div class="col-md-12">
-         <div class="col-md-7">
+         <div class="col-md-6">
             <h2><?php echo $product->title; ?></h2>
             <p class="floating"><?php echo $product->description; ?></p>
-            <div class="col-md-7 col-space-top-l no-padding">
+            <div class="col-space-top-l no-padding">
                <?php 
                   if(!empty($product->images)){ 
                   
@@ -66,7 +58,7 @@
             	$images_array = '';
             	}
             	if($images_array){ ?>
-         <div class="col-md-5">
+         <div class="col-md-6">
             <header id="myCarousel" class="carousel slide myCarouselProduct">
                <!-- Indicators -->
                <ol class="carousel-indicators">
@@ -90,11 +82,10 @@
             </header>
 
             <?php } } ?>
-            <div class="col-md-1 col-right">
+            <div class="col-right">
                <a href="<?php echo base_url().'enquiry/'.$product->id; ?>"><button class="btn btn-enquiry">ENQUIRY</button></a>
             </div>
          </div>
-      </div>
       <?php }
          else { ?>
       <p class="no-record-found"> <?php echo 'No Record Found!'; ?> </p>
