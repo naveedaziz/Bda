@@ -33,7 +33,7 @@
                      <?php foreach ($search_data->result() as $product){  ?>
                      <div class="results">
                 <a class="p-title" href="<?php echo base_url().'product/'.$product->seo_url; ?>"><h3><?php echo $product->title;?></h3></a>
-                <p><?php echo $product->description; //echo substr($product->description, 0, 130);?></p>
+                <p><?php echo substr($product->description, 0, 130);?></p>
                 <div class="read_more-col col-md-6"><a href="<?php echo base_url().'product/'.$product->seo_url; ?>" class="read_more">Read More</a></div>
             </div>
                      <?php } ?>

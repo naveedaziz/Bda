@@ -20,4 +20,5 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
       <![endif]-->
+      <link rel="Shortcut Icon" type="image/ico" href="<?php echo base_url();?>assets/frontend/img/favicon_16X16.ico" />
    </head>
