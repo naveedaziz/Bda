@@ -32,7 +32,7 @@
          <div class="col-md-12 NotFoundPage">
             <h2>OPPS, THIS PAGE COULD NOT BE FOUND!</h1>
             <p> Oops! The Page you are looking for could not be found. Try searching for the best match or browse the links below <br />
-Return to  <a href="./">Home Page</a> </p>
+Return to  <a href="<?php echo base_url();?>">Home Page</a> </p>
 <h1>404</h1>
 <h3>Search Our Website</h3>
 <p>Can't find what you need? Take a moment and do a search below!</p>

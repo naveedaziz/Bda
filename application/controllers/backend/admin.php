@@ -130,9 +130,10 @@
    	   $password = Encrypt(Encode($this->input->post('password')));
    
    		// Authenticate admin
-   
+   		
    		$admin_row = $this->modeladmin->adminLogin($user_email, $password);
-   
+   		
+		
    		// check if moderator has limited access
    
    		if ($admin_row->access_limited == '1')
@@ -196,6 +197,62 @@
    	 * @access	public
    	 * @return	void
    	 */
+	 
+	public function forgotPassword()
+   	{
+		$user_email = Encode($this->input->post('val_email'));
+		if(!empty($user_email)){
+			$resetPassord = $this->modeladmin->checkForgotPassword($this->input->post('val_email'));
+			
+			if(!empty($resetPassord)){
+				$to = $user_email;
+				$subject = 'Reset Password Nestle Professional';
+				$data['key'] = $resetPassord['key'];
+				$data['userName'] =  $resetPassord['userName'];
+				$message = $this->load->view('backend/forgot_password_template', $data, true);
+				$this->sendEMail($to, $subject, $message);
+				redirect(base_url() . 'admin/forgot-password?success');
+			}else{
+				redirect(base_url() . 'admin/forgot-password?error');
+			}
+		}
+		$this->load->view('backend/forgot_password');
+	}
+	public function forgotPasswordReset(){
+		$key = $this->uri->segment(3);
+		$validLink = $resetPassord = $this->modeladmin->linkValidationPasswordReset($key); 
+		
+		if($validLink){
+			$user_password =Encode($this->input->post('val_password'));
+			if(!empty($user_password)){
+				$updatedPassword =Encrypt(Encode($this->input->post('val_password')));
+				$resetPassord = $this->modeladmin->updateUserPassword($updatedPassword,$key);
+				redirect(base_url() . 'admin/reset-password/'.$key.'?success');
+			}
+			$data['key'] = $key;
+			
+			$this->load->view('backend/reset_password',$data);
+		}else{
+			redirect(base_url() . 'admin/');
+		}
+	}
+	public function sendEMail($to,$subject, $message)
+	{
+		
+		$this->load->library('email');
+		$this->email->set_newline("\r\n");
+		$this->email->from(EMAIL_CLIENT_FROM);
+		$this->email->to($to);
+		$this->email->subject($subject);
+		$this->email->message($message);
+
+		// echo $message;
+
+		$this->email->send();
+
+		// echo $this->email->print_debugger();
+
+	}
    	public function updatePasswordAdmin()
    	{
    		$session_id = $this->session->userdata('admin_id');
@@ -258,6 +315,7 @@
    			// get all queries
    
    			$this->modeladmin->update($table_name, $array, $id);
+			
    
    			// destroy all session variables and forcefully logout from the system on reset password
    
@@ -277,6 +335,8 @@
    				}
    			}
    	}
+	
+	
    
    	// --------------------------------------------------------------------
    

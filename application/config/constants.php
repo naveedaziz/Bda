@@ -51,6 +51,8 @@ define('ASSETS_FRONTEND_IMAGE_DIR' ,  'assets/frontend/img/');
 define('DEFAULT_LOGO' ,  'assets/frontend/img/logo.png');
 define('LIMIT_PAGINATION' ,  '10');
 define('CAPTCHA_DIR' ,  'captcha');
+define('EMAIL_CLIENT_TO' ,  'naveed.aziz@bramerz.pk');
+define('EMAIL_CLIENT_FROM' ,  'naveed.aziz@bramerz.pk');
 
 /**
 * Admin Constants

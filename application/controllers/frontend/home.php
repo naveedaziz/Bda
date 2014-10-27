@@ -355,12 +355,17 @@ class Home extends CI_Controller
 	{
 
 		// get form data
-
+		//print_r($this->input->post('category_name'));die();
+		$catagory_name = $this->input->post('category_name');
 		$array['first_name'] = Encode($this->input->post('firstname'));
 		$array['last_name'] = Encode($this->input->post('lastname'));
 		$array['product_id'] = Encode($this->input->post('product_id'));
 		$array['company_name'] = Encode($this->input->post('company'));
-		$array['category_name'] = Encode($this->input->post('category_name'));
+		if(!empty($catagory_name)){
+			$array['category_name'] = Encode($this->input->post('category_name'));
+		}else{
+			$array['category_name'] = '';
+		}
 		$array['brand_name'] = Encode($this->input->post('brand_name'));
 		$array['city'] = Encode($this->input->post('city'));
 		$array['phone'] = Encode($this->input->post('contact'));
@@ -373,6 +378,27 @@ class Home extends CI_Controller
 		// call model to enquiry form data
 
 		$this->modelfrontend->insert($table_name, $array);
+		
+		$data['fName'] = $array['first_name'];
+		$data['lName'] = $array['last_name'];
+		$data['email'] = $array['email'];
+		$data['company'] = $array['company_name'];
+		$data['city'] = $array['city'];
+		$data['contact'] = $array['phone'];
+		$data['address'] = $array['address'];
+		$data['comments'] = $array['note'];
+		$data['business'] = $array['category_name'];
+		$data['brand'] = $array['brand_name'];
+		
+		$message = $this->load->view('frontend/email_template', $data, true);
+		$from = EMAIL_CLIENT_FROM;
+		$to = EMAIL_CLIENT_TO;
+		$cc = '';
+		$bcc = '';
+		$subject = 'New Query Request Nestle Professionals';
+		//$message = 'Test email';
+		
+		$this->sendEMail($from, $to, $cc, $bcc, $subject, $message);
 
 		// redirect to thanks page
 
@@ -392,13 +418,7 @@ class Home extends CI_Controller
 	 * @access	public
 	 * @return	void
 	 */
-	public function sendEmailTemplate()
-	{
-		$data = '123';
-		$message = $this->load->view('frontend/email', $data, true);
-		$this->sendEMail($from, $to, $cc, $bcc, $subject, $message);
-		$this->parser->parse('frontend/layout/detail_template', $data);
-	}
+	
 
 	// --------------------------------------------------------------------
 
@@ -413,10 +433,10 @@ class Home extends CI_Controller
 	 */
 	public function sendEMail($from, $to, $cc, $bcc, $subject, $message)
 	{
-		/*
-		$this->load->library('email', $config);
+		
+		$this->load->library('email');
 		$this->email->set_newline("\r\n");
-		$this->email->from('hrm@bramerz.pk', 'MUNA LIZA HRM');
+		$this->email->from($from);
 		$this->email->to($to);
 		$this->email->cc($cc);
 		$this->email->bcc($bcc);
@@ -425,9 +445,9 @@ class Home extends CI_Controller
 
 		// echo $message;
 
-		$this->email->send();*/
+		$this->email->send();
 
-		// echo $this->email->print_debugger();
+		 //echo $this->email->print_debugger();
 
 	}
 	function notFound (){

@@ -1,27 +1,31 @@
-<p><b>You have recieved a new order in Nestle Pure Life. </b></p>
-<table border="0" cellspacing="1px" cellpadding="0" class="dataTable" id="myTable">
-  <th style="text-align:center;"> 
+<p><b>You have recieved a new Query in Nestle Professionals. </b></p>
+<table border="1" cellspacing="5px" cellpadding="5" class="dataTable" id="myTable">
     <tr>
-      <td width="25%" style="text-align:center;"><b>Name</b></td>
-      <td width="25%" style="text-align:center;"><b>E-mail<b></td>
-      <td width="30%" style="text-align:center;"><b>Phone No<b></td>
-      <td width="25%" style="text-align:center;"><b>Date<b></td>
+      <th  style="text-align:center;"><b>First Name</b></th>
+      <th  style="text-align:center;"><b>Last Name</b></th>
+      <th  style="text-align:center;"><b>E-mail<b></th>
+      <th  style="text-align:center;"><b>Company<b></th>
+      <th  style="text-align:center;"><b>City<b></th>
+      <th  style="text-align:center;"><b>Contact<b></th>
+      <th  style="text-align:center;"><b>Address<b></th>
+      <th  style="text-align:center;"><b>Comments<b></th>
+      <th  style="text-align:center;"><b>Business<b></th>
+      <th  style="text-align:center;"><b>Brand<b></th>
     </tr>
-  </th>
+
   <tbody style="text-align:center;">
   <tr>
-  <?php 
- 	if ($created_date > 0) 
-	{ 
-	 $created_date = date('F j, Y, g:i a',strtotime($created_date)); 
-	} else { 
-	 $created_date = 'N/A';
-	}
-  ?>
-  	<td><?php echo $name; ?></td>
-	<td><?php echo $email_address; ?></td>
-	<td><?php echo $phone_no; ?></td>
-	<td><?php echo $created_date;?></td>
+  	<td><?php echo $fName; ?></td>
+    <td><?php echo $lName; ?></td>
+    <td><?php echo $email; ?></td>
+    <td><?php echo $company; ?></td>
+    <td><?php echo $city; ?></td>
+    <td><?php echo $contact; ?></td>
+    <td><?php echo $address; ?></td>
+    <td><?php echo $comments; ?></td>
+    <td><?php echo $business; ?></td>
+    <td><?php echo $brand; ?></td>
+	
   </tr>
  </tbody>
 </table>

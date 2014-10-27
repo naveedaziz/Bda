@@ -15,7 +15,8 @@
    <!-- Login Block -->
    <div class="block push-bit">
       <!-- Login Form -->
-      <form name="login" method="post" id="form-validation" class="form-horizontal form-bordered form-control-borderless" action="<?php echo base_url();?>admin/login">
+      <form name="login" method="post" id="form-validation" class="form-horizontal form-bordered form-control-borderless" action="<?php echo base_url();?>admin/forgot-password">
+        <?php if(!isset($_REQUEST['success'])) { ?>
          <div class="form-group">
             <div class="col-xs-12">
                <div class="input-group">
@@ -24,22 +25,24 @@
                </div>
             </div>
          </div>
-         <div class="form-group">
-            <div class="col-xs-12">
-               <div class="input-group">
-                  <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
-                  <input type="password" id="password" name="password" class="form-control input-lg" placeholder="Password" data-rule-required="true" value="" >
-               </div>
+         <?php if(isset($_REQUEST['error'])) { ?>
+         <div class="alert alert-danger alert-dismissable"> 
+            Invalid email. Please enter valid email
             </div>
-         </div>
+		 <?php } ?>
          <div class="form-group form-actions">
             <div class="col-xs-12 text-center">
-               <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Login </button>
+               <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Reset Password </button>
             </div>
          </div>
+         <?php }else{ ?>
+         	<div class="alert alert-danger alert-dismissable"> 
+            Reset Password information sent to your email. <br />Please check your email for further assitance.
+            </div>
+         <?php } ?>
          <div class="form-group">
             <div class="col-xs-12 text-center">
-               <a href="<?php echo base_url();?>admin/forgot-password" id="link-reminder-login"><small>Forgot password?</small></a> 
+               <a href="./login" id="link-reminder-login"><small>Login</small></a> 
             </div>
          </div>
       </form>

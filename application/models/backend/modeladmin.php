@@ -57,6 +57,50 @@
    			return false;
    		}
    	}
+	public function randomPassword($length) {
+		$chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+		$pass = "";
+		for($i = 0; $i < $length; $i++) {
+		$index =rand(0,61);
+		$pass .= substr($chars,$index,1);
+		}
+		return $pass;
+	}
+	
+	public function linkValidationPasswordReset($key)
+   	{
+   		$query = "SELECT * FROM np_admin_users WHERE update_password_key = '" . $key . "'";
+   		$record = $this->db->query($query);
+   		if ($record->num_rows() == 1) {
+			return $record;
+   		}
+   		else {
+   			return false;
+   		}
+   	}
+	public function checkForgotPassword($email)
+   	{
+   		$query = "SELECT * FROM np_admin_users WHERE email = '" . $email . "'";
+   		$record = $this->db->query($query);
+   		if ($record->num_rows() == 1) {
+			$key = $this->randomPassword(20);
+			$query = "UPDATE np_admin_users  SET update_request = NOW(), update_password_key = '". $key ."' WHERE email = '" . $email . "'";
+			$this->db->query($query);
+   			$returnData['key'] = $key;
+			$returnData['userName'] = $record->row()->first_name.' '.$record->row()->first_name;
+			return $returnData;
+   		}
+   		else {
+   			return false;
+   		}
+   	}
+	 public function updateUserPassword($password,$key){
+		 
+			$query = "UPDATE np_admin_users  SET password = '".$password."'  where update_password_key = '". $key ."'";
+			$this->db->query($query);
+   			return true;
+   		
+	 }
    
    	// --------------------------------------------------------------------
    
