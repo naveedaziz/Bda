@@ -3,20 +3,12 @@
    <nav>
       <div class="container">
          <div class="row clearfix">
-            <div class="col-md-12 column">
-               <div class="row">
-                  <div class="col-md-6">
-                     <ol class="breadcrumb">
+            <ol class="breadcrumb">
                         <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url();?>">Home</a></span> </div>
                         <div class="space">/</div>
-                        <div class="breadcrums"><span class="small-text-active"><?php echo $page->title ?></span></div>
+                        <div class="breadcrums"><span class="small-text-active"><?php echo $page->title; ?></span></div>
                      </ol>
-                  </div>
-               </div>
-               <!-- /.row -->  
-            </div>
-            <!-- / .col-md-12 column -->
-         </div>
+           </div>
          <!-- / .row clearfix -->
       </div>
       <!--- / .container -->
@@ -34,8 +26,7 @@
    } ?>
 <div class="container">
    <div class="row">
-      <div class="col-md-12">
-            <div <?php if($json_o){?> class="col-md-7 content_pages" <?php }else{ ?> class="col-md-12 content_pages" <?php } ?>>
+      <div <?php if($json_o){?> class="col-md-7 content_pages" <?php }else{ ?> class="col-md-12 content_pages" <?php } ?>>
                <h2><?php echo $page->title; ?></h2>
                <p class="floating">
                   <?php echo $page->description; ?>
@@ -46,7 +37,6 @@
                <img class="images-section img-responsive" src="<?php echo base_url().$json_o[0]; ?>" alt="About US" />
                <?php } ?>
             </div>
-      </div>
    </div>
 </div>
 <?php $this->load->view('frontend/elements/footer'); ?>

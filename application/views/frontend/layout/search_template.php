@@ -34,16 +34,6 @@
                 <p>With an aim to stand tall on the expectations of patrons, we are engaged in supplying and trading a broad array of Nescafe Vending Machines.</p>
                 <div class="read_more-col col-md-6"><a href="#" class="read_more">Read More</a></div>
             </div>
-            <div class="results">
-                <h4 class="msg-bottom">Vending Machine</h4>
-                <p>With an aim to stand tall on the expectations of patrons, we are engaged in supplying and trading a broad array of Nescafe Vending Machines.</p>
-                <div class="read_more-col col-md-6"><a href="#" class="read_more">Read More</a></div>
-            </div>
-            <div class="results">
-                <h4 class="msg-bottom">Vending Machine</h4>
-                <p>With an aim to stand tall on the expectations of patrons, we are engaged in supplying and trading a broad array of Nescafe Vending Machines.</p>
-                <div class="read_more-col col-md-6"><a href="#" class="read_more">Read More</a></div>
-            </div>
         <div class="col-md-8 new_search_col">
         <h3>NEED A NEW SEARCH?</h3>
         <p>If you didn't find what you were looking for, try a new search!</p>

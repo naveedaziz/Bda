@@ -3,25 +3,18 @@
    <nav>
       <div class="container">
          <div class="row clearfix">
-            <div class="col-md-12 column">
-               <div class="row">
-                  <div class="col-md-6">
-                     <ol class="breadcrumb">
+            <ol class="breadcrumb">
                         <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url();?>">Home</a></span> </div>
                         <div class="space">/</div>
                         <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url().'category/'.$this->session->userdata('category_seo_url'); ?>"><?php echo $this->session->userdata('category'); ?></a></span> </div>
-                        <div class="space">/</div>
+                       <?php if($this->session->userdata('category')){?> <div class="space">/</div> <?php } ?>
                         <div class="breadcrums">
                            <span class="small-text-active">
                            <?php if ($product) { echo $product->title; } ?>
                            </span>
                         </div>
                      </ol>
-                  </div>
-               </div>
-               <!-- /.row -->  
-            </div>
-            <!-- / .col-md-12 column -->
+              <!-- / .col-md-12 column -->
          </div>
          <!-- / .row clearfix -->
       </div>

@@ -57,7 +57,6 @@ $route['enquiry:any'] = 'frontend/home/query';
 $route['frontend/submitQuery'] = 'frontend/home/submitQuery';
 $route['thanks'] = 'frontend/home/thanks';
 $route['404_override'] = 'frontend/home/notFound';
-//$route[':any'] = 'frontend/home/404_override';
 
 
 /**
@@ -129,8 +128,8 @@ $route['admin/update_account'] = "backend/account/update";
 $route['admin/update_account_owner'] = "backend/account/updateAccountOwner";
 $route['admin/update_site_settings'] = "backend/account/updateSiteSettings";
 $route['admin/delete_account:any'] = "backend/account/delete";
-
 $route['admin/logout'] = "backend/admin/logout";
+$route[':any'] = 'frontend/home/404_override';
 
 
 /* End of file routes.php */

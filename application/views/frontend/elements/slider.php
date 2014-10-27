@@ -21,16 +21,9 @@
    </ol>
    <!-- Wrapper for slides -->
    <div class="carousel-inner">
-      <!-- <div class="carousel-caption-home">
-         With branded <br/>
-         food & beverage solutions
-         <p>We’ll enable you to innovate & delight your customers<br /> Call Now &nbsp;<span class="contactNo-slider"> 0800 111 111</span><p>
-         <a href="<?php // echo base_url(); ?>frontend/aboutus" class="contact-slider"><button class="btn btn-contact-slider">Contact</button></a>
-         </div>-->
-      <?php if ($banners->num_rows() > 0) { 
+    <?php if ($banners->num_rows() > 0) { 
          $index = 0; 
-                 foreach ($banners->result() as $banner){ ?>
-      <?php 
+         foreach ($banners->result() as $banner){ 
          if(!empty($banner->images)){ 
          	$string = $banner->images;
          	if($string){
@@ -41,11 +34,13 @@
          	if($json_o){?>
       <div <?php if($index == 0){?> class="item active"<?php }else{ ?> class="item" <?php } ?>>
          <div class="fill" style="background-image:url('<?php echo base_url().$json_o[0]; ?>');"></div>
-         <div class="carousel-caption container">
+         <div class="carousel-caption">
+         <div class="container">
             <?php echo $banner->title;?>
             <p><?php echo $banner->description;?></p>
             <a href="<?php echo base_url(); ?>pages/contact" class="contact-slider"><button class="btn btn-contact-slider">Contact</button></a>
          </div>
+        </div>
       </div>
       <?php $index++;} ?>
       <?php } ?>
