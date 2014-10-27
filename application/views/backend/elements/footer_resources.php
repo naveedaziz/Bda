@@ -8,4 +8,4 @@
 <!-- Load and execute javascript code used only in this page -->
 <script src="<?php echo base_url().ASSETS_ADMIN_JS_DIR;?>pages/tablesDatatables.js"></script>
 <script src="<?php echo base_url().ASSETS_ADMIN_JS_DIR;?>pages/formsValidation.js"></script>
-<script>$(function(){ FormsValidation.init(); TablesDatatables.init(); });</script>
+

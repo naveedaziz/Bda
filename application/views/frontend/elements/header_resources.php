@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
+      <!---- site meta ---->
       <?php $this->load->view('frontend/elements/meta'); ?>
-				
-    
       <!---- google font ---->
-     <!-- <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>-->
-       <!-- Theme CSS -->
+      <!-- <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>-->
+      <!-- Theme CSS -->
       <link type="text/css" href="<?php echo base_url().ASSETS_FRONTEND_CSS_DIR;?>theme.css" rel="stylesheet">
       <!-- Bootstrap Core CSS -->
       <link type="text/css" href="<?php echo base_url().ASSETS_FRONTEND_CSS_DIR;?>bootstrap.min.css" rel="stylesheet">
@@ -21,4 +20,5 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
       <![endif]-->
       <link rel="Shortcut Icon" type="image/ico" href="<?php echo base_url();?>assets/frontend/img/favicon_16X16.ico" />
+      <script src="<?php echo base_url().ASSETS_FRONTEND_JS_DIR;?>analytics.js"></script>
    </head>

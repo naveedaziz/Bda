@@ -54,7 +54,7 @@ $route['vending_product:any'] = "frontend/home/getVendingProductDetail";
 $route['product:any'] = 'frontend/home/getProductDetail';
 $route['enquiry'] = 'frontend/home/query';
 $route['enquiry:any'] = 'frontend/home/query';
-$route['frontend/submitQuery'] = 'frontend/home/submitQuery';
+$route['submitQuery'] = 'frontend/home/submitQuery';
 $route['thanks'] = 'frontend/home/thanks';
 $route['404_override'] = 'frontend/home/notFound';
 
@@ -79,7 +79,7 @@ $route['admin/categories'] = "backend/category/index";
 $route['admin/add_category'] = "backend/category/add";
 $route['admin/insert_category'] = "backend/category/insert";
 $route['admin/edit_category:any'] = "backend/category/edit";
-$route['admin/change_category_status:any'] = "backend/category/ChangeStatus";
+$route['admin/change_category_status:any'] = "backend/category/changeStatus";
 $route['admin/update_category'] = "backend/category/update";
 $route['admin/delete_category:any'] = "backend/category/delete";
 
@@ -87,7 +87,7 @@ $route['admin/brands'] = "backend/brand/index";
 $route['admin/add_brand'] = "backend/brand/add";
 $route['admin/insert_brand'] = "backend/brand/insert";
 $route['admin/edit_brand:any'] = "backend/brand/edit";
-$route['admin/change_brand_status:any'] = "backend/brand/ChangeStatus";
+$route['admin/change_brand_status:any'] = "backend/brand/changeStatus";
 $route['admin/update_brand'] = "backend/brand/update";
 $route['admin/delete_brand:any'] = "backend/brand/delete";
 
@@ -95,7 +95,7 @@ $route['admin/products'] = "backend/product/index";
 $route['admin/add_product'] = "backend/product/add";
 $route['admin/insert_product'] = "backend/product/insert";
 $route['admin/edit_product:any'] = "backend/product/edit";
-$route['admin/change_product_status:any'] = "backend/product/ChangeStatus";
+$route['admin/change_product_status:any'] = "backend/product/changeStatus";
 $route['admin/update_product'] = "backend/product/update";
 $route['admin/delete_product:any'] = "backend/product/delete";
 
@@ -103,7 +103,7 @@ $route['admin/pages'] = "backend/page/index";
 $route['admin/add_page'] = "backend/page/add";
 $route['admin/insert_page'] = "backend/page/insert";
 $route['admin/edit_page:any'] = "backend/page/edit";
-$route['admin/change_page_status:any'] = "backend/page/ChangeStatus";
+$route['admin/change_page_status:any'] = "backend/page/changeStatus";
 $route['admin/update_page'] = "backend/page/update";
 $route['admin/delete_page:any'] = "backend/page/delete";
 
@@ -111,14 +111,14 @@ $route['admin/banners'] = "backend/banner/index";
 $route['admin/add_banner'] = "backend/banner/add";
 $route['admin/insert_banner'] = "backend/banner/insert";
 $route['admin/edit_banner:any'] = "backend/banner/edit";
-$route['admin/change_banner_status:any'] = "backend/banner/ChangeStatus";
+$route['admin/change_banner_status:any'] = "backend/banner/changeStatus";
 $route['admin/update_banner'] = "backend/banner/update";
 $route['admin/delete_banner:any'] = "backend/banner/delete";
 
 $route['admin/notifications'] = "backend/notification/index";
 $route['admin/insert_notification'] = "backend/notification/insert";
 $route['admin/edit_notification:any'] = "backend/notification/edit";
-$route['admin/change_notification_status:any'] = "backend/notification/ChangeStatus";
+$route['admin/change_notification_status:any'] = "backend/notification/changeStatus";
 $route['admin/update_notification'] = "backend/notification/update";
 $route['admin/delete_notification:any'] = "backend/notification/delete";
 

@@ -3,12 +3,12 @@
    <nav>
       <div class="container">
          <div class="row clearfix">
-             <ol class="breadcrumb">
-                        <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url();?>">Home</a></span> </div>
-                        <div class="space">/</div>
-                        <div class="breadcrums"><span class="small-text-active">Enquiry</span></div>
-                     </ol>
-             </div>
+            <ol class="breadcrumb">
+               <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url();?>">Home</a></span> </div>
+               <div class="space">/</div>
+               <div class="breadcrums"><span class="small-text-active">Enquiry</span></div>
+            </ol>
+         </div>
          <!-- / .row clearfix -->
       </div>
       <!--- / .container -->
@@ -28,23 +28,33 @@
                <li><a href="#vending" data-toggle="tab">Vending Machine</a></li>
             </ul>
          </div>
-         <form id="form-validation" action="<?php echo base_url();?>frontend/submitQuery" method="post" class="form-horizontal form-bordered">
+         <form id="form-validation" action="<?php echo base_url();?>submitQuery" method="post" class="form-horizontal form-bordered">
             <input type="hidden" value="<?php if(isset($product_id)){ echo $product_id; }?>" name="product_id" />
             <div class="row">
                <div class="col-lg-8 centered-text">
-                  <div class="col-lg-6">
-                     <div class="form-group">
-                        <div class="col-md-12">
+                  <div class="col-lg-12">
+                     <div class="form-group col-md-6">
+                        <div>
                            <input type="text" id="firstname" name="firstname" class="form-control" placeholder="First Name*" autocomplete="off">
                         </div>
                      </div>
-                     <div class="form-group">
-                        <div class="col-md-12">
+                      <div class="form-group  col-md-6 margin-left20">
+                        <div >
+                           <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Last Name*" autocomplete="off" >
+                        </div>
+                     </div>
+                     <div class="form-group  col-md-6">
+                        <div>
                            <input type="text" id="company" name="company" class="form-control" placeholder="Company*" autocomplete="off" >
                         </div>
                      </div>
-                     <div class="form-group">
-                        <div class="col-md-12">
+                      <div class="form-group  col-md-6 margin-left20">
+                        <div>
+                           <input type="text" id="val_email" name="email" class="form-control" placeholder="Email*" autocomplete="off">
+                        </div>
+                     </div>
+                     <div class="form-group  col-md-6">
+                        <div>
                            <select class="form-control" name="city" id="city">
                               <option value="">City</option>
                               <option value="lahore">Lahore</option>
@@ -53,39 +63,23 @@
                            </select>
                         </div>
                      </div>
-                  </div>
-                  <div class="col-lg-6">
-                     <div class="form-group">
-                        <div class="col-md-12">
-                           <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Last Name*" autocomplete="off" >
-                        </div>
-                     </div>
-                     <div class="form-group">
-                        <div class="col-md-12">
-                           <input type="text" id="val_email" name="email" class="form-control" placeholder="Email*" autocomplete="off">
-                        </div>
-                     </div>
-                     <div class="form-group">
-                        <div class="col-md-12">
+                      <div class="form-group  col-md-6 margin-left20">
+                        <div>
                            <input type="text" id="contact" name="contact" class="form-control" placeholder="Contact*" autocomplete="off">
                         </div>
                      </div>
-                  </div>
-                  <div class="col-md-12">
-                     <div class="form-group">
-                        <div class="col-md-12">
-                           <textarea style="resize:none" maxlength="999" name="address" class="form-control" placeholder="Address" cols="100" rows="4"  aria-invalid="false"></textarea>
+                      <div class="form-group  col-md-6">
+                        <div>
+                           <textarea  maxlength="999" name="address" class="form-control no-resize" placeholder="Address" cols="100" rows="10"  aria-invalid="false"></textarea>
                         </div>
                      </div>
-                     <div class="form-group">
-                        <div class="col-md-12">
-                           <textarea style="resize:none" maxlength="999" name="description"  class="form-control" placeholder="Comments" cols="100" rows="10" aria-invalid="false"></textarea>
+                      <div class="form-group  col-md-6 margin-left20">
+                        <div>
+                           <textarea  maxlength="999" name="description"  class="form-control no-resize" placeholder="Comments" cols="100" rows="10" aria-invalid="false"></textarea>
                         </div>
                      </div>
-                  </div>
-                  <div class="col-lg-6">
-                     <div class="form-group">
-                        <div class="col-md-12">
+                     <div class="form-group  col-md-6">
+                        <div>
                            <div class="tab-pane fade active in" id="product">
                               <select class="form-control" name="category_name" id="category_name">
                                  <option value="">Choose Your Business</option>
@@ -104,10 +98,8 @@
                            </div>
                         </div>
                      </div>
-                  </div>
-                  <div class="col-lg-6">
-                     <div class="form-group">
-                        <div class="col-md-12">
+                     <div class="form-group  col-md-6">
+                        <div >
                            <select class="form-control" name="brand_name" id="brand_name">
                               <option value="">Brand</option>
                               <?php if ($brands->num_rows() > 0) { 
@@ -118,25 +110,22 @@
                            </select>
                         </div>
                      </div>
-                  </div>
-                  <div class="col-md-12">
-                     <div class="col-md-12">
-                        <div class="form-group">
+                     <div class="clearfix"></div>
+                     <div class="form-group  col-md-12">
                            <label class="col-md-6 control-label text_left col-md-space-bottom">Verification Code</label>
                            <input type="text" id="txtCaptcha" disabled="disabled" class="form-control" />
                            <span id="captcha-error">Enter valid Verification code.</span>
                         </div>
-                     </div>
-                     <div class="col-md-12">
-                        <div class="form-group">
-                           <input type="text" name="captch" id="captch" placeholder="Please enter above verification code*" class="form-control" autocomplete="off" /> 
-                        </div>
-                     </div>
-                     <div class="form-group form-actions">
+                    <div class="form-grou  col-md-6p">
+                       <input type="text" name="captch" id="captch" placeholder="Please enter above verification code*" class="form-control" autocomplete="off" /> 
+                    </div>
+                    <div class="form-group form-actions">
                         <div class="col-xs-12 text-right">
                            <button type="submit" class="btn btn-enquiry btn-submit-enquiry" onclick="return captchaConfirm()">SUBMIT</button>
                         </div>
                      </div>
+                     
+                     
                   </div>
                </div>
             </div>

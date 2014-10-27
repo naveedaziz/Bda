@@ -3,25 +3,25 @@
    <nav>
       <div class="container">
          <div class="row clearfix">
-             <ol class="breadcrumb">
-                        <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url();?>">Home</a></span> </div>
-                        <div class="space">/</div>
-                        <div class="breadcrums">
-                           <span class="small-text-active">
-                           <?php if ($categories->num_rows() > 0) { 
-                              foreach ($categories->result() as $category){ 
-                              if($category->seo_url === $active_category){
-                               echo $category->title;
-                              if($this->session->userdata('category') != $category->title) 
-                              $this->session->set_userdata('category', $category->title); 
-                              $this->session->set_userdata('category_id', $category->id); 
-							  $this->session->set_userdata('category_seo_url', $category->seo_url); 
-                              } ?>
-                           <?php } } ?>
-                           </span>
-                        </div>
-                     </ol>
-          </div>
+            <ol class="breadcrumb">
+               <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url();?>">Home</a></span> </div>
+               <div class="space">/</div>
+               <div class="breadcrums">
+                  <span class="small-text-active">
+                  <?php if ($categories->num_rows() > 0) { 
+                     foreach ($categories->result() as $category){ 
+                     if($category->seo_url === $active_category){
+                      echo $category->title;
+                     if($this->session->userdata('category') != $category->title) 
+                     $this->session->set_userdata('category', $category->title); 
+                     $this->session->set_userdata('category_id', $category->id); 
+                     $this->session->set_userdata('category_seo_url', $category->seo_url); 
+                     } ?>
+                  <?php } } ?>
+                  </span>
+               </div>
+            </ol>
+         </div>
          <!-- / .row clearfix -->
       </div>
       <!--- / .container -->
@@ -48,58 +48,58 @@
 <div class="ful-col-banner">
    <div class="container" id="category-inner">
       <div class="row clearfix">
-            <?php if ($categories->num_rows() > 0) { 
-                  foreach ($categories->result() as $category){ 
-                  if($category->seo_url === $active_category){ ?>
-               <div class="col-md-6">
-                  <header id="myCarousel" class="carousel slide myCarouselContent">
-                     <!-- Indicators -->
-                     <ol class="carousel-indicators">
-                        <?php if($category->images){ 
-                           $index = 0;
-                                             $string = $category->images;
-                                             if($string){
-                                             $json_o = (array) json_decode($string);
-                                             }else{
-                                             $json_o = '';
-                                             }
-                                             if($json_o){
-                                             foreach($json_o as $key =>$value){ ?>
-                        <li data-target="#myCarousel" data-slide-to="<?php echo $index;?>" <?php if($index == 0){?> class="active"<?php } ?>></li>
-                        <?php $index++; } ?>
-                        <?php } ?>
-                        <?php } ?>
-                     </ol>
-                     <!-- Wrapper for slides -->
-                     <div class="carousel-inner" id="category-carousel-inner" >
-                        <?php if($category->images){ 
-                           $string = $category->images;
-                           if($string){
-                           $json_o = (array) json_decode($string);
-                           }else{
-                           $json_o = '';
-                           }
-                           if($json_o){
-                           foreach($json_o as $key =>$value){ ?>
-                        <div class="item">
-                           <div class="fill" style="background-image:url('<?php echo base_url().$json_o[$key]; ?>');"></div>
-                        </div>
-                        <?php } ?>
-                        <?php }else{ ?>
-                        <div class="item">
-                           <div class="fill" style="background-image:url('<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>default.jpg');"></div>
-                        </div>
-                        <?php } ?>
-                        <?php }   ?>
-                     </div>
-                  </header>
+         <?php if ($categories->num_rows() > 0) { 
+            foreach ($categories->result() as $category){ 
+            if($category->seo_url === $active_category){ ?>
+         <div class="col-md-6">
+            <header id="myCarousel" class="carousel slide myCarouselContent">
+               <!-- Indicators -->
+               <ol class="carousel-indicators">
+                  <?php if($category->images){ 
+                     $index = 0;
+                                       $string = $category->images;
+                                       if($string){
+                                       $json_o = (array) json_decode($string);
+                                       }else{
+                                       $json_o = '';
+                                       }
+                                       if($json_o){
+                                       foreach($json_o as $key =>$value){ ?>
+                  <li data-target="#myCarousel" data-slide-to="<?php echo $index;?>" <?php if($index == 0){?> class="active"<?php } ?>></li>
+                  <?php $index++; } ?>
+                  <?php } ?>
+                  <?php } ?>
+               </ol>
+               <!-- Wrapper for slides -->
+               <div class="carousel-inner" id="category-carousel-inner" >
+                  <?php if($category->images){ 
+                     $string = $category->images;
+                     if($string){
+                     $json_o = (array) json_decode($string);
+                     }else{
+                     $json_o = '';
+                     }
+                     if($json_o){
+                     foreach($json_o as $key =>$value){ ?>
+                  <div class="item">
+                     <div class="fill" style="background-image:url('<?php echo base_url().$json_o[$key]; ?>');"></div>
+                  </div>
+                  <?php } ?>
+                  <?php }else{ ?>
+                  <div class="item">
+                     <div class="fill" style="background-image:url('<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>default.jpg');"></div>
+                  </div>
+                  <?php } ?>
+                  <?php }   ?>
                </div>
-               <div class="col-md-6 column category-slider-col-content">
-                  <h3><?php echo $category->title; ?></h3>
-                  <p><?php echo $category->description; ?></p>
-               </div>
-               <?php } } } ?>
-       </div>
+            </header>
+         </div>
+         <div class="col-md-6 column category-slider-col-content">
+            <h3><?php echo $category->title; ?></h3>
+            <p><?php echo $category->description; ?></p>
+         </div>
+         <?php } } } ?>
+      </div>
       <!-- / .row clearfix -->
    </div>
    <!--- / .container -->
@@ -183,8 +183,8 @@
 </div>
 <!----  brand products----->
 <?php if ($categories->num_rows() > 0) { 
-     foreach ($categories->result() as $category){ 
-         if($category->id === $active_category){ ?>
+   foreach ($categories->result() as $category){ 
+       if($category->id === $active_category){ ?>
 <div class="ful-col-product">
    <nav>
       <div class="container">
@@ -195,20 +195,20 @@
                      <h4 class="msg-bottom">THESE <?php echo $category->title; ?> PRODUCTS</h4>
                   </div>
                   <div class="col-md-6">
-                  <?php if(!empty($category->hotel_images)){ 
-                           $string = $category->hotel_images;
-                           if($string){
-                           $json_o = (array) json_decode($string);
-                           }else{
-                           $json_o = '';
-                           }
-                          if($json_o){
-                           foreach($json_o as $key =>$value){ ?>
+                     <?php if(!empty($category->hotel_images)){ 
+                        $string = $category->hotel_images;
+                        if($string){
+                        $json_o = (array) json_decode($string);
+                        }else{
+                        $json_o = '';
+                        }
+                        if($json_o){
+                        foreach($json_o as $key =>$value){ ?>
                      <img class="thumbs-product img-responsive" src="<?php echo base_url().$json_o[$key]; ?>" alt="<?php echo $category->id; ?>" />
-                       <?php } ?>
-					 <?php } ?>
-                   <?php } ?>
-                   </div>
+                     <?php } ?>
+                     <?php } ?>
+                     <?php } ?>
+                  </div>
                </div>
                <!-- /.row -->  
             </div>
@@ -223,4 +223,4 @@
 <?php } ?>
 <?php } } ?>
 <!-- /.container -->
-<?php $this->load->view('frontend/elements/footer'); ?>
+<?php $this->load->view('frontend/elements/footer'); ?>>>

@@ -1,10 +1,9 @@
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
    <div class="container">
-   
-    <a class="navbar-brand" href="<?php echo base_url(); ?>">
-         <img src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>logo.png" alt="logo" class="img-responsive" />
-         </a>
+      <a class="navbar-brand" href="<?php echo base_url(); ?>">
+      <img src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>logo.png" alt="logo" class="img-responsive" />
+      </a>
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -13,13 +12,12 @@
          <span class="icon-bar"></span>
          <span class="icon-bar"></span>
          </button>
-        
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
          <div class="row remove-margin">
             <div class="search_top">
                <div class="input-group">
-                  <form action="search" method="post">
+                  <form action="<?php echo base_url();?>search" method="post">
                      <input required="required" type="text" class="form-control search-box" id="search" name="search_string" value="<?php if(isset($search_string)){ echo $search_string; }?>" >
                      <button class="btn btn-search" type="submit"><i class="fa fa-search search-icon"></i></button>
                   </form>

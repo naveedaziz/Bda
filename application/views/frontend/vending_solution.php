@@ -3,12 +3,12 @@
    <nav>
       <div class="container">
          <div class="row clearfix">
-              <ol class="breadcrumb">
-                        <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url();?>">Home</a></span> </div>
-                        <div class="space">/</div>
-                        <div class="breadcrums"><span class="small-text-active">Vending Solutions</span></div>
-                     </ol>
-           </div>
+            <ol class="breadcrumb">
+               <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url();?>">Home</a></span> </div>
+               <div class="space">/</div>
+               <div class="breadcrums"><span class="small-text-active">Vending Solutions</span></div>
+            </ol>
+         </div>
          <!-- / .row clearfix -->
       </div>
       <!--- / .container -->
@@ -44,12 +44,12 @@
             <img class="thumbs-vending-detail img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>default.jpg" alt="default" />
             <?php } ?>
             <div class="learn-mor-col">
-            <div class="learn_more">
-            <a href="<?php echo base_url().'vending_product/'.$product->seo_url; ?>">
-            <button class="btn btn-enquiry">LEARN MORE</button>
-            </a>
+               <div class="learn_more">
+                  <a href="<?php echo base_url().'vending_product/'.$product->seo_url; ?>">
+                  <button class="btn btn-enquiry">LEARN MORE</button>
+                  </a>
+               </div>
             </div>
-           </div>
          </div>
          <?php } ?>
          <?php } } ?> 

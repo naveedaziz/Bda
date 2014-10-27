@@ -16,7 +16,7 @@
    <div class="block push-bit">
       <!-- Login Form -->
       <form name="login" method="post" id="form-validation" class="form-horizontal form-bordered form-control-borderless" action="<?php echo base_url();?>admin/reset-password/<?php echo $key;?>">
-        <?php if(!isset($_REQUEST['success'])) { ?>
+         <?php if(!isset($_REQUEST['success'])) { ?>
          <div class="form-group">
             <div class="col-xs-12">
                <div class="input-group">
@@ -39,9 +39,9 @@
             </div>
          </div>
          <?php }else{ ?>
-         	<div class="alert alert-danger alert-dismissable"> 
+         <div class="alert alert-danger alert-dismissable"> 
             Password update successfull. Please proceed to login screen.
-            </div>
+         </div>
          <?php } ?>
          <div class="form-group">
             <div class="col-xs-12 text-center">

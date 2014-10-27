@@ -21,7 +21,7 @@
    </ol>
    <!-- Wrapper for slides -->
    <div class="carousel-inner">
-    <?php if ($banners->num_rows() > 0) { 
+      <?php if ($banners->num_rows() > 0) { 
          $index = 0; 
          foreach ($banners->result() as $banner){ 
          if(!empty($banner->images)){ 
@@ -35,12 +35,12 @@
       <div <?php if($index == 0){?> class="item active"<?php }else{ ?> class="item" <?php } ?>>
          <div class="fill" style="background-image:url('<?php echo base_url().$json_o[0]; ?>');"></div>
          <div class="carousel-caption">
-         <div class="container">
-            <?php echo $banner->title;?>
-            <p><?php echo $banner->description;?></p>
-            <a href="<?php echo base_url(); ?>pages/contact" class="contact-slider"><button class="btn btn-contact-slider">Contact</button></a>
+            <div class="container">
+               <?php echo $banner->title;?>
+               <p><?php echo $banner->description;?></p>
+               <a href="<?php echo base_url(); ?>pages/contact" class="contact-slider"><button class="btn btn-contact-slider">Contact</button></a>
+            </div>
          </div>
-        </div>
       </div>
       <?php $index++;} ?>
       <?php } ?>

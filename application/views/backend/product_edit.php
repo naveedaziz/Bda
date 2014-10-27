@@ -128,13 +128,13 @@
                            <select class="form-control" name="product_type" id="city">
                               <option value="">Please select product type</option>
                               <option value="food" <?php if($row->type == 'food'){?> selected="selected" <?php } ?> >Food</option>
-                          	  <option value="beverages" <?php if($row->type == 'beverages'){?> selected="selected" <?php } ?>>Beverages</option>
-                             </select>
+                              <option value="beverages" <?php if($row->type == 'beverages'){?> selected="selected" <?php } ?>>Beverages</option>
+                           </select>
                         </div>
                         <div class="col-md-6">
                            <b>Brand</b> 
                            <select class="form-control" name="product_brand" id="brand">
-                              <option value="">Please select brand</option> 
+                              <option value="">Please select brand</option>
                               <?php if ($results->num_rows() > 0) { 
                                  foreach ($results->result() as $brand){ ?> 
                               <option value="<?php echo $brand->id; ?>" <?php if($row->brand == $brand->id){?> selected="selected" <?php } ?> ><?php echo $brand->title; ?></option>
@@ -181,7 +181,7 @@
                                        <input type="text" placeholder="e.g. Size" class="form-control" id="varient_title_1" name="varient_title_1" value="<?php echo $row->varient_title_1; ?>" autocomplete="off">
                                     </th>
                                     <th> 
-                                       <input type="text" value="<?php echo $row->varient_value_1; ?>" class="input-tags" name="varient_value_1" id="example-tags1" style="display: none;">
+                                       <input type="text" value="<?php echo $row->varient_value_1; ?>" class="input-tags hide" name="varient_value_1" id="example-tags1">
                                     </th>
                                  </tr>
                                  <tr>
@@ -189,7 +189,7 @@
                                        <input type="text" placeholder="e.g. Flavour" class="form-control" name="varient_title_2" id="varient_title_2" value="<?php echo $row->varient_title_2; ?>" autocomplete="off">
                                     </th>
                                     <th> 
-                                       <input type="text" value="<?php echo $row->varient_value_2; ?>" class="input-tags" name="varient_value_2" id="example-tags2" style="display: none;">
+                                       <input type="text" value="<?php echo $row->varient_value_2; ?>" class="input-tags hide" name="varient_value_2" id="example-tags2">
                                     </th>
                                  </tr>
                                  <tr>
@@ -197,7 +197,7 @@
                                        <input type="text" placeholder="Option Title" class="form-control" name="varient_title_3" id="varient_title_3" value="<?php echo $row->varient_title_3; ?>" autocomplete="off">
                                     </th>
                                     <th> 
-                                       <input type="text" value="<?php echo $row->varient_value_3; ?>" class="input-tags" name="varient_value_3" id="example-tags3" style="display: none;">
+                                       <input type="text" value="<?php echo $row->varient_value_3; ?>" class="input-tags hide" name="varient_value_3" id="example-tags3">
                                     </th>
                                  </tr>
                               </tbody>

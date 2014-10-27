@@ -17,7 +17,7 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
  */
 class Home extends CI_Controller
 
-{
+	{
 	/**
 	 * Constructor
 	 * set headers for no-cache
@@ -27,7 +27,7 @@ class Home extends CI_Controller
 	// --------------------------------------------------------------------
 
 	function __construct()
-	{
+		{
 		parent::__construct();
 		session_start();
 		$this->load->helper('url');
@@ -38,7 +38,7 @@ class Home extends CI_Controller
 		$_SESSION['site_meta'] = $this->modelfrontend->getSeoData('np_site_settings');
 		$_SESSION['site_meta']->images = base_url() . DEFAULT_LOGO;
 		date_default_timezone_set('Asia/Karachi');
-	}
+		}
 
 	// --------------------------------------------------------------------
 
@@ -52,7 +52,7 @@ class Home extends CI_Controller
 	 * @return	void
 	 */
 	public function index()
-	{
+		{
 
 		// set session page name
 
@@ -69,11 +69,11 @@ class Home extends CI_Controller
 		$filter_banner = 'banner';
 		$data['banners'] = $this->modelfrontend->getAllData($table_name, $filter_banner);
 
-		// print_r($data['banners']);die();
+		
 		// load view
 
 		$this->load->view('frontend/index', $data);
-	}
+		}
 
 	// --------------------------------------------------------------------
 
@@ -86,7 +86,7 @@ class Home extends CI_Controller
 	 * @return	void
 	 */
 	public function getAllProducts()
-	{
+		{
 		$data = '';
 
 		// get categories
@@ -99,34 +99,46 @@ class Home extends CI_Controller
 		// get single catagory
 
 		$data['catagory'] = $this->modelfrontend->getRecord($table_name, $filter);
-		//print_r($data['catagory']);die();
-		if (isset($data['catagory']) && isset($data['catagory']->title)) {
+
+		
+
+		if (isset($data['catagory']) && isset($data['catagory']->title))
+			{
 			$_SESSION['site_meta'] = $data['catagory'];
 			$imageDefault = (array)json_decode($_SESSION['site_meta']->images);
-			if (isset($imageDefault[0])) {
+			if (isset($imageDefault[0]))
+				{
 				$_SESSION['site_meta']->images = base_url() . $imageDefault[0];
+				}
 			}
-		}else{
+		  else
+			{
 			redirect(base_url() . '404_override');
-		}
-		
+			}
+
 		// get url parameter
 		// get products
 
 		$table_name = 'np_products';
-		if(isset($data['catagory']->id)){
+		if (isset($data['catagory']->id))
+			{
 			$filterCatagory = $data['catagory']->id;
-		}else{
+			}
+		  else
+			{
 			$filterCatagory = false;
-		}
+			}
+
 		$data['products'] = $this->modelfrontend->getProductCount($table_name, $filterCatagory);
-		//print_r($data['products']);die();
+
+		
+
 		$data['active_category'] = $filter;
 
 		// load query detail view
 
 		$this->load->view('frontend/products', $data);
-	}
+		}
 
 	// --------------------------------------------------------------------
 
@@ -139,7 +151,7 @@ class Home extends CI_Controller
 	 * @return	void
 	 */
 	public function getProductDetail()
-	{
+		{
 		$data = '';
 
 		// get url parameter
@@ -151,20 +163,24 @@ class Home extends CI_Controller
 		$table_name = 'np_products';
 		$data['product'] = $this->modelfrontend->getRecord($table_name, $id);
 		$data['product_detail'] = $this->modelfrontend->getRecord($table_name, $id);
-		if (isset($data['product_detail']) && isset($data['product_detail']->title)) {
+		if (isset($data['product_detail']) && isset($data['product_detail']->title))
+			{
 			$_SESSION['site_meta'] = $data['product_detail'];
 			$imageDefault = (array)json_decode($_SESSION['site_meta']->images);
-			if (isset($imageDefault[0])) {
+			if (isset($imageDefault[0]))
+				{
 				$_SESSION['site_meta']->images = base_url() . $imageDefault[0];
+				}
 			}
-		}else{
+		  else
+			{
 			redirect(base_url() . '404_override');
-		}
+			}
 
 		// load view
 
 		$this->load->view('frontend/product_detail', $data);
-	} // --------------------------------------------------------------------
+		} // --------------------------------------------------------------------
 	/**
 	 * getProductDetail
 	 *
@@ -174,7 +190,7 @@ class Home extends CI_Controller
 	 * @return	void
 	 */
 	public function getVendingProductDetail()
-	{
+		{
 		$data = '';
 
 		// get url parameter
@@ -189,12 +205,19 @@ class Home extends CI_Controller
 		// load view
 
 		$this->load->view('frontend/vending_detail', $data);
-	}
+		}
 
 	// --------------------------------------------------------------------
-
+	/**
+	 * getPageDetail
+	 *
+	 * get request pram from uri and get that record to display page detail
+	 *
+	 * @access	public
+	 * @return	void
+	 */
 	public function getPageDetail()
-	{
+		{
 		$data = '';
 
 		// get url parameter
@@ -206,25 +229,35 @@ class Home extends CI_Controller
 
 		$table_name = 'np_general_settings';
 		$data['page'] = $this->modelfrontend->getPageRecord($table_name, $slug);
-		
 		$data['page_detail'] = $this->modelfrontend->getPageRecord($table_name, $slug);
-		if (isset($data['page_detail']) && isset($data['page_detail']->title)) {
+		if (isset($data['page_detail']) && isset($data['page_detail']->title))
+			{
 			$_SESSION['site_meta'] = $data['page_detail'];
 			$imageDefault = (array)json_decode($_SESSION['site_meta']->images);
-			if (isset($imageDefault[0])) {
+			if (isset($imageDefault[0]))
+				{
 				$_SESSION['site_meta']->images = base_url() . $imageDefault[0];
+				}
 			}
-		}else{
+		  else
+			{
 			redirect(base_url() . '404_override');
-		}
+			}
 
 		// load view
 
 		$this->load->view('frontend/layout/detail_template', $data);
-	}
-
+		}
+/**
+	 * getSearchDetail
+	 *
+	 * get request pram from uri and get that record to display search detail
+	 *
+	 * @access	public
+	 * @return	void
+	 */
 	public function getSearchDetail()
-	{
+		{
 		$data = '';
 
 		// get categories
@@ -233,7 +266,7 @@ class Home extends CI_Controller
 		$data['search_string'] = $filter;
 		$data['search_data'] = $this->modelfrontend->getSearchRecord($filter);
 
-		// print_r($data['search_data']->row());die();
+		
 		// get url parameter
 		// get products
 
@@ -244,12 +277,19 @@ class Home extends CI_Controller
 		// load view
 
 		$this->load->view('frontend/search', $data);
-	}
+		}
 
 	// --------------------------------------------------------------------
-
+	/**
+	 * getVendingSolution
+	 *
+	 * get request pram from uri and get that record to display vending solution detail
+	 *
+	 * @access	public
+	 * @return	void
+	 */
 	public function getVendingSolution()
-	{
+		{
 		$data = '';
 
 		// set session page name
@@ -261,29 +301,34 @@ class Home extends CI_Controller
 		$table_name = 'np_general_settings';
 		$filter = 'category';
 		$data['category'] = $this->modelfrontend->getRecord($table_name, $filter);
-		
 		$data['category_detail'] = $this->modelfrontend->getRecord($table_name, $filter);
-		if (isset($data['category_detail']) && isset($data['category_detail']->title)) {
+		if (isset($data['category_detail']) && isset($data['category_detail']->title))
+			{
 			$_SESSION['site_meta'] = $data['category_detail'];
 			$imageDefault = (array)json_decode($_SESSION['site_meta']->images);
-			if (isset($imageDefault[0])) {
+			if (isset($imageDefault[0]))
+				{
 				$_SESSION['site_meta']->images = base_url() . $imageDefault[0];
+				}
 			}
-		}else{
+		  else
+			{
 			redirect(base_url() . '404_override');
-		}
+			}
+
 		// get products
 
-		if ($data['category']) {
+		if ($data['category'])
+			{
 			$table_name = 'np_products';
 			$filter = $data['category']->id;
 			$data['products'] = $this->modelfrontend->getAllProducts($table_name, $filter);
-		}
+			}
 
 		// load view
 
 		$this->load->view('frontend/vending_solution', $data);
-	}
+		}
 
 	// --------------------------------------------------------------------
 
@@ -296,7 +341,7 @@ class Home extends CI_Controller
 	 * @return	void
 	 */
 	public function query()
-	{
+		{
 
 		// get url parameter
 
@@ -313,14 +358,15 @@ class Home extends CI_Controller
 		$table_name = 'np_general_settings';
 		$filter = 'category';
 		$data['categories'] = $this->modelfrontend->getAllData($table_name, $filter);
-		if ($this->uri->segment(2)) {
+		if ($this->uri->segment(2))
+			{
 			$data['product_id'] = $this->uri->segment(2);
-		}
+			}
 
 		// load qury view
 
 		$this->load->view('frontend/query', $data);
-	}
+		}
 
 	// --------------------------------------------------------------------
 
@@ -333,12 +379,12 @@ class Home extends CI_Controller
 	 * @return	void
 	 */
 	public function thanks()
-	{
+		{
 
 		// load user view with data listing
 
 		$this->load->view('frontend/thanks');
-	}
+		}
 
 	// --------------------------------------------------------------------
 
@@ -352,20 +398,24 @@ class Home extends CI_Controller
 	 * @return	void
 	 */
 	public function submitQuery()
-	{
+		{
 
 		// get form data
-		//print_r($this->input->post('category_name'));die();
-		$catagory_name = $this->input->post('category_name');
+
+		$catagory_name = Encode($this->input->post('category_name'));
 		$array['first_name'] = Encode($this->input->post('firstname'));
 		$array['last_name'] = Encode($this->input->post('lastname'));
 		$array['product_id'] = Encode($this->input->post('product_id'));
 		$array['company_name'] = Encode($this->input->post('company'));
-		if(!empty($catagory_name)){
+		if (!empty($catagory_name))
+			{
 			$array['category_name'] = Encode($this->input->post('category_name'));
-		}else{
+			}
+		  else
+			{
 			$array['category_name'] = '';
-		}
+			}
+
 		$array['brand_name'] = Encode($this->input->post('brand_name'));
 		$array['city'] = Encode($this->input->post('city'));
 		$array['phone'] = Encode($this->input->post('contact'));
@@ -378,7 +428,6 @@ class Home extends CI_Controller
 		// call model to enquiry form data
 
 		$this->modelfrontend->insert($table_name, $array);
-		
 		$data['fName'] = $array['first_name'];
 		$data['lName'] = $array['last_name'];
 		$data['email'] = $array['email'];
@@ -389,23 +438,21 @@ class Home extends CI_Controller
 		$data['comments'] = $array['note'];
 		$data['business'] = $array['category_name'];
 		$data['brand'] = $array['brand_name'];
-		
 		$message = $this->load->view('frontend/email_template', $data, true);
 		$from = EMAIL_CLIENT_FROM;
 		$to = EMAIL_CLIENT_TO;
 		$cc = '';
 		$bcc = '';
 		$subject = 'New Query Request Nestle Professionals';
-		//$message = 'Test email';
-		
-		$this->sendEMail($from, $to, $cc, $bcc, $subject, $message);
+
+		// $message = 'Test email';
+
+		$this->sendEmail($from, $to, $cc, $bcc, $subject, $message);
 
 		// redirect to thanks page
 
 		redirect(base_url() . 'thanks');
-		
-		
-	}
+		}
 
 	// --------------------------------------------------------------------
 
@@ -418,12 +465,11 @@ class Home extends CI_Controller
 	 * @access	public
 	 * @return	void
 	 */
-	
 
 	// --------------------------------------------------------------------
 
 	/**
-	 * sendEMail
+	 * sendEmail
 	 *
 	 * This function get email params and load email library to send email.
 	 *
@@ -431,9 +477,8 @@ class Home extends CI_Controller
 	 * @access	public
 	 * @return	void
 	 */
-	public function sendEMail($from, $to, $cc, $bcc, $subject, $message)
-	{
-		
+	public function sendEmail($from, $to, $cc, $bcc, $subject, $message)
+		{
 		$this->load->library('email');
 		$this->email->set_newline("\r\n");
 		$this->email->from($from);
@@ -443,19 +488,22 @@ class Home extends CI_Controller
 		$this->email->subject($subject);
 		$this->email->message($message);
 
-		// echo $message;
+		
 
 		$this->email->send();
 
-		 //echo $this->email->print_debugger();
+		
 
-	}
-	function notFound (){
+		}
+
+	function notFound()
+		{
 		$this->load->view('frontend/not_found');
+		}
 	}
-}
 
 // --------------------------------------------------------------------
 
 /* End of file home.php */
 /* Location: ./application/controllers/frontend/home.php */
+

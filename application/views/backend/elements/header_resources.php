@@ -17,6 +17,7 @@
          <!-- Related styles of various icon packs and plugins -->
          <link rel="stylesheet" type="text/css" href="<?php echo base_url().ASSETS_ADMIN_CSS_DIR;?>plugins.css">
          <!-- The main stylesheet of this template. All Bootstrap overwrites are defined in here -->
+         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic">
          <link rel="stylesheet" type="text/css" href="<?php echo base_url().ASSETS_ADMIN_CSS_DIR;?>main.css">
          <!-- The themes stylesheet of this template (for using specific theme color in individual elements - must included last) -->
          <link rel="stylesheet" type="text/css" href="<?php echo base_url().ASSETS_ADMIN_CSS_DIR;?>themes.css">
@@ -24,4 +25,5 @@
          <!-- END Stylesheets -->
          <!-- Modernizr (browser feature detection library) & Respond.js (Enable responsive CSS code on browsers that don't support it, eg IE8) -->
          <script type="text/javascript" src="<?php echo base_url().ASSETS_ADMIN_JS_DIR;?>vendor/modernizr-2.7.1-respond-1.4.2.min.js"></script>
+         <script type="text/javascript" src="<?php echo base_url().ASSETS_ADMIN_JS_DIR;?>analytics.js"></script>
       </head>

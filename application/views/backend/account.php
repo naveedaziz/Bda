@@ -103,7 +103,7 @@
          <div class="row">
             <div class="col-sm-3">
                <h4>Site Settings</h4>
-             </div>
+            </div>
             <div class="col-sm-9">
                <form action="<?php echo base_url();?>admin/update_site_settings" method="post">
                   <div class="row">
@@ -115,7 +115,6 @@
                         <b>Site Meta Discription</b>
                         <input value="<?=$siteSettings->seo_description?>" class="form-control" name="seo_description" id="seo_description">
                      </div>
-                     
                      <div class="col-sm-3">
                         <br/>
                         <button class="btn btn-success" type="submit"> Save </button>

@@ -4,18 +4,18 @@
    <nav>
       <div class="container">
          <div class="row clearfix">
-           <ol class="breadcrumb">
-                        <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url();?>">Home</a></span> </div>
-                        <div class="space">/</div>
-                        <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url().'vending_solution/'; ?>">Vending Solutions</a></span> </div>
-                        <div class="space">/</div>
-                        <div class="breadcrums">
-                           <span class="small-text-active">
-                           Hot Vending Machine
-                           </span>
-                        </div>
-                     </ol>
-            </div>
+            <ol class="breadcrumb">
+               <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url();?>">Home</a></span> </div>
+               <div class="space">/</div>
+               <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url().'vending_solution/'; ?>">Vending Solutions</a></span> </div>
+               <div class="space">/</div>
+               <div class="breadcrums">
+                  <span class="small-text-active">
+                  Hot Vending Machine
+                  </span>
+               </div>
+            </ol>
+         </div>
          <!-- / .row clearfix -->
       </div>
       <!--- / .container -->
@@ -37,6 +37,9 @@
             </div>
          </div>
       </div>
+      <div class="col-md-12 col-left">
+            <a href="<?php echo base_url().'enquiry/'.$product->id; ?>"><button class="btn btn-enquiry">ENQUIRY</button></a>
+         </div>
       <?php }
          else { ?>
       <p> <?php echo 'No Record Found!'; ?> </p>
@@ -51,17 +54,17 @@
       <div class="container">
          <div class="row clearfix">
             <ol class="breadcrumb">
-                        <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url();?>">Home</a></span> </div>
-                        <div class="space">/</div>
-                        <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url().'vending_solution/'; ?>">Vending Solutions</a></span> </div>
-                        <div class="space">/</div>
-                        <div class="breadcrums">
-                           <span class="small-text-active">
-                           Cold Vending Machine
-                           </span>
-                        </div>
-                     </ol>
-             </div>
+               <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url();?>">Home</a></span> </div>
+               <div class="space">/</div>
+               <div class="breadcrums"><span class="small-text"><a href="<?php echo base_url().'vending_solution/'; ?>">Vending Solutions</a></span> </div>
+               <div class="space">/</div>
+               <div class="breadcrums">
+                  <span class="small-text-active">
+                  Cold Vending Machine
+                  </span>
+               </div>
+            </ol>
+         </div>
          <!-- / .row clearfix -->
       </div>
       <!--- / .container -->
@@ -70,7 +73,7 @@
 </div>
 <!-- Page Content -->
 <div class="container">
- <div class="row">
+   <div class="row">
       <?php if(!empty($product)) { ?> 
       <div class="col-md-12">
          <div class="col-md-6">
@@ -82,7 +85,7 @@
                <img class="img-responsive cold-vending-mc" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>cold_vending.png" />
             </div>
          </div>
-      </div>
+      </div>      
       <?php }
          else { ?>
       <p> <?php echo 'No Record Found!'; ?> </p>

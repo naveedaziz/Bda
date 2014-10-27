@@ -77,7 +77,7 @@
                   </div>
                </div>
             </div>
-             <hr />
+            <hr />
             <div class="row">
                <div class="col-sm-3">
                   <h5 class="remove-margin"><b>Visibility</b></h5>

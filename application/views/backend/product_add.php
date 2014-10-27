@@ -113,7 +113,7 @@
                            <select class="form-control" name="product_brand" id="brand">
                               <option value="">Please select brand</option>
                               <?php if ($results->num_rows() > 0) { 
-							 		foreach ($results->result() as $row){ ?>
+                                 foreach ($results->result() as $row){ ?>
                               <option value="<?php echo $row->id; ?>"><?php echo $row->title; ?></option>
                               <?php }}?>
                            </select>
@@ -158,7 +158,7 @@
                                        <input type="text" placeholder="e.g. Size" class="form-control" id="varient_title_1" name="varient_title_1" autocomplete="off">
                                     </th>
                                     <th> 
-                                       <input type="text" value="" class="input-tags" name="varient_value_1" id="example-tags1" style="display: none;">
+                                       <input type="text" value="" class="input-tags hide" name="varient_value_1" id="example-tags1">
                                     </th>
                                  </tr>
                                  <tr>
@@ -166,7 +166,7 @@
                                        <input type="text" placeholder="Option Title" class="form-control" id="varient_title_2" name="varient_title_2" autocomplete="off">
                                     </th>
                                     <th> 
-                                       <input type="text" value="" class="input-tags" name="varient_value_2" id="example-tags2" style="display: none;">
+                                       <input type="text" value="" class="input-tags hide" name="varient_value_2" id="example-tags2">
                                     </th>
                                  </tr>
                                  <tr>
@@ -174,7 +174,7 @@
                                        <input type="text" placeholder="Option Title" class="form-control" id="varient_title_3" name="varient_title_3" autocomplete="off">
                                     </th>
                                     <th> 
-                                       <input type="text" value="" class="input-tags" name="varient_value_3" id="example-tags3" style="display: none;">
+                                       <input type="text" value="" class="input-tags hide" name="varient_value_3" id="example-tags3">
                                     </th>
                                  </tr>
                               </tbody>

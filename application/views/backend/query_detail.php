@@ -45,7 +45,7 @@
                         <td> <b>Phone:</b> </td>
                         <td> <?php if($row->phone){ echo $row->phone; } ?> </td>
                      </tr>
-                    <tr>
+                     <tr>
                         <td> <b>City:</b> </td>
                         <td> <?php if($row->city){ echo $row->city; } ?> </td>
                      </tr>
@@ -72,8 +72,8 @@
                         <td> <b>Product Name:</b> </td>
                         <td> <?php if($row->productTitle){?> <a href="<?php echo base_url().'admin/admin/edit_product/'.$row->product_id; ?>"> <?php echo $row->productTitle; ?></a> <?php } ?> </td>
                      </tr>
-                    <?php }?>
-                    <?php if($row->brandName && !$row->brand_name){ ?>
+                     <?php }?>
+                     <?php if($row->brandName && !$row->brand_name){ ?>
                      <tr>
                         <td> <b>Brand Name:</b> </td>
                         <td> <?php if($row->brandName){ ?> <a href="<?php echo base_url().'admin/edit_brand/'.$row->brandID; ?>"> <?php echo $row->brandName; ?></a> <?php } ?> </td>

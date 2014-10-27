@@ -16,8 +16,8 @@
         var g = Math.ceil(Math.random() * 10)+ '';  
         var code = a + ' ' + b + ' ' + ' ' + c + ' ' + d + ' ' + e + ' '+ f + ' ' + g;
        
-	   document.getElementById("txtCaptcha").value = code;
-       document.getElementById("txtCaptcha").innerHTML = code;
+	  $("#txtCaptcha").val(code);
+      $("#txtCaptcha").html(code);
    
    // varify captcha
    
