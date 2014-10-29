@@ -54,9 +54,11 @@ class Home extends CI_Controller
 	 */
 	public function index()
 		{
+		if(isset($_SESSION['site_meta']->site_off)){
 		if($_SESSION['site_meta']->site_off == 'true'){
 				$this->load->view('frontend/offline');
 				return true;
+		}
 		}
 		// set session page name
 
@@ -91,9 +93,11 @@ class Home extends CI_Controller
 	 */
 	public function getAllProducts()
 		{
+	    if(isset($_SESSION['site_meta']->site_off)){
 		if($_SESSION['site_meta']->site_off == 'true'){
 				$this->load->view('frontend/offline');
 				return true;
+		}
 		}
 		$data = '';
 
@@ -160,10 +164,12 @@ class Home extends CI_Controller
 	 */
 	public function getProductDetail()
 		{
+		if(isset($_SESSION['site_meta']->site_off)){
 		if($_SESSION['site_meta']->site_off == 'true'){
 				$this->load->view('frontend/offline');
 				return true;
-		}		
+		}
+		}
 		$data = '';
 
 		// get url parameter
