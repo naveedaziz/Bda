@@ -15,21 +15,22 @@
    <!-- Login Block -->
    <div class="block push-bit">
       <!-- Login Form -->
-      <form name="login" method="post" id="form-validation" class="form-horizontal form-bordered form-control-borderless" action="<?php echo base_url();?>admin/reset-password/<?php echo $key;?>">
+      <form name="login" method="post" class="form-horizontal form-bordered form-control-borderless" action="<?php echo base_url();?>admin/reset-password/<?php echo $key;?>">
          <?php if(!isset($_REQUEST['success'])) { ?>
          <div class="form-group">
             <div class="col-xs-12">
                <div class="input-group">
                   <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
-                  <input type="password" id="val_password" name="val_password" class="form-control input-lg" placeholder="Password" data-rule-required="true" value="" >
+                  <input type="password" id="val_password" name="val_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="required" class="form-control input-lg" placeholder="Password" data-rule-required="true" value="" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
                </div>
-            </div>
+               <p class="note">Password must be between 8 and 20 characters and must contain a combination of uppercase, lowercase, and numeric digits.</p>
+             </div>
          </div>
          <div class="form-group">
             <div class="col-xs-12">
                <div class="input-group">
                   <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
-                  <input type="password" id="val_confirm_password" name="val_confirm_password" class="form-control input-lg" placeholder="Confirm Password" data-rule-required="true" value="" >
+                  <input type="password" id="val_confirm_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="required" name="val_confirm_password" class="form-control input-lg" placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="required" data-rule-required="true" value="" >
                </div>
             </div>
          </div>
@@ -45,7 +46,7 @@
          <?php } ?>
          <div class="form-group">
             <div class="col-xs-12 text-center">
-               <a href="../login" id="link-reminder-login"><small>Login</small></a> 
+               <a href="../login" id="link-reminder-login"><small>Back to Login</small></a> 
             </div>
          </div>
       </form>

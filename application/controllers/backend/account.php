@@ -122,6 +122,7 @@ class Account extends CI_Controller
 		$array['email'] = Encode($this->input->post('val_email'));
 		$array['city'] = Encode($this->input->post('city'));
 		$array['access_limited'] = '1';
+		$array['updated_at'] = date('Y-m-d H:i:s');
 		$array['access_list'] = '["query","category","brands","product","page","notification","accounts"]';
 		$password = Encode($this->input->post('val_password'));
 

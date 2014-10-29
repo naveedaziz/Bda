@@ -8,7 +8,7 @@
    <!-- Login Block -->
    <div class="block push-bit">
       <!-- Login Form -->
-      <form id="profile-setting" action="<?php echo base_url();?>admin/reset_password" method="post" class="form-horizontal form-bordered">
+      <form action="<?php echo base_url();?>admin/reset_password" method="post" class="form-horizontal form-bordered">
          <input type="hidden" value="<?php echo $this->session->userdata('admin_id');?>" name="admin_id" />
          <fieldset>
             <legend>Vital Info</legend>
@@ -21,7 +21,7 @@
             <div class="form-group">
                <label class="col-md-4 control-label" for="user-settings-email">First Name</label>
                <div class="col-md-8">
-                  <input type="text" id="first_name" name="val_first_name" class="form-control" autocomplete="off" value="<?php echo $this->session->userdata('first_name');?>">
+                  <input type="text" id="first_name" name="val_first_name" class="form-control" autocomplete="off" value="<?php echo $this->session->userdata('first_name');?>" >
                </div>
             </div>
             <div class="form-group">
@@ -37,16 +37,17 @@
                <label class="col-md-4 control-label" for="val_password">Password <span class="text-danger">*</span></label>
                <div class="col-md-8">
                   <div class="input-group">
-                     <input type="password" id="val_password" name="val_password" class="form-control" placeholder="Choose a password..">
+                     <input type="password" id="val_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="val_password" class="form-control" placeholder="Choose a password.." required="required">
                      <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
                   </div>
+                  <p class="note">Password must be between 8 and 20 characters and must contain a combination of uppercase, lowercase, and numeric digits.</p>
                </div>
             </div>
             <div class="form-group">
                <label class="col-md-4 control-label" for="val_confirm_password">Confirm Password <span class="text-danger">*</span></label>
                <div class="col-md-8">
                   <div class="input-group">
-                     <input type="password" id="val_confirm_password" name="val_confirm_password" class="form-control" placeholder="..and confirm it!">
+                     <input type="password" id="val_confirm_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="val_confirm_password" class="form-control" placeholder="..and confirm it!" required="required">
                      <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
                   </div>
                </div>

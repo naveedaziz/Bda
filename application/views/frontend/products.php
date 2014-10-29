@@ -238,4 +238,4 @@
 <?php } ?>
 <?php } } ?>
 <!-- /.container -->
-<?php $this->load->view('frontend/elements/footer'); ?>>>>
+<?php $this->load->view('frontend/elements/footer'); ?>

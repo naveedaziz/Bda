@@ -140,31 +140,31 @@
             <!-- END Modal Header -->
             <!-- Modal Body -->
             <div class="modal-body">
-               <form id="form-validation" action="<?php echo base_url();?>admin/insert_account" method="post" class="form-horizontal form-bordered" >
+               <form action="<?php echo base_url();?>admin/insert_account" method="post" class="form-horizontal form-bordered" >
                   <fieldset>
                      <legend>Subscriber Information</legend>
                      <div class="form-group">
                         <label class="col-md-4 control-label" for="user-settings-password">First Name</label>
                         <div class="col-md-8">
-                           <input type="text" id="first_name" name="first_name" class="form-control" autocomplete="off">
+                           <input type="text" id="first_name" name="first_name" class="form-control" autocomplete="off" required="required">
                         </div>
                      </div>
                      <div class="form-group">
                         <label class="col-md-4 control-label" for="user-settings-repassword">Last Name</label>
                         <div class="col-md-8">
-                           <input type="text" id="last_name" name="last_name" class="form-control" autocomplete="off">
+                           <input type="text" id="last_name" name="last_name" class="form-control" autocomplete="off" required="required">
                         </div>
                      </div>
                      <div class="form-group">
                         <label class="col-md-4 control-label" for="user-settings-repassword">Email</label>
                         <div class="col-md-8">
-                           <input type="email" id="email" name="val_email" class="form-control" autocomplete="off">
+                           <input type="email" id="email" name="val_email" class="form-control" autocomplete="off" required="required">
                         </div>
                      </div>
                      <div class="form-group">
                         <label class="col-md-4 control-label" for="user-settings-repassword">City</label>
                         <div class="col-md-8">
-                           <select class="form-control" name="city" id="city">
+                           <select class="form-control" name="city" id="city" required="required">
                               <option value="">Please select city</option>
                               <option value="Lahore">Lahore</option>
                               <option value="Karachi">Karachi</option>
@@ -175,7 +175,8 @@
                      <div class="form-group">
                         <label class="col-md-4 control-label" for="user-settings-repassword">Password</label>
                         <div class="col-md-8">
-                           <input  placeholder="Password must contain at least 6 characters, including UPPER/lowercase and numbers" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" type="password" id="val_password" name="val_password" class="form-control" autocomplete="off">
+                           <input required="required" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" type="password" id="val_password" name="val_password" class="form-control" autocomplete="off">
+                        	<p class="note">Password must be between 8 and 20 characters and must contain a combination of uppercase, lowercase, and numeric digits.</p>
                         </div>
                      </div>
                      <!--<div class="form-group">

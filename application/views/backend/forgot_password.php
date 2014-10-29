@@ -1,7 +1,7 @@
 <?php $this->load->view('backend/elements/header_resources'); ?>
 <div id="login-container" class="animation-fadeIn">
    <?php if ( $this->session->flashdata('error_message') ) { ?>
-   <div class="alert alert-danger alert-dismissable">
+   <div class="alert alert-success">
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
       <h4><i class="fa fa-times-circle"></i> Error! </h4>
       <?php echo $this->session->flashdata('error_message'); ?>  
@@ -26,7 +26,7 @@
             </div>
          </div>
          <?php if(isset($_REQUEST['error'])) { ?>
-         <div class="alert alert-danger alert-dismissable"> 
+         <div class="alert alert-success"> 
             Invalid email. Please enter valid email
          </div>
          <?php } ?>
@@ -42,7 +42,7 @@
          <?php } ?>
          <div class="form-group">
             <div class="col-xs-12 text-center">
-               <a href="./login" id="link-reminder-login"><small>Login</small></a> 
+               <a href="./login" id="link-reminder-login"><small>Back to Login</small></a> 
             </div>
          </div>
       </form>
