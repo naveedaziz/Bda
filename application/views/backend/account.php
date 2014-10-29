@@ -112,12 +112,12 @@
                         <input value="<?php echo $siteSettings->seo_title?>" class="form-control" name="seo_title" id="seo_title">
                      </div>
                      <div class="col-sm-3">
-                        <b>Site Meta Discription</b>
+                        <b>Site Meta Description</b>
                         <input value="<?php echo $siteSettings->seo_description?>" class="form-control" name="seo_description" id="seo_description">
                      </div>
                       <div class="col-sm-3">
-                        <b>Site Off Switch</b>
-                        <input <?php if($siteSettings->site_off =='true'){?>checked="checked"<?php } ?> value="true" class="form-control" name="site_off" id="site_off" type="checkbox">
+                        <input <?php if($siteSettings->site_off =='true'){?>checked="checked"<?php } ?> value="true"  name="site_off" id="site_off" type="checkbox"> <b>Site Off Switch</b>
+                        
                      </div>
                      <div class="col-sm-3">
                         <br/>

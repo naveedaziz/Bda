@@ -30,6 +30,9 @@
          <div class="col-md-7">
             <h2><?php echo $product->title; ?></h2>
             <p class="floating"><?php echo $product->description; ?></p>
+             <div>
+            	<a href="<?php echo base_url().'enquiry/'.$product->id; ?>"><button class="btn btn-enquiry">ENQUIRY</button></a>
+        	</div>  
          </div>
          <div class="col-md-5 col-space-top-l">
             <div class="hot_vending">
@@ -37,9 +40,7 @@
             </div>
          </div>
       </div>
-      <div class="col-md-12 col-left">
-            <a href="<?php echo base_url().'enquiry/'.$product->id; ?>"><button class="btn btn-enquiry">ENQUIRY</button></a>
-         </div>
+      
       <?php }
          else { ?>
       <p> <?php echo 'No Record Found!'; ?> </p>
@@ -79,13 +80,17 @@
          <div class="col-md-6">
             <h2><?php echo $product->title; ?></h2>
             <p class="floating"><?php echo $product->description; ?></p>
+            <div>
+            	<a href="<?php echo base_url().'enquiry/'.$product->id; ?>"><button class="btn btn-enquiry">ENQUIRY</button></a>
+        	</div>  
          </div>
          <div class="col-md-6 col-space-top-l">
             <div class="cold_vending">
                <img class="img-responsive cold-vending-mc" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>cold_vending.png" />
             </div>
          </div>
-      </div>      
+      </div>
+          
       <?php }
          else { ?>
       <p> <?php echo 'No Record Found!'; ?> </p>

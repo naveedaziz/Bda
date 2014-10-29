@@ -9,8 +9,8 @@
       <th  style="text-align:center;"><b>Contact<b></th>
       <th  style="text-align:center;"><b>Address<b></th>
       <th  style="text-align:center;"><b>Comments<b></th>
-      <th  style="text-align:center;"><b>Business<b></th>
-      <th  style="text-align:center;"><b>Brand<b></th>
+      <th  style="text-align:center;"><b>Business / Vending Machine<b></th>
+      <?php if(!empty($brand)){ ?><th  style="text-align:center;"><b>Brand<b></th> <?php } ?>
    </tr>
    <tbody style="text-align:center;">
       <tr>
@@ -23,7 +23,7 @@
          <td><?php echo $address; ?></td>
          <td><?php echo $comments; ?></td>
          <td><?php echo $business; ?></td>
-         <td><?php echo $brand; ?></td>
+         <?php if(!empty($brand)){ ?><td><?php echo $brand; ?></td> <?php } ?>
       </tr>
    </tbody>
 </table>
