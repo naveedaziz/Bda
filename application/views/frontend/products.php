@@ -198,7 +198,7 @@
             <div class="col-md-12 column">
                <div class="row">
                   <div class="col-md-6">
-                     <h4 class="msg-bottom">THESE <?php echo $category->title; ?> PRODUCTS</h4>
+                     <h4 class="msg-bottom">THESE <?php echo $category->title; ?> USING HORECA PRODUCTS</h4>
                   </div>
                   <div class="col-md-6">
                      <?php if(!empty($category->hotel_images)){ 
@@ -229,4 +229,4 @@
 <?php } ?>
 <?php } } ?>
 <!-- /.container -->
-<?php $this->load->view('frontend/elements/footer'); ?>
+<?php $this->load->view('frontend/elements/footer'); ?>>
