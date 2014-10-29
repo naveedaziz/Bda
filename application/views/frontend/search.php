@@ -1,4 +1,4 @@
-<?php $this->load->view('frontend/elements/header'); ?>
+<?php  $this->load->view('frontend/elements/header'); ?>
 <div class="ful-col">
    <nav>
       <div class="container">
@@ -32,10 +32,10 @@
          <div class="result_count">About <?php echo $search_data->num_rows; ?> results found </div>
          <?php foreach ($search_data->result() as $product){  ?>
          <div class="results">
-            <a class="p-title" href="<?php echo base_url().'product/'.$product->seo_url; ?>">
+            <a class="p-title" <?php if($product->seo_url == 'hot-vending' || $product->seo_url == 'cold-vending'){?>href="<?php echo base_url().'vending_product/'.$product->seo_url; ?>" <?php }else{ ?>href="<?php echo base_url().'product/'.$product->seo_url; ?>" <?php }?>>
                <h3><?php echo $product->title;?></h3>
             </a>
-            <p><?php echo substr($product->description, 0, 130);?></p>
+            <p><?php echo $product->description;?></p>
             <div class="read_more-col col-md-12 no-float"><a href="<?php echo base_url().'product/'.$product->seo_url; ?>" class="read_more">Read More</a></div>
          </div>
          <?php } ?>

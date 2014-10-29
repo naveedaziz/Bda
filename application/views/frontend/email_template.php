@@ -1,4 +1,4 @@
-<p><b>You have recieved a new Query in Nestle Professionals. </b></p>
+<p><b>You have recieved a new Query in Nestle Professionals. </b></p><br />
 <table border="1" cellspacing="5px" cellpadding="5" class="dataTable" id="myTable">
    <tr>
       <th  style="text-align:center;"><b>First Name</b></th>

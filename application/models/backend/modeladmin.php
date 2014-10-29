@@ -172,17 +172,17 @@ class ModelAdmin extends CI_Model
 
 		// query executes according to the filter and table name
 
-		if ($table_name == 'np_general_settings')
+		if ($table_name == TABLE_GENERAL_SETTINGS)
 			{
 			$sql = "SELECT * FROM `" . $table_name . "` where type = '" . $filter . "' order by id desc";
 			}
 		  else
-		if ((!empty($filter)) && $table_name == 'np_admin_users')
+		if ((!empty($filter)) && $table_name == TABLE_ADMIN_USERS)
 			{
 			$sql = "SELECT * FROM `" . $table_name . "` where id = '" . $filter . "' order by id desc";
 			}
 		  else
-		if ($table_name == 'np_query')
+		if ($table_name == TABLE_QUERY)
 			{
 			$sql = "SELECT q.* , s.title as brandName, s.id as brandID, p.id as productID, p.title as productTitle,p.brand as productBrand FROM `np_query` as q left join np_products as p on p.id = q.product_id left join np_general_settings as s on s.id = p.brand order by q.id desc";
 			}
@@ -269,7 +269,7 @@ class ModelAdmin extends CI_Model
 	 */
 	public function getRecord($table_name, $id)
 		{
-		if ($table_name == 'np_query')
+		if ($table_name == TABLE_QUERY)
 			{
 			$sql = "SELECT q.* , s.title as brandName, s.id as brandID, p.id as productID, p.title as productTitle,p.brand as productBrand FROM `np_query` as q left join np_products as p on p.id = q.product_id left join np_general_settings as s on s.id = p.brand where q.id = '" . $id . "'";
 			}

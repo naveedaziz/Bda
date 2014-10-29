@@ -85,7 +85,7 @@ class Notification extends CI_Controller
 
 		// declare table name and filter
 
-		$table_name = 'np_notifications';
+		$table_name = TABLE_NOTIFICATION;
 		$filter = 'notifications';
 
 		// get all notifications
@@ -118,7 +118,7 @@ class Notification extends CI_Controller
 		$array['email'] = Encode($this->input->post('val_email'));
 		$array['status'] = Encode($this->input->post('status'));
 		$array['created_at'] = date('Y-m-d H:i:s');
-		$table_name = 'np_notifications';
+		$table_name = TABLE_NOTIFICATION;
 		$filter = Encode($this->input->post('val_email'));
 
 		// get all notification email address
@@ -172,7 +172,7 @@ class Notification extends CI_Controller
 
 		// get table name
 
-		$table_name = 'np_notifications';
+		$table_name = TABLE_NOTIFICATION;
 
 		// call to delete model
 
@@ -203,7 +203,7 @@ class Notification extends CI_Controller
 
 		// get table name
 
-		$table_name = 'np_notifications';
+		$table_name = TABLE_NOTIFICATION;
 
 		// get notification record of the given id
 
@@ -242,7 +242,7 @@ class Notification extends CI_Controller
 		$array['last_name'] = Encode($this->input->post('last_name'));
 		$array['status'] = Encode($this->input->post('notification_status'));
 		$array['updated_at'] = date('Y-m-d H:i:s');
-		$table_name = 'np_notifications';
+		$table_name = TABLE_NOTIFICATION;
 
 		// call model to update notification data
 
@@ -269,7 +269,7 @@ class Notification extends CI_Controller
 
 		// set table name
 
-		$table_name = 'np_notifications';
+		$table_name = TABLE_NOTIFICATION;
 
 		// get id from url parameter
 

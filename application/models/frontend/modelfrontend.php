@@ -52,7 +52,7 @@ class ModelFrontend extends CI_Model
 
 		// query executes according to the filter and table name
 
-		if ($table_name == 'np_general_settings')
+		if ($table_name == TABLE_GENERAL_SETTINGS)
 			{
 			if ($filter == 'category')
 				{
@@ -119,6 +119,24 @@ class ModelFrontend extends CI_Model
 		$results = $this->db->query($sql);
 		return $results->row();
 		}
+   // --------------------------------------------------------------------
+
+	/**
+	 * getNotificationEmails
+	 *
+	 * This function takes param of table name and get Notification to send email data.
+	 *
+	 * @access	public
+	 * @param	array
+	 * @param	int
+	 * @return	void
+	 */	
+   public function getNotificationEmails($table_name){
+		$results = '';
+		$sql = "SELECT * FROM `" . $table_name . "` where status = '1'";
+		$results = $this->db->query($sql);
+		return $results;
+   }
 
 	// --------------------------------------------------------------------
 

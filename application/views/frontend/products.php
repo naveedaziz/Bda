@@ -52,7 +52,7 @@
             foreach ($categories->result() as $category){ 
             if($category->seo_url === $active_category){ ?>
          <div class="col-md-6">
-            <header id="myCarousel" class="carousel slide myCarouselContent">
+            <header id="myCarousel" class="carousel slide myCarouselContent myCarouselList">
                <!-- Indicators -->
                <ol class="carousel-indicators">
                   <?php if($category->images){ 
@@ -163,6 +163,12 @@
                         </a>
                         <?php } ?>
                         <h4 class="title"><a href="<?php echo base_url().'product/'.$product->id; ?>"><?php echo $product->title;?></a></h4>
+                        <div class="hover-item col-md-12" style="position: absolute;top: 0px;border: 1px solid red;">
+                        	<div class="learn_more" style="padding-top:15%;">
+                              <a href="<?php echo base_url().'product/'.$product->seo_url; ?>">
+                              <button class="btn btn-enquiry">LEARN MORE</button>
+                              </a>
+                        </div>
                         <?php } ?>
                      </div>
                      <?php  } ?>
@@ -184,7 +190,7 @@
 <!----  brand products----->
 <?php if ($categories->num_rows() > 0) { 
    foreach ($categories->result() as $category){ 
-       if($category->id === $active_category){ ?>
+       if($category->seo_url === $active_category){ ?>
 <div class="ful-col-product">
    <nav>
       <div class="container">
@@ -204,7 +210,7 @@
                         }
                         if($json_o){
                         foreach($json_o as $key =>$value){ ?>
-                     <img class="thumbs-product img-responsive" src="<?php echo base_url().$json_o[$key]; ?>" alt="<?php echo $category->id; ?>" />
+                     <img class="thumbs-product img-responsive left-float" src="<?php echo base_url().$json_o[$key]; ?>" alt="<?php echo $category->id; ?>" />
                      <?php } ?>
                      <?php } ?>
                      <?php } ?>
@@ -224,3 +230,4 @@
 <?php } } ?>
 <!-- /.container -->
 <?php $this->load->view('frontend/elements/footer'); ?>>>
+>>>>>>

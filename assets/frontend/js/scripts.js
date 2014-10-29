@@ -80,7 +80,7 @@
 					minlength: "Your username must consist of at least 2 characters"
 				},
 				password: {
-					required: "Please provide a password",
+					required: "Please provide a password now",
 					minlength: "Your password must be at least 5 characters long"
 				},
 				confirm_password: {

@@ -2,7 +2,6 @@
    <tr class="tbl_top_heading">
       <th><b>Query #</b></th>
       <th><b>Date</b></th>
-      <th><b>Product Name</b></th>
       <th><b>Category Name</b></th>
       <th><b>Brand Name</b></th>
       <th><b>Customer Name</b></th>
@@ -25,7 +24,6 @@
    <tr>
       <td>  <?php if($row->id){ echo $row->id; } ?> </td>
       <td>  <?php if($created_date){ echo $created_date; } ?> </td>
-      <td> <?php if($row->productTitle){ echo $row->productTitle; } ?> </td>
       <td> <?php if($row->category_name){ echo $row->category_name; } ?> </td>
       <td> <?php if($row->brandName && !$row->brand_name){ echo $row->brandName; }else{ echo $row->brand_name; } ?> </td>
       <td>  <?php if($row->first_name){ echo $row->first_name.' '.$row->last_name; } ?> </td>
@@ -45,10 +43,10 @@
       	  $created_date = 'N/A';
       	} ?>
    <tr>
-      <td>  <?php if($row->id){ echo $row->id; } ?> </td>
+     <td>  <?php if($row->id){ echo $row->id; } ?> </td>
       <td>  <?php if($created_date){ echo $created_date; } ?> </td>
-      <td> <?php if($row->productTitle){ echo $row->productTitle; } ?> </td>
-      <td> <?php if($row->brandName){ echo $row->brandName; } ?> </td>
+      <td> <?php if($row->category_name){ echo $row->category_name; } ?> </td>
+      <td> <?php if($row->brandName && !$row->brand_name){ echo $row->brandName; }else{ echo $row->brand_name; } ?> </td>
       <td>  <?php if($row->first_name){ echo $row->first_name.' '.$row->last_name; } ?> </td>
       <td> <?php if($row->email){ echo $row->email; } ?> </td>
       <td> <?php if($row->phone){ echo $row->phone; } ?> </td>

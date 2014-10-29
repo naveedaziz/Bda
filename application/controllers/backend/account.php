@@ -81,7 +81,7 @@ class Account extends CI_Controller
 
 		// set table name and filter
 
-		$table_name = 'np_admin_users';
+		$table_name = TABLE_ADMIN_USERS;
 		$filter = '';
 
 		// set session page name
@@ -91,7 +91,7 @@ class Account extends CI_Controller
 		// get all account
 
 		$data['results'] = $this->modeladmin->getAllData($table_name, $filter);
-		$table_name = 'np_site_settings';
+		$table_name = TABLE_SITE_SETTINGS;
 		$filter = '';
 		$data['siteSettings'] = $this->modeladmin->getAllData($table_name, $filter)->row();
 
@@ -137,7 +137,7 @@ class Account extends CI_Controller
 
 		// declare table name and filter
 
-		$table_name = 'np_admin_users';
+		$table_name = TABLE_ADMIN_USERS;
 		$filter = Encode($this->input->post('val_email'));
 
 		// get all account
@@ -188,7 +188,7 @@ class Account extends CI_Controller
 
 		// get table name
 
-		$table_name = 'np_admin_users';
+		$table_name = TABLE_ADMIN_USERS;
 
 		// call model to delete record
 
@@ -219,7 +219,7 @@ class Account extends CI_Controller
 
 		// get table name
 
-		$table_name = 'np_admin_users';
+		$table_name = TABLE_ADMIN_USERS;
 
 		// get notification record of the given id
 
@@ -258,9 +258,9 @@ class Account extends CI_Controller
 		$array['last_name'] = Encode($this->input->post('last_name'));
 		$array['city'] = Encode($this->input->post('city'));
 		$array['access_limited'] = Encode($this->input->post('access_limited'));
-		$array['access_list'] = json_encode(Encode($this->input->post('access_list')));
+		$array['access_list'] = json_encode($this->input->post('access_list'));
 		$array['updated_at'] = date('Y-m-d H:i:s');
-		$table_name = 'np_admin_users';
+		$table_name = TABLE_ADMIN_USERS;
 
 		// call model to update data
 
@@ -287,7 +287,7 @@ class Account extends CI_Controller
 
 		// set table name and filters
 
-		$table_name = 'np_admin_users';
+		$table_name = TABLE_ADMIN_USERS;
 		$filter = '1';
 		$array['super_access'] = '0';
 
@@ -315,9 +315,10 @@ class Account extends CI_Controller
 
 		// set table name and filters
 
-		$table_name = 'np_site_settings';
+		$table_name = TABLE_SITE_SETTINGS;
 		$array['seo_title'] = Encode($this->input->post('seo_title'));
 		$array['seo_description'] = Encode($this->input->post('seo_description'));
+		$array['site_off'] = Encode($this->input->post('site_off'));
 		$this->modeladmin->updateSiteSittings($table_name, $array);
 		redirect(base_url() . 'admin/account_setting');
 		}

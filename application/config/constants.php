@@ -69,5 +69,17 @@ define('IMAGES_PAGES_DIR'		, 'assets/uploads/pages/');
 define('IMAGES_PRODUCTS_DIR'		, 'assets/uploads/products/');
 define('IMAGES_BANNER_DIR'		, 'assets/uploads/banners/');
 
+/**
+* DB Constants
+*/
+
+define('TABLE_ADMIN_USERS' ,  'np_admin_users');
+define('TABLE_GENERAL_SETTINGS' ,  'np_general_settings');
+define('TABLE_NAVIGATION' ,  'np_navigations');
+define('TABLE_NOTIFICATION' ,  'np_notifications');
+define('TABLE_PRODUCTS' ,  'np_products');
+define('TABLE_QUERY'		, 'np_query');
+define('TABLE_SITE_SETTINGS'		, 'np_site_settings');
+define('TABLE_THEME_SETTINGS'		, 'np_theme_settings');
 
 

@@ -1,4 +1,4 @@
-<?php $this->load->view('backend/elements/header_resources'); ?>
+<?php $this->load->view('backend/elements/header_resources'); echo $this->session->flashdata('error_message'); ?>
 <div id="login-container" class="animation-fadeIn">
    <?php if ( $this->session->flashdata('error_message') ) { ?>
    <div class="alert alert-danger alert-dismissable">

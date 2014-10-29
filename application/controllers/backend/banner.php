@@ -85,7 +85,7 @@ class Banner extends CI_Controller
 
 		// declare table name and filter variable
 
-		$table_name = 'np_general_settings';
+		$table_name = TABLE_GENERAL_SETTINGS;
 		$filter = 'banner';
 
 		// get all banners
@@ -128,7 +128,7 @@ class Banner extends CI_Controller
 
 		// declare table name
 
-		$table_name = 'np_general_settings';
+		$table_name = TABLE_GENERAL_SETTINGS;
 
 		// declare variable and array
 
@@ -248,7 +248,7 @@ class Banner extends CI_Controller
 			$array['seo_url'] = Encode($this->input->post('seo_url'));
 			$array['seo_tags'] = Encode($this->input->post('seo_tags'));
 			$array['created_at'] = date('Y-m-d H:i:s');
-			$table_name = 'np_general_settings';
+			$table_name = TABLE_GENERAL_SETTINGS;
 
 			// call model to insert banner data
 
@@ -284,7 +284,7 @@ class Banner extends CI_Controller
 
 		// get table name
 
-		$table_name = 'np_general_settings';
+		$table_name = TABLE_GENERAL_SETTINGS;
 
 		// call to delete model
 
@@ -309,7 +309,7 @@ class Banner extends CI_Controller
 
 		// set table name
 
-		$table_name = 'np_general_settings';
+		$table_name = TABLE_GENERAL_SETTINGS;
 
 		// get url parameter
 
@@ -462,7 +462,7 @@ class Banner extends CI_Controller
 			$array['seo_url'] = Encode($this->input->post('seo_url'));
 			$array['seo_tags'] = Encode($this->input->post('seo_tags'));
 			$array['updated_at'] = date('Y-m-d H:i:s');
-			$table_name = 'np_general_settings';
+			$table_name = TABLE_GENERAL_SETTINGS;
 
 			// call model to insert banner data
 
@@ -494,7 +494,7 @@ class Banner extends CI_Controller
 
 		// set table name
 
-		$table_name = 'np_general_settings';
+		$table_name = TABLE_GENERAL_SETTINGS;
 
 		// get id from url parameter
 

@@ -109,11 +109,15 @@
                   <div class="row">
                      <div class="col-sm-3">
                         <b>Site Meta Title</b>
-                        <input value="<?=$siteSettings->seo_title?>" class="form-control" name="seo_title" id="seo_title">
+                        <input value="<?php echo $siteSettings->seo_title?>" class="form-control" name="seo_title" id="seo_title">
                      </div>
                      <div class="col-sm-3">
                         <b>Site Meta Discription</b>
-                        <input value="<?=$siteSettings->seo_description?>" class="form-control" name="seo_description" id="seo_description">
+                        <input value="<?php echo $siteSettings->seo_description?>" class="form-control" name="seo_description" id="seo_description">
+                     </div>
+                      <div class="col-sm-3">
+                        <b>Site Off Switch</b>
+                        <input <?php if($siteSettings->site_off =='true'){?>checked="checked"<?php } ?> value="true" class="form-control" name="site_off" id="site_off" type="checkbox">
                      </div>
                      <div class="col-sm-3">
                         <br/>
@@ -171,7 +175,7 @@
                      <div class="form-group">
                         <label class="col-md-4 control-label" for="user-settings-repassword">Password</label>
                         <div class="col-md-8">
-                           <input type="password" id="val_password" name="val_password" class="form-control" autocomplete="off">
+                           <input  placeholder="Password must contain at least 6 characters, including UPPER/lowercase and numbers" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" type="password" id="val_password" name="val_password" class="form-control" autocomplete="off">
                         </div>
                      </div>
                      <!--<div class="form-group">

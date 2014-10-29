@@ -85,7 +85,7 @@ class Product extends CI_Controller
 
 		// check if session isset
 
-		$table_name = 'np_products';
+		$table_name = TABLE_PRODUCTS;
 		$filter = '';
 
 		// get all products
@@ -112,7 +112,7 @@ class Product extends CI_Controller
 
 		// declare table name and filter
 
-		$table_name = 'np_general_settings';
+		$table_name = TABLE_GENERAL_SETTINGS;
 		$filter = 'brand';
 
 		// get all brands
@@ -360,13 +360,13 @@ class Product extends CI_Controller
 			$array['varient_value_1'] = Encode($this->input->post('varient_value_1'));
 			$array['varient_value_2'] = Encode($this->input->post('varient_value_2'));
 			$array['varient_value_3'] = Encode($this->input->post('varient_value_3'));
-			$array['category'] = json_encode(Encode($this->input->post('categories')));
+			$array['category'] = json_encode($this->input->post('categories'));
 			$array['seo_title'] = Encode($this->input->post('seo_title'));
 			$array['seo_description'] = Encode($this->input->post('seo_description'));
 			$array['seo_url'] = Encode($this->input->post('seo_url'));
 			$array['seo_tags'] = Encode($this->input->post('seo_tags'));
 			$array['created_at'] = date('Y-m-d H:i:s');
-			$table_name = 'np_products';
+			$table_name = TABLE_PRODUCTS;
 
 			// call model to insert product data
 
@@ -402,7 +402,7 @@ class Product extends CI_Controller
 
 		// get table name
 
-		$table_name = 'np_products';
+		$table_name = TABLE_PRODUCTS;
 
 		// call to delete model
 
@@ -433,7 +433,7 @@ class Product extends CI_Controller
 
 		// declare table name
 
-		$table_name = 'np_products';
+		$table_name = TABLE_PRODUCTS;
 
 		// get product record of the given id
 
@@ -441,7 +441,7 @@ class Product extends CI_Controller
 
 		// get all brands
 
-		$table_name = 'np_general_settings';
+		$table_name = TABLE_GENERAL_SETTINGS;
 		$filter = 'brand';
 		$data['results'] = $this->modeladmin->getAllData($table_name, $filter);
 
@@ -689,13 +689,13 @@ class Product extends CI_Controller
 			$array['varient_value_1'] = Encode($this->input->post('varient_value_1'));
 			$array['varient_value_2'] = Encode($this->input->post('varient_value_2'));
 			$array['varient_value_3'] = Encode($this->input->post('varient_value_3'));
-			$array['category'] = json_encode(Encode($this->input->post('categories')));
+			$array['category'] = json_encode($this->input->post('categories'));
 			$array['seo_title'] = Encode($this->input->post('seo_title'));
 			$array['seo_description'] = Encode($this->input->post('seo_description'));
 			$array['seo_url'] = Encode($this->input->post('seo_url'));
 			$array['seo_tags'] = Encode($this->input->post('seo_tags'));
 			$array['updated_at'] = date('Y-m-d H:i:s');
-			$table_name = 'np_products';
+			$table_name = TABLE_PRODUCTS;
 
 			// call model to insert product data
 
@@ -727,7 +727,7 @@ class Product extends CI_Controller
 
 		// set table name
 
-		$table_name = 'np_products';
+		$table_name = TABLE_PRODUCTS;
 
 		// get id from url parameter
 

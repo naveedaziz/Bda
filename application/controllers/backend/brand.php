@@ -85,7 +85,7 @@ class Brand extends CI_Controller
 
 		// declare table name and filter variable
 
-		$table_name = 'np_general_settings';
+		$table_name = TABLE_GENERAL_SETTINGS;
 		$filter = 'brand';
 
 		// get all brands
@@ -131,7 +131,7 @@ class Brand extends CI_Controller
 
 		// declare table name
 
-		$table_name = 'np_general_settings';
+		$table_name = TABLE_GENERAL_SETTINGS;
 
 		// declare variable and array
 
@@ -282,7 +282,7 @@ class Brand extends CI_Controller
 
 		// set table name
 
-		$table_name = 'np_general_settings';
+		$table_name = TABLE_GENERAL_SETTINGS;
 
 		// get url parameter
 
@@ -313,7 +313,7 @@ class Brand extends CI_Controller
 
 		// set table name
 
-		$table_name = 'np_general_settings';
+		$table_name = TABLE_GENERAL_SETTINGS;
 
 		// get url parameter
 
@@ -465,7 +465,7 @@ class Brand extends CI_Controller
 			$array['seo_url'] = Encode($this->input->post('seo_url'));
 			$array['seo_tags'] = Encode($this->input->post('seo_tags'));
 			$array['updated_at'] = date('Y-m-d H:i:s');
-			$table_name = 'np_general_settings';
+			$table_name = TABLE_GENERAL_SETTINGS;
 
 			// call model to insert brand data
 
@@ -497,7 +497,7 @@ class Brand extends CI_Controller
 
 		// set table name
 
-		$table_name = 'np_general_settings';
+		$table_name = TABLE_GENERAL_SETTINGS;
 
 		// get id from url parameter
 

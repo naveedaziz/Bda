@@ -28,7 +28,7 @@
          </a>
          <?php } ?>
          <?php } ?>
-         <h4> <a href="<?php echo base_url().'category/'.$category->seo_url; ?>" class="title-link"><?php echo $category->title; ?></a></h4>
+         <h4 class="title"> <a href="<?php echo base_url().'category/'.$category->seo_url; ?>" class=""><?php echo $category->title; ?></a></h4>
       </div>
       <?php } ?>
       <?php } else { ?>

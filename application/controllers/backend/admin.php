@@ -71,7 +71,7 @@ class Admin extends CI_Controller
 			{
 
 			// session not set load login
-
+			
 			$this->load->view('backend/index');
 			}
 		}
@@ -134,39 +134,31 @@ class Admin extends CI_Controller
 		// Authenticate admin
 
 		$admin_row = $this->modeladmin->adminLogin($user_email, $password);
-
+		
+		
 		// check if moderator has limited access
 
-		if ($admin_row->access_limited == '1')
+		if ($admin_row && $admin_row->access_limited == '1')
 			{
 			$access_list_string = $admin_row->access_list;
 			$limited_access_list = (array)json_decode($access_list_string);
 			$this->session->set_userdata('limited_access', $limited_access_list);
-			}
-
-		$last_updated_date = $admin_row->updated_at;
-		$last_thirty_days_date = date('Y-m-d H:i:s', strtotime('today - 30 days'));
-
-		// update password after 30 days
-
-		if ($last_updated_date < $last_thirty_days_date)
-			{
-
-			// set admin session
-
-			$this->session->set_userdata('admin_email', $user_email);
-			$this->session->set_userdata('admin_id', $admin_row->id);
-			$this->session->set_userdata('first_name', $admin_row->first_name);
-			$this->session->set_userdata('last_name', $admin_row->last_name);
-			redirect(base_url() . 'admin/update_password_admin');
-			}
-		  else
-			{
-
-			// set admin session
-
-			if ($admin_row)
+		}
+		if ($admin_row)
 				{
+					$last_updated_date = $admin_row->updated_at;
+					$last_thirty_days_date = date('Y-m-d H:i:s', strtotime('today - 30 days'));
+					// update password after 30 days
+					if ($last_updated_date < $last_thirty_days_date)
+						{
+							// set admin session
+				
+							$this->session->set_userdata('admin_email', $user_email);
+							$this->session->set_userdata('admin_id', $admin_row->id);
+							$this->session->set_userdata('first_name', $admin_row->first_name);
+							$this->session->set_userdata('last_name', $admin_row->last_name);
+							redirect(base_url() . 'admin/update_password_admin');
+						}
 				$this->session->set_userdata('admin_email', $user_email);
 				$this->session->set_userdata('admin_id', $admin_row->id);
 				$this->session->set_userdata('first_name', $admin_row->first_name);
@@ -174,7 +166,7 @@ class Admin extends CI_Controller
 
 				// Update last login
 
-				$table_name = 'np_admin_users';
+				$table_name = TABLE_ADMIN_USERS;
 				$admin_data['last_logged_in'] = date('Y-m-d H:i:s');
 				$this->modeladmin->update($table_name, $admin_data, $admin_row->id);
 				redirect(base_url() . 'admin/query');
@@ -183,11 +175,14 @@ class Admin extends CI_Controller
 				{
 
 				// Redirect to login if authentication fails and show error message
-
-				$this->session->set_flashdata('error_message', 'Email or password you entered is incorrect. Try again or reset your password.');
+				if($user_email){
+					$this->session->set_flashdata('error_message', 'Email or password you entered is incorrect. Try again or reset your password.');
+				}else{
+					$this->session->set_flashdata('error_message',false);
+				}
 				redirect(base_url() . 'admin');
 				}
-			}
+			
 		}
 
 	// --------------------------------------------------------------------
@@ -248,7 +243,7 @@ class Admin extends CI_Controller
 			}
 		}
 
-	public function sendEmail($to, $subject, $message)
+	private function sendEmail($to, $subject, $message)
 		{
 		$this->load->library('email');
 		$this->email->set_newline("\r\n");
@@ -317,7 +312,7 @@ class Admin extends CI_Controller
 
 			// declare table name;
 
-			$table_name = 'np_admin_users';
+			$table_name = TABLE_ADMIN_USERS;
 
 			// get all queries
 
@@ -365,7 +360,7 @@ class Admin extends CI_Controller
 
 		// declare table name
 
-		$table_name = 'np_query';
+		$table_name = TABLE_QUERY;
 		$filter = '';
 
 		// get session admin id
@@ -432,7 +427,7 @@ class Admin extends CI_Controller
 
 		if ($session_id)
 			{
-			$table_name = 'np_query';
+			$table_name = TABLE_QUERY;
 
 			// get record
 
@@ -518,7 +513,7 @@ class Admin extends CI_Controller
 
 			// get all queries records for statistics
 
-			$table_name = 'np_query';
+			$table_name = TABLE_QUERY;
 			$filter = '';
 
 			// get all queries
@@ -586,7 +581,7 @@ class Admin extends CI_Controller
 
 			// get all queries records for statistics
 
-			$table_name = 'np_query';
+			$table_name = TABLE_QUERY;
 
 			// get single query data
 

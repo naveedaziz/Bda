@@ -24,8 +24,8 @@
          <p>Please fill in your information to place order. Our sales team will contact you shortly</p>
          <div class="col-lg-8 centered-text">
             <ul id="myTab" class="nav nav-tabs nav-justified tabs-enquiry">
-               <li class="active"><a href="#product" data-toggle="tab">Product</a></li>
-               <li><a href="#vending" data-toggle="tab">Vending Machine</a></li>
+               <li <?php if(!isset($product_id)) { ?>class="active" <? } ?>><a href="#product" data-toggle="tab"  onclick="$('#activeState').val(1);$('.brandSelect').removeClass('fade')">Product</a></li>
+               <li <?php if(isset($product_id)) { ?>class="active" <? } ?>><a href="#vending" data-toggle="tab" onclick="$('#activeState').val(2);$('.brandSelect').addClass('fade')">Vending Machine</a></li>
             </ul>
          </div>
          <form id="form-validation" action="<?php echo base_url();?>submitQuery" method="post" class="form-horizontal form-bordered">
@@ -80,7 +80,7 @@
                      </div>
                      <div class="form-group  col-md-6">
                         <div>
-                           <div class="tab-pane fade active in" id="product">
+                           <div class="tab-pane fade <?php if(!isset($product_id)) { ?>active in<? } ?>" id="product">
                               <select class="form-control" name="category_name" id="category_name">
                                  <option value="">Choose Your Business</option>
                                  <?php if ($categories->num_rows() > 0) { 
@@ -90,16 +90,19 @@
                                  <?php }?>
                               </select>
                            </div>
-                           <div class="tab-pane fade" id="vending">
-                              <select class="form-control" name="category_name" id="category_name">
-                                 <option value="">Choose Your Business</option>
-                                 <option value="Vending Machine" selected="selected">Vending Machine</option>
+                           <div class="tab-pane fade <?php if(isset($product_id)) { ?>active in<? } ?>" id="vending">
+                              <select class="form-control" name="category_name_vending" id="category_name_vending">
+                                 <option value="">Choose Your Vending Machine</option>
+                                 <option value="Hot Vending Machine" >Hot Vending Machine</option>
+                                 <option value="Cold Vending Machine" >Cold Vending Machine</option>
                               </select>
                            </div>
                         </div>
                      </div>
-                     <div class="form-group  col-md-6">
-                        <div >
+                     
+                     <input type="hidden" value="1" id="activeState" name="active_state" />
+                     <div class="form-group  col-md-6  margin-left20 <?php if(isset($product_id)) { ?>fade<? } ?>">
+                        <div class="tab-pane brandSelect">
                            <select class="form-control" name="brand_name" id="brand_name">
                               <option value="">Brand</option>
                               <?php if ($brands->num_rows() > 0) { 

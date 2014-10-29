@@ -84,7 +84,7 @@
          </header>
          <?php } } ?>
          <div class="col-right">
-            <a href="<?php echo base_url().'enquiry/'.$product->id; ?>"><button class="btn btn-enquiry">ENQUIRY</button></a>
+            <a href="<?php echo base_url().'enquiry/'?>"><button class="btn btn-enquiry">ENQUIRY</button></a>
          </div>
       </div>
       <?php }

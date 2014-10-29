@@ -26,7 +26,7 @@ class Home extends CI_Controller
 
 	// --------------------------------------------------------------------
 
-	function __construct()
+	public function __construct()
 		{
 		parent::__construct();
 		session_start();
@@ -35,13 +35,14 @@ class Home extends CI_Controller
 		$this->load->library('session');
 		$this->load->library('pagination');
 		$this->load->model('frontend/modelfrontend');
-		$_SESSION['site_meta'] = $this->modelfrontend->getSeoData('np_site_settings');
+		$_SESSION['site_meta'] = $this->modelfrontend->getSeoData('np_site_settings');		
 		$_SESSION['site_meta']->images = base_url() . DEFAULT_LOGO;
 		date_default_timezone_set('Asia/Karachi');
 		}
 
-	// --------------------------------------------------------------------
 
+	// --------------------------------------------------------------------
+	
 	/**
 	 * Index
 	 *
@@ -53,14 +54,17 @@ class Home extends CI_Controller
 	 */
 	public function index()
 		{
-
+		if($_SESSION['site_meta']->site_off == 'true'){
+				$this->load->view('frontend/offline');
+				return true;
+		}
 		// set session page name
 
 		$this->session->set_userdata('page', 'home');
 
 		// declare table name
 
-		$table_name = 'np_general_settings';
+		$table_name = TABLE_GENERAL_SETTINGS;
 		$filter = 'category';
 
 		// get record
@@ -71,7 +75,7 @@ class Home extends CI_Controller
 
 		
 		// load view
-
+		
 		$this->load->view('frontend/index', $data);
 		}
 
@@ -87,11 +91,15 @@ class Home extends CI_Controller
 	 */
 	public function getAllProducts()
 		{
+		if($_SESSION['site_meta']->site_off == 'true'){
+				$this->load->view('frontend/offline');
+				return true;
+		}
 		$data = '';
 
 		// get categories
 
-		$table_name = 'np_general_settings';
+		$table_name = TABLE_GENERAL_SETTINGS;
 		$filter = 'category';
 		$data['categories'] = $this->modelfrontend->getAllData($table_name, $filter);
 		$filter = $this->uri->segment(2);
@@ -119,7 +127,7 @@ class Home extends CI_Controller
 		// get url parameter
 		// get products
 
-		$table_name = 'np_products';
+		$table_name = TABLE_PRODUCTS;
 		if (isset($data['catagory']->id))
 			{
 			$filterCatagory = $data['catagory']->id;
@@ -152,6 +160,10 @@ class Home extends CI_Controller
 	 */
 	public function getProductDetail()
 		{
+		if($_SESSION['site_meta']->site_off == 'true'){
+				$this->load->view('frontend/offline');
+				return true;
+		}		
 		$data = '';
 
 		// get url parameter
@@ -160,7 +172,7 @@ class Home extends CI_Controller
 
 		// get product
 
-		$table_name = 'np_products';
+		$table_name = TABLE_PRODUCTS;
 		$data['product'] = $this->modelfrontend->getRecord($table_name, $id);
 		$data['product_detail'] = $this->modelfrontend->getRecord($table_name, $id);
 		if (isset($data['product_detail']) && isset($data['product_detail']->title))
@@ -191,6 +203,10 @@ class Home extends CI_Controller
 	 */
 	public function getVendingProductDetail()
 		{
+		if($_SESSION['site_meta']->site_off == 'true'){
+				$this->load->view('frontend/offline');
+				return true;
+		}
 		$data = '';
 
 		// get url parameter
@@ -199,7 +215,7 @@ class Home extends CI_Controller
 
 		// get product
 
-		$table_name = 'np_products';
+		$table_name = TABLE_PRODUCTS;
 		$data['product'] = $this->modelfrontend->getRecord($table_name, $id);
 
 		// load view
@@ -218,6 +234,10 @@ class Home extends CI_Controller
 	 */
 	public function getPageDetail()
 		{
+		if($_SESSION['site_meta']->site_off == 'true'){
+				$this->load->view('frontend/offline');
+				return true;
+		}
 		$data = '';
 
 		// get url parameter
@@ -227,7 +247,7 @@ class Home extends CI_Controller
 
 		// get pages
 
-		$table_name = 'np_general_settings';
+		$table_name = TABLE_GENERAL_SETTINGS;
 		$data['page'] = $this->modelfrontend->getPageRecord($table_name, $slug);
 		$data['page_detail'] = $this->modelfrontend->getPageRecord($table_name, $slug);
 		if (isset($data['page_detail']) && isset($data['page_detail']->title))
@@ -258,6 +278,10 @@ class Home extends CI_Controller
 	 */
 	public function getSearchDetail()
 		{
+		if($_SESSION['site_meta']->site_off == 'true'){
+				$this->load->view('frontend/offline');
+				return true;
+		}
 		$data = '';
 
 		// get categories
@@ -270,7 +294,7 @@ class Home extends CI_Controller
 		// get url parameter
 		// get products
 
-		$table_name = 'np_products';
+		$table_name = TABLE_PRODUCTS;
 		$data['products'] = $this->modelfrontend->getProductCount($table_name, $filter);
 		$data['active_category'] = $filter;
 
@@ -290,6 +314,10 @@ class Home extends CI_Controller
 	 */
 	public function getVendingSolution()
 		{
+		if($_SESSION['site_meta']->site_off == 'true'){
+				$this->load->view('frontend/offline');
+				return true;
+		}
 		$data = '';
 
 		// set session page name
@@ -298,7 +326,7 @@ class Home extends CI_Controller
 
 		// get categories
 
-		$table_name = 'np_general_settings';
+		$table_name = TABLE_GENERAL_SETTINGS;
 		$filter = 'category';
 		$data['category'] = $this->modelfrontend->getRecord($table_name, $filter);
 		$data['category_detail'] = $this->modelfrontend->getRecord($table_name, $filter);
@@ -320,7 +348,7 @@ class Home extends CI_Controller
 
 		if ($data['category'])
 			{
-			$table_name = 'np_products';
+			$table_name = TABLE_PRODUCTS;
 			$filter = $data['category']->id;
 			$data['products'] = $this->modelfrontend->getAllProducts($table_name, $filter);
 			}
@@ -342,6 +370,10 @@ class Home extends CI_Controller
 	 */
 	public function query()
 		{
+		if($_SESSION['site_meta']->site_off == 'true'){
+				$this->load->view('frontend/offline');
+				return true;
+		}
 
 		// get url parameter
 
@@ -349,13 +381,13 @@ class Home extends CI_Controller
 
 		// get brands
 
-		$table_name = 'np_general_settings';
+		$table_name = TABLE_GENERAL_SETTINGS;
 		$filter = 'brand';
 		$data['brands'] = $this->modelfrontend->getAllData($table_name, $filter);
 
 		// get categories
 
-		$table_name = 'np_general_settings';
+		$table_name = TABLE_GENERAL_SETTINGS;
 		$filter = 'category';
 		$data['categories'] = $this->modelfrontend->getAllData($table_name, $filter);
 		if ($this->uri->segment(2))
@@ -380,6 +412,10 @@ class Home extends CI_Controller
 	 */
 	public function thanks()
 		{
+		if($_SESSION['site_meta']->site_off == 'true'){
+				$this->load->view('frontend/offline');
+				return true;
+		}
 
 		// load user view with data listing
 
@@ -399,21 +435,27 @@ class Home extends CI_Controller
 	 */
 	public function submitQuery()
 		{
+		if($_SESSION['site_meta']->site_off == 'true'){
+				$this->load->view('frontend/offline');
+				return true;
+		}
 
 		// get form data
 
 		$catagory_name = Encode($this->input->post('category_name'));
+		$category_name_vending = Encode($this->input->post('category_name_vending'));
+		$active_state = Encode($this->input->post('active_state'));
 		$array['first_name'] = Encode($this->input->post('firstname'));
 		$array['last_name'] = Encode($this->input->post('lastname'));
 		$array['product_id'] = Encode($this->input->post('product_id'));
 		$array['company_name'] = Encode($this->input->post('company'));
-		if (!empty($catagory_name))
+		if ($active_state == '1')
 			{
-			$array['category_name'] = Encode($this->input->post('category_name'));
+			$array['category_name'] = $catagory_name;
 			}
 		  else
 			{
-			$array['category_name'] = '';
+			$array['category_name'] = $category_name_vending;
 			}
 
 		$array['brand_name'] = Encode($this->input->post('brand_name'));
@@ -423,7 +465,7 @@ class Home extends CI_Controller
 		$array['address'] = Encode($this->input->post('address'));
 		$array['note'] = Encode($this->input->post('description'));
 		$array['created_at'] = date('Y-m-d H:i:s');
-		$table_name = 'np_query';
+		$table_name = TABLE_QUERY;
 
 		// call model to enquiry form data
 
@@ -440,17 +482,18 @@ class Home extends CI_Controller
 		$data['brand'] = $array['brand_name'];
 		$message = $this->load->view('frontend/email_template', $data, true);
 		$from = EMAIL_CLIENT_FROM;
-		$to = EMAIL_CLIENT_TO;
+		$table_name = TABLE_NOTIFICATION;
+		$notifications_email  = $this->modelfrontend->getNotificationEmails($table_name);
+		$notifications_email_list = '';
+		foreach($notifications_email->result() as $key=>$values){
+			$notifications_email_list .= $values->email.',';
+		}
+		$to = $notifications_email_list;
 		$cc = '';
 		$bcc = '';
 		$subject = 'New Query Request Nestle Professionals';
-
-		// $message = 'Test email';
-
 		$this->sendEmail($from, $to, $cc, $bcc, $subject, $message);
-
 		// redirect to thanks page
-
 		redirect(base_url() . 'thanks');
 		}
 
@@ -477,8 +520,12 @@ class Home extends CI_Controller
 	 * @access	public
 	 * @return	void
 	 */
-	public function sendEmail($from, $to, $cc, $bcc, $subject, $message)
+	private function sendEmail($from, $to, $cc, $bcc, $subject, $message)
 		{
+		if($_SESSION['site_meta']->site_off == 'true'){
+				$this->load->view('frontend/offline');
+				return true;
+		}
 		$this->load->library('email');
 		$this->email->set_newline("\r\n");
 		$this->email->from($from);
@@ -496,8 +543,12 @@ class Home extends CI_Controller
 
 		}
 
-	function notFound()
+	public function notFound()
 		{
+		if($_SESSION['site_meta']->site_off == 'true'){
+				$this->load->view('frontend/offline');
+				return true;
+		}
 		$this->load->view('frontend/not_found');
 		}
 	}
