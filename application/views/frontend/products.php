@@ -118,7 +118,13 @@
                      <?php foreach ($products->result() as $product){
                         if($product->type == 'beverages'){ ?>
                      <div class="col-md-3 col-margin">
-                        <?php if(!empty($product->banner_images)){ 
+                     <div class="thumbnail-products-cat">
+                     <div class="caption">
+                      <a href="<?php echo base_url().'product/'.$product->seo_url; ?>">
+                       <button class="btn btn-learn-more">LEARN MORE</button>
+                      </a>
+              		  </div>
+                     <?php if(!empty($product->banner_images)){ 
                            $string = $product->banner_images;
                            if($string){
                            $json_o = (array) json_decode($string);
@@ -133,7 +139,9 @@
                         <a href="<?php echo base_url().'product/'.$product->seo_url; ?>">
                         <img class="product-images-section img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>default.jpg" alt="">
                         </a>
+                        
                         <?php } ?>
+                        </div>
                         <h4 class="title"><a href="<?php echo base_url().'product/'.$product->seo_url; ?>"><?php echo $product->title;?></a></h4>
                         <?php } ?>
                      </div>
@@ -146,6 +154,12 @@
                      <?php foreach ($products->result() as $product){
                         if($product->type == 'food'){ ?>
                      <div class="col-md-3 col-margin">
+                     <div class="thumbnail-products-cat">
+                     <div class="caption">
+                      <a href="<?php echo base_url().'product/'.$product->seo_url; ?>">
+                       <button class="btn btn-learn-more">LEARN MORE</button>
+                      </a>
+              		  </div>
                         <?php if(!empty($product->banner_images)){ 
                            $string = $product->banner_images;
                            if($string){
@@ -162,13 +176,8 @@
                         <img class="product-images-section img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>default.jpg" alt="">
                         </a>
                         <?php } ?>
+                         </div>
                         <h4 class="title"><a href="<?php echo base_url().'product/'.$product->id; ?>"><?php echo $product->title;?></a></h4>
-                       <!-- <div class="hover-item col-md-12" style="position: absolute;top: 0px;border: 1px solid red;">
-                        	<div class="learn_more" style="padding-top:15%;">
-                              <a href="<?php echo base_url().'product/'.$product->seo_url; ?>">
-                              <button class="btn btn-enquiry">LEARN MORE</button>
-                              </a>
-                        </div>-->
                         <?php } ?>
                      </div>
                      <?php  } ?>
@@ -229,4 +238,4 @@
 <?php } ?>
 <?php } } ?>
 <!-- /.container -->
-<?php $this->load->view('frontend/elements/footer'); ?>>
+<?php $this->load->view('frontend/elements/footer'); ?>>>>
