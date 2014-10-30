@@ -53,14 +53,14 @@
                         </select>
                      </div>
                   </div>
-                  <hr />
-                  <b>Invite/Send Password</b> 
+                  <!-- <hr />
+                 <b>Invite/Send Password</b> 
                   <div class="form-group">
                      <div class="col-xs-8">
                         <br/>
                         <button class="btn btn-success" type="button">Send Password</button>
                      </div>
-                  </div>
+                  </div>-->
                </div>
             </div>
             <hr />

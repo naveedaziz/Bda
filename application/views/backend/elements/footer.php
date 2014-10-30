@@ -62,7 +62,7 @@
                      <label class="col-md-4 control-label" for="val_password">Password <span class="text-danger">*</span></label>
                      <div class="col-md-8">
                         <div class="input-group">
-                           <input type="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="val_password" class="form-control" placeholder="Choose a password.." required="required">
+                           <input type="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}" name="val_password" class="form-control" placeholder="Choose a password.." required="required">
                            <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
                         </div>
                         <p class="note">Password must be between 8 and 20 characters and must contain a combination of uppercase, lowercase, and numeric digits.</p>

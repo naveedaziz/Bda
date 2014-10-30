@@ -1,7 +1,7 @@
 <?php $this->load->view('backend/elements/header_resources'); ?>
 <div id="login-container" class="animation-fadeIn">
    <?php if ( $this->session->flashdata('error_message') ) { ?>
-   <div class="alert alert-danger alert-dismissable">
+   <div class="alert alert-success">
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
       <h4><i class="fa fa-times-circle"></i> Error! </h4>
       <?php echo $this->session->flashdata('error_message'); ?>  
@@ -21,7 +21,7 @@
             <div class="col-xs-12">
                <div class="input-group">
                   <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
-                  <input type="password" id="val_password" name="val_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="required" class="form-control input-lg" placeholder="Password" data-rule-required="true" value="" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                  <input type="password" id="val_password" name="val_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}" required="required" class="form-control input-lg" placeholder="Password" data-rule-required="true" value="" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
                </div>
                <p class="note">Password must be between 8 and 20 characters and must contain a combination of uppercase, lowercase, and numeric digits.</p>
              </div>
@@ -30,7 +30,7 @@
             <div class="col-xs-12">
                <div class="input-group">
                   <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
-                  <input type="password" id="val_confirm_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="required" name="val_confirm_password" class="form-control input-lg" placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="required" data-rule-required="true" value="" >
+                  <input type="password" id="val_confirm_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}" required="required" name="val_confirm_password" class="form-control input-lg" placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="required" data-rule-required="true" value="" >
                </div>
             </div>
          </div>
