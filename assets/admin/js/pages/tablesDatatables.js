@@ -1,1 +1,0 @@
-var TablesDatatables=function(){return{init:function(){App.datatables();$("#example-datatable").dataTable({iDisplayLength:10,aaSorting:[],bFilter:false,bLengthChange:false,aLengthMenu:[[10,20,30,-1],[10,20,30,"All"]]});$(".dataTables_filter input").addClass("form-control").attr("placeholder","Search");$(".dataTables_length select").addClass("form-control")}}}()
