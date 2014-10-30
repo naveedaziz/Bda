@@ -475,7 +475,7 @@ class Product extends CI_Controller
 	 */
 	public function update()
 		{
-
+			
 		// check if the form submited
 
 		if ($this->input->post('submit'))

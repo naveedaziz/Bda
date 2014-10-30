@@ -21,7 +21,7 @@
    
    function Encode($str)
    	{
-   	return mysql_real_escape_string( htmlentities( strip_tags($str) ) );
+   	return mysql_real_escape_string( ( ($str) ) );
    	} 
 	// --------------------------------------------------------------------
    
