@@ -149,6 +149,7 @@ class Admin extends CI_Controller
 					$last_updated_date = $admin_row->updated_at;
 					$last_thirty_days_date = date('Y-m-d H:i:s', strtotime('today - 30 days'));
 					// update password after 30 days
+					if(isset($admin_row->updated_at)){
 					if ($last_updated_date < $last_thirty_days_date)
 						{
 							// set admin session
@@ -159,6 +160,7 @@ class Admin extends CI_Controller
 							$this->session->set_userdata('last_name', $admin_row->last_name);
 							redirect(base_url() . 'admin/update_password_admin');
 						}
+					}
 				$this->session->set_userdata('admin_email', $user_email);
 				$this->session->set_userdata('admin_id', $admin_row->id);
 				$this->session->set_userdata('first_name', $admin_row->first_name);

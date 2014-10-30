@@ -27772,7 +27772,7 @@ var FormsValidation = function() {
             $("#masked_pkey").mask("a*-999-a999")
         }
     }
-}()
+}
 
 $(document).ready(function(){
    $('.thumbnail-products-cat').hover(

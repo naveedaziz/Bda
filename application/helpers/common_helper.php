@@ -22,6 +22,25 @@
    function Encode($str)
    	{
    	return mysql_real_escape_string( htmlentities( strip_tags($str) ) );
+   	} 
+	// --------------------------------------------------------------------
+   
+	 /**
+    * password validation
+    *
+    * This function is used to validate password with reg expression.
+    *
+    * @access	public
+    * @return	Password string
+    */
+   
+   function validatePassword($str)
+   	{
+		if (!preg_match_all('(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}', $str)){
+        return FALSE;
+		}else{
+    	return TRUE;
+		}
    	}
    
    // --------------------------------------------------------------------
