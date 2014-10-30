@@ -115,13 +115,13 @@
    
    		// get form data
    
-   		$array['first_name'] = Encode($this->input->post('first_name'));
-   		$array['last_name'] = Encode($this->input->post('last_name'));
-   		$array['email'] = Encode($this->input->post('val_email'));
-   		$array['status'] = Encode($this->input->post('status'));
+   		$array['first_name'] = encode($this->input->post('first_name'));
+   		$array['last_name'] = encode($this->input->post('last_name'));
+   		$array['email'] = encode($this->input->post('val_email'));
+   		$array['status'] = encode($this->input->post('status'));
    		$array['created_at'] = date('Y-m-d H:i:s');
    		$table_name = TABLE_NOTIFICATION;
-   		$filter = Encode($this->input->post('val_email'));
+   		$filter = encode($this->input->post('val_email'));
    
    		// get all notification email address
    
@@ -239,10 +239,10 @@
    
    		// get form data
    
-   		$id = Encode($this->input->post('id'));
-   		$array['first_name'] = Encode($this->input->post('first_name'));
-   		$array['last_name'] = Encode($this->input->post('last_name'));
-   		$array['status'] = Encode($this->input->post('notification_status'));
+   		$id = encode($this->input->post('id'));
+   		$array['first_name'] = encode($this->input->post('first_name'));
+   		$array['last_name'] = encode($this->input->post('last_name'));
+   		$array['status'] = encode($this->input->post('notification_status'));
    		$array['updated_at'] = date('Y-m-d H:i:s');
    		$table_name = TABLE_NOTIFICATION;
    

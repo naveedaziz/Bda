@@ -298,7 +298,7 @@ class Home extends CI_Controller
 
 		// get categories
 
-		$filter = Encode($this->input->post('search_string'));
+		$filter = encode($this->input->post('search_string'));
 		$data['search_string'] = $filter;
 		$data['search_data'] = $this->modelfrontend->getSearchRecord($filter);
 
@@ -462,13 +462,13 @@ class Home extends CI_Controller
 
 		// get form data
 
-		$catagory_name = Encode($this->input->post('category_name'));
-		$category_name_vending = Encode($this->input->post('category_name_vending'));
-		$active_state = Encode($this->input->post('active_state'));
-		$array['first_name'] = Encode($this->input->post('firstname'));
-		$array['last_name'] = Encode($this->input->post('lastname'));
-		$array['product_id'] = Encode($this->input->post('product_id'));
-		$array['company_name'] = Encode($this->input->post('company'));
+		$catagory_name = encode($this->input->post('category_name'));
+		$category_name_vending = encode($this->input->post('category_name_vending'));
+		$active_state = encode($this->input->post('active_state'));
+		$array['first_name'] = encode($this->input->post('firstname'));
+		$array['last_name'] = encode($this->input->post('lastname'));
+		$array['product_id'] = encode($this->input->post('product_id'));
+		$array['company_name'] = encode($this->input->post('company'));
 		if ($active_state == '1')
 			{
 			$array['category_name'] = $catagory_name;
@@ -478,12 +478,12 @@ class Home extends CI_Controller
 			$array['category_name'] = $category_name_vending;
 			}
 
-		$array['brand_name'] = Encode($this->input->post('brand_name'));
-		$array['city'] = Encode($this->input->post('city'));
-		$array['phone'] = Encode($this->input->post('contact'));
-		$array['email'] = Encode($this->input->post('email'));
-		$array['address'] = Encode($this->input->post('address'));
-		$array['note'] = Encode($this->input->post('description'));
+		$array['brand_name'] = encode($this->input->post('brand_name'));
+		$array['city'] = encode($this->input->post('city'));
+		$array['phone'] = encode($this->input->post('contact'));
+		$array['email'] = encode($this->input->post('email'));
+		$array['address'] = encode($this->input->post('address'));
+		$array['note'] = encode($this->input->post('description'));
 		$array['created_at'] = date('Y-m-d H:i:s');
 		$table_name = TABLE_QUERY;
 

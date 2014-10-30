@@ -341,14 +341,14 @@
    
    			// get form data
    
-   			$array['title'] = Encode($this->input->post('title'));
-   			$array['description'] = Encode($this->input->post('description'));
-   			$array['type'] = Encode($this->input->post('type'));
-   			$array['status'] = Encode($this->input->post('status'));
-   			$array['seo_title'] = Encode($this->input->post('seo_title'));
-   			$array['seo_description'] = Encode($this->input->post('seo_description'));
-   			$array['seo_url'] = Encode($this->input->post('seo_url'));
-   			$array['seo_tags'] = Encode($this->input->post('seo_tags'));
+   			$array['title'] = encode($this->input->post('title'));
+   			$array['description'] = encode($this->input->post('description'));
+   			$array['type'] = encode($this->input->post('type'));
+   			$array['status'] = encode($this->input->post('status'));
+   			$array['seo_title'] = encode($this->input->post('seo_title'));
+   			$array['seo_description'] = encode($this->input->post('seo_description'));
+   			$array['seo_url'] = encode($this->input->post('seo_url'));
+   			$array['seo_tags'] = encode($this->input->post('seo_tags'));
    			$array['created_at'] = date('Y-m-d H:i:s');
    
    			// call model to insert category data
@@ -454,7 +454,7 @@
    			{
    			$imagesCounts = 0;
    			$imageToSave = array();
-   			$id = Encode($this->input->post('id'));
+   			$id = encode($this->input->post('id'));
    
    			// check if the file size exist or file has been uploaded
    
@@ -646,14 +646,14 @@
    
    			$array['images'] = json_encode($imageToSave);
    			$array['hotel_images'] = json_encode($imageToSaveHotel);
-   			$array['title'] = Encode($this->input->post('title'));
-   			$array['description'] = Encode($this->input->post('description'));
-   			$array['type'] = Encode($this->input->post('type'));
-   			$array['status'] = Encode($this->input->post('status'));
-   			$array['seo_title'] = Encode($this->input->post('seo_title'));
-   			$array['seo_description'] = Encode($this->input->post('seo_description'));
-   			$array['seo_url'] = Encode($this->input->post('seo_url'));
-   			$array['seo_tags'] = Encode($this->input->post('seo_tags'));
+   			$array['title'] = encode($this->input->post('title'));
+   			$array['description'] = encode($this->input->post('description'));
+   			$array['type'] = encode($this->input->post('type'));
+   			$array['status'] = encode($this->input->post('status'));
+   			$array['seo_title'] = encode($this->input->post('seo_title'));
+   			$array['seo_description'] = encode($this->input->post('seo_description'));
+   			$array['seo_url'] = encode($this->input->post('seo_url'));
+   			$array['seo_tags'] = encode($this->input->post('seo_tags'));
    			$array['updated_at'] = date('Y-m-d H:i:s');
    			$table_name = TABLE_GENERAL_SETTINGS;
    

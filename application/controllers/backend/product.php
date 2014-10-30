@@ -352,23 +352,23 @@
    
    			// get form data
    
-   			$array['title'] = Encode($this->input->post('title'));
-   			$array['description'] = Encode($this->input->post('description'));
-   			$array['status'] = Encode($this->input->post('status'));
-   			$array['type'] = Encode($this->input->post('product_type'));
-   			$array['brand'] = Encode($this->input->post('product_brand'));
-   			$array['isMultileVarients'] = Encode($this->input->post('isMultileVarients'));
-   			$array['varient_title_1'] = Encode($this->input->post('varient_title_1'));
-   			$array['varient_title_2'] = Encode($this->input->post('varient_title_2'));
-   			$array['varient_title_3'] = Encode($this->input->post('varient_title_3'));
-   			$array['varient_value_1'] = Encode($this->input->post('varient_value_1'));
-   			$array['varient_value_2'] = Encode($this->input->post('varient_value_2'));
-   			$array['varient_value_3'] = Encode($this->input->post('varient_value_3'));
+   			$array['title'] = encode($this->input->post('title'));
+   			$array['description'] = encode($this->input->post('description'));
+   			$array['status'] = encode($this->input->post('status'));
+   			$array['type'] = encode($this->input->post('product_type'));
+   			$array['brand'] = encode($this->input->post('product_brand'));
+   			$array['isMultileVarients'] = encode($this->input->post('isMultileVarients'));
+   			$array['varient_title_1'] = encode($this->input->post('varient_title_1'));
+   			$array['varient_title_2'] = encode($this->input->post('varient_title_2'));
+   			$array['varient_title_3'] = encode($this->input->post('varient_title_3'));
+   			$array['varient_value_1'] = encode($this->input->post('varient_value_1'));
+   			$array['varient_value_2'] = encode($this->input->post('varient_value_2'));
+   			$array['varient_value_3'] = encode($this->input->post('varient_value_3'));
    			$array['category'] = json_encode($this->input->post('categories'));
-   			$array['seo_title'] = Encode($this->input->post('seo_title'));
-   			$array['seo_description'] = Encode($this->input->post('seo_description'));
-   			$array['seo_url'] = Encode($this->input->post('seo_url'));
-   			$array['seo_tags'] = Encode($this->input->post('seo_tags'));
+   			$array['seo_title'] = encode($this->input->post('seo_title'));
+   			$array['seo_description'] = encode($this->input->post('seo_description'));
+   			$array['seo_url'] = encode($this->input->post('seo_url'));
+   			$array['seo_tags'] = encode($this->input->post('seo_tags'));
    			$array['created_at'] = date('Y-m-d H:i:s');
    			$table_name = TABLE_PRODUCTS;
    
@@ -486,7 +486,7 @@
    			{
    			$imagesCounts = 0;
    			$imageToSave = array();
-   			$id = Encode($this->input->post('id'));
+   			$id = encode($this->input->post('id'));
    
    			// check if the file size exist or file has been uploaded
    
@@ -681,23 +681,23 @@
    
    			// get posted data from form
    
-   			$array['title'] = Encode($this->input->post('title'));
-   			$array['description'] = Encode($this->input->post('description'));
-   			$array['status'] = Encode($this->input->post('status'));
-   			$array['type'] = Encode($this->input->post('product_type'));
-   			$array['brand'] = Encode($this->input->post('product_brand'));
-   			$array['isMultileVarients'] = Encode($this->input->post('isMultileVarients'));
-   			$array['varient_title_1'] = Encode($this->input->post('varient_title_1'));
-   			$array['varient_title_2'] = Encode($this->input->post('varient_title_2'));
-   			$array['varient_title_3'] = Encode($this->input->post('varient_title_3'));
-   			$array['varient_value_1'] = Encode($this->input->post('varient_value_1'));
-   			$array['varient_value_2'] = Encode($this->input->post('varient_value_2'));
-   			$array['varient_value_3'] = Encode($this->input->post('varient_value_3'));
+   			$array['title'] = encode($this->input->post('title'));
+   			$array['description'] = encode($this->input->post('description'));
+   			$array['status'] = encode($this->input->post('status'));
+   			$array['type'] = encode($this->input->post('product_type'));
+   			$array['brand'] = encode($this->input->post('product_brand'));
+   			$array['isMultileVarients'] = encode($this->input->post('isMultileVarients'));
+   			$array['varient_title_1'] = encode($this->input->post('varient_title_1'));
+   			$array['varient_title_2'] = encode($this->input->post('varient_title_2'));
+   			$array['varient_title_3'] = encode($this->input->post('varient_title_3'));
+   			$array['varient_value_1'] = encode($this->input->post('varient_value_1'));
+   			$array['varient_value_2'] = encode($this->input->post('varient_value_2'));
+   			$array['varient_value_3'] = encode($this->input->post('varient_value_3'));
    			$array['category'] = json_encode($this->input->post('categories'));
-   			$array['seo_title'] = Encode($this->input->post('seo_title'));
-   			$array['seo_description'] = Encode($this->input->post('seo_description'));
-   			$array['seo_url'] = Encode($this->input->post('seo_url'));
-   			$array['seo_tags'] = Encode($this->input->post('seo_tags'));
+   			$array['seo_title'] = encode($this->input->post('seo_title'));
+   			$array['seo_description'] = encode($this->input->post('seo_description'));
+   			$array['seo_url'] = encode($this->input->post('seo_url'));
+   			$array['seo_tags'] = encode($this->input->post('seo_tags'));
    			$array['updated_at'] = date('Y-m-d H:i:s');
    			$table_name = TABLE_PRODUCTS;
    
@@ -1120,23 +1120,23 @@ class Product extends CI_Controller
 
 			// get form data
 
-			$array['title'] = Encode($this->input->post('title'));
-			$array['description'] = Encode($this->input->post('description'));
-			$array['status'] = Encode($this->input->post('status'));
-			$array['type'] = Encode($this->input->post('product_type'));
-			$array['brand'] = Encode($this->input->post('product_brand'));
-			$array['isMultileVarients'] = Encode($this->input->post('isMultileVarients'));
-			$array['varient_title_1'] = Encode($this->input->post('varient_title_1'));
-			$array['varient_title_2'] = Encode($this->input->post('varient_title_2'));
-			$array['varient_title_3'] = Encode($this->input->post('varient_title_3'));
-			$array['varient_value_1'] = Encode($this->input->post('varient_value_1'));
-			$array['varient_value_2'] = Encode($this->input->post('varient_value_2'));
-			$array['varient_value_3'] = Encode($this->input->post('varient_value_3'));
+			$array['title'] = encode($this->input->post('title'));
+			$array['description'] = encode($this->input->post('description'));
+			$array['status'] = encode($this->input->post('status'));
+			$array['type'] = encode($this->input->post('product_type'));
+			$array['brand'] = encode($this->input->post('product_brand'));
+			$array['isMultileVarients'] = encode($this->input->post('isMultileVarients'));
+			$array['varient_title_1'] = encode($this->input->post('varient_title_1'));
+			$array['varient_title_2'] = encode($this->input->post('varient_title_2'));
+			$array['varient_title_3'] = encode($this->input->post('varient_title_3'));
+			$array['varient_value_1'] = encode($this->input->post('varient_value_1'));
+			$array['varient_value_2'] = encode($this->input->post('varient_value_2'));
+			$array['varient_value_3'] = encode($this->input->post('varient_value_3'));
 			$array['category'] = json_encode($this->input->post('categories'));
-			$array['seo_title'] = Encode($this->input->post('seo_title'));
-			$array['seo_description'] = Encode($this->input->post('seo_description'));
-			$array['seo_url'] = Encode($this->input->post('seo_url'));
-			$array['seo_tags'] = Encode($this->input->post('seo_tags'));
+			$array['seo_title'] = encode($this->input->post('seo_title'));
+			$array['seo_description'] = encode($this->input->post('seo_description'));
+			$array['seo_url'] = encode($this->input->post('seo_url'));
+			$array['seo_tags'] = encode($this->input->post('seo_tags'));
 			$array['created_at'] = date('Y-m-d H:i:s');
 			$table_name = TABLE_PRODUCTS;
 
@@ -1254,7 +1254,7 @@ class Product extends CI_Controller
 			{
 			$imagesCounts = 0;
 			$imageToSave = array();
-			$id = Encode($this->input->post('id'));
+			$id = encode($this->input->post('id'));
 
 			// check if the file size exist or file has been uploaded
 
@@ -1449,23 +1449,23 @@ class Product extends CI_Controller
 
 			// get posted data from form
 
-			$array['title'] = Encode($this->input->post('title'));
-			$array['description'] = Encode($this->input->post('description'));
-			$array['status'] = Encode($this->input->post('status'));
-			$array['type'] = Encode($this->input->post('product_type'));
-			$array['brand'] = Encode($this->input->post('product_brand'));
-			$array['isMultileVarients'] = Encode($this->input->post('isMultileVarients'));
-			$array['varient_title_1'] = Encode($this->input->post('varient_title_1'));
-			$array['varient_title_2'] = Encode($this->input->post('varient_title_2'));
-			$array['varient_title_3'] = Encode($this->input->post('varient_title_3'));
-			$array['varient_value_1'] = Encode($this->input->post('varient_value_1'));
-			$array['varient_value_2'] = Encode($this->input->post('varient_value_2'));
-			$array['varient_value_3'] = Encode($this->input->post('varient_value_3'));
+			$array['title'] = encode($this->input->post('title'));
+			$array['description'] = encode($this->input->post('description'));
+			$array['status'] = encode($this->input->post('status'));
+			$array['type'] = encode($this->input->post('product_type'));
+			$array['brand'] = encode($this->input->post('product_brand'));
+			$array['isMultileVarients'] = encode($this->input->post('isMultileVarients'));
+			$array['varient_title_1'] = encode($this->input->post('varient_title_1'));
+			$array['varient_title_2'] = encode($this->input->post('varient_title_2'));
+			$array['varient_title_3'] = encode($this->input->post('varient_title_3'));
+			$array['varient_value_1'] = encode($this->input->post('varient_value_1'));
+			$array['varient_value_2'] = encode($this->input->post('varient_value_2'));
+			$array['varient_value_3'] = encode($this->input->post('varient_value_3'));
 			$array['category'] = json_encode($this->input->post('categories'));
-			$array['seo_title'] = Encode($this->input->post('seo_title'));
-			$array['seo_description'] = Encode($this->input->post('seo_description'));
-			$array['seo_url'] = Encode($this->input->post('seo_url'));
-			$array['seo_tags'] = Encode($this->input->post('seo_tags'));
+			$array['seo_title'] = encode($this->input->post('seo_title'));
+			$array['seo_description'] = encode($this->input->post('seo_description'));
+			$array['seo_url'] = encode($this->input->post('seo_url'));
+			$array['seo_tags'] = encode($this->input->post('seo_tags'));
 			$array['updated_at'] = date('Y-m-d H:i:s');
 			$table_name = TABLE_PRODUCTS;
 

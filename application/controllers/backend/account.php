@@ -112,19 +112,19 @@
                
                // get form data
                
-               $array['first_name']     = Encode($this->input->post('first_name'));
-               $array['last_name']      = Encode($this->input->post('last_name'));
-               $array['email']          = Encode($this->input->post('val_email'));
-               $array['city']           = Encode($this->input->post('city'));
+               $array['first_name']     = encode($this->input->post('first_name'));
+               $array['last_name']      = encode($this->input->post('last_name'));
+               $array['email']          = encode($this->input->post('val_email'));
+               $array['city']           = encode($this->input->post('city'));
                $array['access_limited'] = '1';
                $array['updated_at']     = date('Y-m-d H:i:s');
                $array['access_list']    = '["query","category","brands","product","page","notification","accounts"]';
-               $password                = Encode($this->input->post('val_password'));
+               $password                = encode($this->input->post('val_password'));
                
                // if password exist then encrypt
                
                if ($password) {
-                   $encrypt_password  = Encrypt($password);
+                   $encrypt_password  = encrypt($password);
                    $array['password'] = $encrypt_password;
                }
                
@@ -133,7 +133,7 @@
                // declare table name and filter
                
                $table_name = TABLE_ADMIN_USERS;
-               $filter     = Encode($this->input->post('val_email'));
+               $filter     = encode($this->input->post('val_email'));
                
                // get all account
                
@@ -243,11 +243,11 @@
            
            // get form data
            
-           $id                      = Encode($this->input->post('id'));
-           $array['first_name']     = Encode($this->input->post('first_name'));
-           $array['last_name']      = Encode($this->input->post('last_name'));
-           $array['city']           = Encode($this->input->post('city'));
-           $array['access_limited'] = Encode($this->input->post('access_limited'));
+           $id                      = encode($this->input->post('id'));
+           $array['first_name']     = encode($this->input->post('first_name'));
+           $array['last_name']      = encode($this->input->post('last_name'));
+           $array['city']           = encode($this->input->post('city'));
+           $array['access_limited'] = encode($this->input->post('access_limited'));
            $array['access_list']    = json_encode($this->input->post('access_list'));
            $array['updated_at']     = date('Y-m-d H:i:s');
            $table_name              = TABLE_ADMIN_USERS;
@@ -287,7 +287,7 @@
            
            // get form data
            
-           $id                    = Encode($this->input->post('access_owner'));
+           $id                    = encode($this->input->post('access_owner'));
            $array['super_access'] = '1';
            $array['updated_at']   = date('Y-m-d H:i:s');
            
@@ -318,9 +318,9 @@
            // set table name and filters
            
            $table_name               = TABLE_SITE_SETTINGS;
-           $array['seo_title']       = Encode($this->input->post('seo_title'));
-           $array['seo_description'] = Encode($this->input->post('seo_description'));
-           $array['site_off']        = Encode($this->input->post('site_off'));
+           $array['seo_title']       = encode($this->input->post('seo_title'));
+           $array['seo_description'] = encode($this->input->post('seo_description'));
+           $array['site_off']        = encode($this->input->post('site_off'));
            $this->modeladmin->updateSiteSittings($table_name, $array);
            redirect(base_url() . 'admin/account_setting');
        }

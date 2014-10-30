@@ -19,7 +19,7 @@
     * @return	encoded string
     */
    
-   function Encode($str)
+   function encode($str)
    	{
    	return mysql_real_escape_string( ( ($str) ) );
    	} 
@@ -54,7 +54,7 @@
     * @return	Encrypt password
     */
    
-   function Encrypt($password)
+   function encrypt($password)
    	{
    
    	// return md5($password);

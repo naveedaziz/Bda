@@ -128,11 +128,11 @@
    
    		// get user_email input
    
-   		$user_email = Encode($this->input->post('val_email'));
+   		$user_email = encode($this->input->post('val_email'));
    
    		// get and encrypt password
    
-   		$password = Encrypt(Encode($this->input->post('password')));
+   		$password = encrypt(encode($this->input->post('password')));
    
    		// Authenticate admin
    
@@ -202,7 +202,7 @@
    	 */
    		public function forgotPassword()
    		{
-   		$user_email = Encode($this->input->post('val_email'));
+   		$user_email = encode($this->input->post('val_email'));
    		if (!empty($user_email))
    			{
    			$resetPassord = $this->modeladmin->checkForgotPassword($user_email);
@@ -249,10 +249,10 @@
    			$validLink = $resetPassord = $this->modeladmin->linkValidationPasswordReset($key);
    		if ($validLink)
    			{
-   			$user_password = Encode($this->input->post('val_password'));
+   			$user_password = encode($this->input->post('val_password'));
    			if (!empty($user_password))
    				{
-   				$updatedPassword = Encrypt(Encode($this->input->post('val_password')));
+   				$updatedPassword = encrypt(encode($this->input->post('val_password')));
    				$resetPassord = $this->modeladmin->updateUserPassword($updatedPassword, $key);
    				redirect(base_url() . 'admin/reset-password/' . $key . '?success');
    				}
@@ -351,10 +351,10 @@
    
    			// get posted data
    
-   			$id = Encode($this->input->post('admin_id'));
-   			$array['first_name'] = Encode($this->input->post('val_first_name'));
-   			$array['last_name'] = Encode($this->input->post('val_last_name'));
-   			$array['password'] = Encrypt(Encode($this->input->post('val_password')));
+   			$id = encode($this->input->post('admin_id'));
+   			$array['first_name'] = encode($this->input->post('val_first_name'));
+   			$array['last_name'] = encode($this->input->post('val_last_name'));
+   			$array['password'] = encrypt(encode($this->input->post('val_password')));
    
    			// if password exist then encrypt that
    
