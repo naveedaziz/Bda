@@ -119,7 +119,7 @@
                            <input type="text" id="txtCaptcha" disabled="disabled" class="form-control" />
                            <span id="captcha-error">Enter valid Verification code.</span>
                         </div>
-                    <div class="form-grou  col-md-6p">
+                    <div class="form-group  col-md-12">
                        <input type="text" name="captch" id="captch" placeholder="Please enter above verification code*" class="form-control" autocomplete="off" /> 
                     </div>
                     <div class="form-group form-actions">
