@@ -36,7 +36,7 @@
          <ul id="myTab" class="nav nav-tabs nav-justified tabs-categories">
             <?php if ($categories->num_rows() > 0) { 
                foreach ($categories->result() as $category){ ?>
-            <li <?php if($category->seo_url === $active_category){?> class="active" <?php } ?>><a href="<?php echo base_url().'category/'.$category->seo_url; ?>"><?php echo $category->title;?></a></li>
+            <li <?php if($category->seo_url === $active_category){?> class="float-left-33 active" <?php }else{ ?>class="float-left-33" <?php } ?>><a href="<?php echo base_url().'category/'.$category->seo_url; ?>"><?php echo $category->title;?></a></li>
             <?php }  ?>
             <?php }?>
          </ul>
@@ -82,7 +82,7 @@
                      if($json_o){
                      foreach($json_o as $key =>$value){ ?>
                   <div class="item">
-                     <div class="fill" style="background-image:url('<?php echo base_url().$json_o[$key]; ?>');"></div>
+                     <div class="fill product-slider-fill" style="background-image:url('<?php echo base_url().$json_o[$key]; ?>');"></div>
                   </div>
                   <?php } ?>
                   <?php }else{ ?>
@@ -117,7 +117,7 @@
                      <h4 class="heading">BEVERAGES</h4>
                      <?php foreach ($products->result() as $product){
                         if($product->type == 'beverages'){ ?>
-                     <div class="col-md-3 col-margin">
+                     <div class="col-md-3 col-margin  margin-bottom-30">
                      <div class="thumbnail-products-cat">
                      <div class="caption">
                       <a href="<?php echo base_url().'product/'.$product->seo_url; ?>">
@@ -153,7 +153,7 @@
                      <h3 class="heading">Food</h3>
                      <?php foreach ($products->result() as $product){
                         if($product->type == 'food'){ ?>
-                     <div class="col-md-3 col-margin">
+                     <div class="col-md-3 col-margin  margin-bottom-30">
                      <div class="thumbnail-products-cat">
                      <div class="caption">
                       <a href="<?php echo base_url().'product/'.$product->seo_url; ?>">
@@ -201,13 +201,13 @@
    foreach ($categories->result() as $category){ 
        if($category->seo_url === $active_category){ ?>
 <div class="ful-col-product">
-   <nav>
+   <nav>   
       <div class="container">
          <div class="row clearfix">
             <div class="col-md-12 column">
                <div class="row">
                   <div class="col-md-6">
-                     <h4 class="msg-bottom">THESE <?php echo $category->title; ?> USING HORECA PRODUCTS</h4>
+                     <h4 class="msg-bottom">THESE <?php echo $category->title; ?> USING THESE PRODUCTS</h4>
                   </div>
                   <div class="col-md-6">
                      <?php if(!empty($category->hotel_images)){ 
@@ -239,3 +239,4 @@
 <?php } } ?>
 <!-- /.container -->
 <?php $this->load->view('frontend/elements/footer'); ?>>>>
+>>>>>

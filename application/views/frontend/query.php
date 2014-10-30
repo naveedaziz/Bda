@@ -24,8 +24,8 @@
          <p>Please fill in your information to place order. Our sales team will contact you shortly</p>
          <div class="col-lg-8 centered-text">
             <ul id="myTab" class="nav nav-tabs nav-justified tabs-enquiry">
-               <li <?php if(!isset($product_id)) { ?>class="active" <?php } ?>><a href="#product" data-toggle="tab"  onclick="$('#activeState').val(1);$('.brandSelect').removeClass('fade')">Product</a></li>
-               <li <?php if(isset($product_id)) { ?>class="active" <?php } ?>><a href="#vending" data-toggle="tab" onclick="$('#activeState').val(2);$('.brandSelect').addClass('fade')">Vending Machine</a></li>
+               <li <?php if(!isset($product_id)) { ?>class="active float-left-50" <?php }else{ ?>class="float-left-50" <?php } ?>><a href="#product" data-toggle="tab"  onclick="$('#activeState').val(1);$('.brandSelect').removeClass('fade')">Product</a></li>
+               <li <?php if(isset($product_id)) { ?>class="active float-left-50"  <?php }else{ ?>class="float-left-50" <?php } ?>><a href="#vending" data-toggle="tab" onclick="$('#activeState').val(2);$('.brandSelect').addClass('fade')">Vending Machine</a></li>
             </ul>
          </div>
          <form id="form-validation" action="<?php echo base_url();?>submitQuery" method="post" class="form-horizontal form-bordered">

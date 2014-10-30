@@ -55,10 +55,10 @@ class Home extends CI_Controller
 	public function index()
 		{
 		if(isset($_SESSION['site_meta']->site_off)){
-		if($_SESSION['site_meta']->site_off == 'true'){
-				$this->load->view('frontend/offline');
-				return true;
-		}
+			if($_SESSION['site_meta']->site_off == 'true'){
+					$this->load->view('frontend/offline');
+					return true;
+			}
 		}
 		// set session page name
 
@@ -94,10 +94,10 @@ class Home extends CI_Controller
 	public function getAllProducts()
 		{
 	    if(isset($_SESSION['site_meta']->site_off)){
-		if($_SESSION['site_meta']->site_off == 'true'){
-				$this->load->view('frontend/offline');
-				return true;
-		}
+			if($_SESSION['site_meta']->site_off == 'true'){
+					$this->load->view('frontend/offline');
+					return true;
+			}
 		}
 		$data = '';
 
@@ -165,10 +165,10 @@ class Home extends CI_Controller
 	public function getProductDetail()
 		{
 		if(isset($_SESSION['site_meta']->site_off)){
-		if($_SESSION['site_meta']->site_off == 'true'){
-				$this->load->view('frontend/offline');
-				return true;
-		}
+			if($_SESSION['site_meta']->site_off == 'true'){
+					$this->load->view('frontend/offline');
+					return true;
+			}
 		}
 		$data = '';
 
@@ -209,9 +209,11 @@ class Home extends CI_Controller
 	 */
 	public function getVendingProductDetail()
 		{
-		if($_SESSION['site_meta']->site_off == 'true'){
-				$this->load->view('frontend/offline');
-				return true;
+		if(isset($_SESSION['site_meta']->site_off)){
+			if($_SESSION['site_meta']->site_off == 'true'){
+					$this->load->view('frontend/offline');
+					return true;
+			}
 		}
 		$data = '';
 
@@ -240,9 +242,11 @@ class Home extends CI_Controller
 	 */
 	public function getPageDetail()
 		{
-		if($_SESSION['site_meta']->site_off == 'true'){
-				$this->load->view('frontend/offline');
-				return true;
+		if(isset($_SESSION['site_meta']->site_off)){
+			if($_SESSION['site_meta']->site_off == 'true'){
+					$this->load->view('frontend/offline');
+					return true;
+			}
 		}
 		$data = '';
 
@@ -284,9 +288,11 @@ class Home extends CI_Controller
 	 */
 	public function getSearchDetail()
 		{
-		if($_SESSION['site_meta']->site_off == 'true'){
-				$this->load->view('frontend/offline');
-				return true;
+		if(isset($_SESSION['site_meta']->site_off)){
+			if($_SESSION['site_meta']->site_off == 'true'){
+					$this->load->view('frontend/offline');
+					return true;
+			}
 		}
 		$data = '';
 
@@ -320,9 +326,11 @@ class Home extends CI_Controller
 	 */
 	public function getVendingSolution()
 		{
-		if($_SESSION['site_meta']->site_off == 'true'){
-				$this->load->view('frontend/offline');
-				return true;
+		if(isset($_SESSION['site_meta']->site_off)){
+			if($_SESSION['site_meta']->site_off == 'true'){
+					$this->load->view('frontend/offline');
+					return true;
+			}
 		}
 		$data = '';
 
@@ -376,9 +384,11 @@ class Home extends CI_Controller
 	 */
 	public function query()
 		{
-		if($_SESSION['site_meta']->site_off == 'true'){
-				$this->load->view('frontend/offline');
-				return true;
+		if(isset($_SESSION['site_meta']->site_off)){
+			if($_SESSION['site_meta']->site_off == 'true'){
+					$this->load->view('frontend/offline');
+					return true;
+			}
 		}
 
 		// get url parameter
@@ -418,9 +428,11 @@ class Home extends CI_Controller
 	 */
 	public function thanks()
 		{
-		if($_SESSION['site_meta']->site_off == 'true'){
-				$this->load->view('frontend/offline');
-				return true;
+		if(isset($_SESSION['site_meta']->site_off)){
+			if($_SESSION['site_meta']->site_off == 'true'){
+					$this->load->view('frontend/offline');
+					return true;
+			}
 		}
 
 		// load user view with data listing
@@ -441,9 +453,11 @@ class Home extends CI_Controller
 	 */
 	public function submitQuery()
 		{
-		if($_SESSION['site_meta']->site_off == 'true'){
-				$this->load->view('frontend/offline');
-				return true;
+		if(isset($_SESSION['site_meta']->site_off)){
+			if($_SESSION['site_meta']->site_off == 'true'){
+					$this->load->view('frontend/offline');
+					return true;
+			}
 		}
 
 		// get form data
@@ -528,9 +542,11 @@ class Home extends CI_Controller
 	 */
 	private function sendEmail($from, $to, $cc, $bcc, $subject, $message)
 		{
-		if($_SESSION['site_meta']->site_off == 'true'){
-				$this->load->view('frontend/offline');
-				return true;
+		if(isset($_SESSION['site_meta']->site_off)){
+			if($_SESSION['site_meta']->site_off == 'true'){
+					$this->load->view('frontend/offline');
+					return true;
+			}
 		}
 		$this->load->library('email');
 		$this->email->set_newline("\r\n");
@@ -551,9 +567,11 @@ class Home extends CI_Controller
 
 	public function notFound()
 		{
-		if($_SESSION['site_meta']->site_off == 'true'){
-				$this->load->view('frontend/offline');
-				return true;
+		if(isset($_SESSION['site_meta']->site_off)){
+			if($_SESSION['site_meta']->site_off == 'true'){
+					$this->load->view('frontend/offline');
+					return true;
+			}
 		}
 		$this->load->view('frontend/not_found');
 		}
