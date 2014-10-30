@@ -9,7 +9,7 @@
       </div>
       <?php if ($categories->num_rows() > 0) { 
          foreach ($categories->result() as $category){ ?>
-      <div class="col-md-4">
+      <div class="col-md-4 margin-bottom-30">
          <?php 
             if(!empty($category->images)){ 
             	$string = $category->images;

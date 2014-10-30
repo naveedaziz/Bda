@@ -1,5 +1,5 @@
 <!-- Header Carousel -->
-<header id="myCarousel" class="carousel slide carousel-home">
+<header id="myCarousel" class="home-slider carousel slide carousel-home">
    <!-- Indicators -->
    <ol class="carousel-indicators">
       <?php if ($banners->num_rows() > 0) {

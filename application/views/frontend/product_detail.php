@@ -76,7 +76,7 @@
                <?php  if($images_array){
                   foreach($images_array as $key =>$value){ ?>
                <div class="item">
-                  <div class="fill" style="background-image:url('<?php echo base_url().$images_array[$key]; ?>');"></div>
+                  <div class="fill  product-slider-fill" style="background-image:url('<?php echo base_url().$images_array[$key]; ?>');"></div>
                </div>
                <?php } ?>
                <?php } ?>
