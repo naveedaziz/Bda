@@ -118,29 +118,28 @@
                      <?php foreach ($products->result() as $product){
                         if($product->type == 'beverages'){ ?>
                      <div class="col-md-3 col-margin  margin-bottom-30">
-                     <div class="thumbnail-products-cat">
-                     <div class="caption">
-                      <a href="<?php echo base_url().'product/'.$product->seo_url; ?>">
-                       <button class="btn btn-learn-more">LEARN MORE</button>
-                      </a>
-              		  </div>
-                     <?php if(!empty($product->banner_images)){ 
-                           $string = $product->banner_images;
-                           if($string){
-                           $json_o = (array) json_decode($string);
-                           }else{
-                           $json_o = '';
-                           }
-                           if($json_o){?>
-                        <a href="<?php echo base_url().'product/'.$product->seo_url; ?>">
-                        <img class="images-section img-responsive" src="<?php echo base_url().$json_o[0]; ?>" alt="">
-                        </a>
-                        <?php }else{ ?>
-                        <a href="<?php echo base_url().'product/'.$product->seo_url; ?>">
-                        <img class="product-images-section img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>default.jpg" alt="">
-                        </a>
-                        
-                        <?php } ?>
+                        <div class="thumbnail-products-cat">
+                           <div class="caption">
+                              <a href="<?php echo base_url().'product/'.$product->seo_url; ?>">
+                              <button class="btn btn-learn-more">LEARN MORE</button>
+                              </a>
+                           </div>
+                           <?php if(!empty($product->banner_images)){ 
+                              $string = $product->banner_images;
+                              if($string){
+                              $json_o = (array) json_decode($string);
+                              }else{
+                              $json_o = '';
+                              }
+                              if($json_o){?>
+                           <a href="<?php echo base_url().'product/'.$product->seo_url; ?>">
+                           <img class="images-section img-responsive" src="<?php echo base_url().$json_o[0]; ?>" alt="">
+                           </a>
+                           <?php }else{ ?>
+                           <a href="<?php echo base_url().'product/'.$product->seo_url; ?>">
+                           <img class="product-images-section img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>default.jpg" alt="">
+                           </a>
+                           <?php } ?>
                         </div>
                         <h4 class="title"><a href="<?php echo base_url().'product/'.$product->seo_url; ?>"><?php echo $product->title;?></a></h4>
                         <?php } ?>
@@ -154,29 +153,29 @@
                      <?php foreach ($products->result() as $product){
                         if($product->type == 'food'){ ?>
                      <div class="col-md-3 col-margin  margin-bottom-30">
-                     <div class="thumbnail-products-cat">
-                     <div class="caption">
-                      <a href="<?php echo base_url().'product/'.$product->seo_url; ?>">
-                       <button class="btn btn-learn-more">LEARN MORE</button>
-                      </a>
-              		  </div>
-                        <?php if(!empty($product->banner_images)){ 
-                           $string = $product->banner_images;
-                           if($string){
-                           $json_o = (array) json_decode($string);
-                           }else{
-                           $json_o = '';
-                           }
-                           if($json_o){?>
-                        <a href="<?php echo base_url().'product/'.$product->seo_url; ?>">
-                        <img class="images-section img-responsive" src="<?php echo base_url().$json_o[0]; ?>" alt="">
-                        </a>
-                        <?php }else{ ?>
-                        <a href="<?php echo base_url().'product/'.$product->seo_url; ?>">
-                        <img class="product-images-section img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>default.jpg" alt="">
-                        </a>
-                        <?php } ?>
-                         </div>
+                        <div class="thumbnail-products-cat">
+                           <div class="caption">
+                              <a href="<?php echo base_url().'product/'.$product->seo_url; ?>">
+                              <button class="btn btn-learn-more">LEARN MORE</button>
+                              </a>
+                           </div>
+                           <?php if(!empty($product->banner_images)){ 
+                              $string = $product->banner_images;
+                              if($string){
+                              $json_o = (array) json_decode($string);
+                              }else{
+                              $json_o = '';
+                              }
+                              if($json_o){?>
+                           <a href="<?php echo base_url().'product/'.$product->seo_url; ?>">
+                           <img class="images-section img-responsive" src="<?php echo base_url().$json_o[0]; ?>" alt="">
+                           </a>
+                           <?php }else{ ?>
+                           <a href="<?php echo base_url().'product/'.$product->seo_url; ?>">
+                           <img class="product-images-section img-responsive" src="<?php echo base_url().ASSETS_FRONTEND_IMAGE_DIR;?>default.jpg" alt="">
+                           </a>
+                           <?php } ?>
+                        </div>
                         <h4 class="title"><a href="<?php echo base_url().'product/'.$product->id; ?>"><?php echo $product->title;?></a></h4>
                         <?php } ?>
                      </div>
@@ -201,7 +200,7 @@
    foreach ($categories->result() as $category){ 
        if($category->seo_url === $active_category){ ?>
 <div class="ful-col-product">
-   <nav>   
+   <nav>
       <div class="container">
          <div class="row clearfix">
             <div class="col-md-12 column">

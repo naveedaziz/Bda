@@ -23,9 +23,9 @@
    	{
    	return mysql_real_escape_string( htmlentities( strip_tags($str) ) );
    	} 
-	// --------------------------------------------------------------------
+   // --------------------------------------------------------------------
    
-	 /**
+   /**
     * password validation
     *
     * This function is used to validate password with reg expression.
@@ -36,13 +36,13 @@
    
    function passwordRegex($str)
    	{
-		if (preg_match("^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}$^", $str)){
-		return TRUE;
-		}else{
+   if (preg_match("^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}$^", $str)){
+   return TRUE;
+   }else{
     	return FALSE;
-		}
+   }
    	}
-  
+   
    // --------------------------------------------------------------------
    
    /**

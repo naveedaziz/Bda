@@ -1,20 +1,20 @@
 <?php
 
-if (!defined('BASEPATH')) exit('No direct script access allowed');
-/**
- * @Filename: home.php
- * Location: ./application/controllers/frontend/home.php
- * Function: Home class handles the frontend
- * views and category,product and brands listing and query.
- *
- * @Author: Anum Ishtiaq
- * @Creator: Bramerz.pk
- *
- */
-/**
- * this Home class extends CI_Controller
- * @see main_class
- */
+	if (!defined('BASEPATH')) exit('No direct script access allowed');
+	/**
+	 * @Filename: home.php
+	 * Location: ./application/controllers/frontend/home.php
+	 * Function: Home class handles the frontend
+	 * views and category,product and brands listing and query.
+	 *
+	 * @Author: Anum Ishtiaq
+	 * @Creator: Bramerz.pk
+	 *
+	 */
+	/**
+	 * this Home class extends CI_Controller
+	 * @see main_class
+	 */
 class Home extends CI_Controller
 
 	{
