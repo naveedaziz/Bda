@@ -21,7 +21,7 @@
    
    function Encode($str)
    	{
-   	return mysql_real_escape_string( htmlentities( strip_tags($str) ) );
+   	return mysql_real_escape_string( ( ($str) ) );
    	} 
    // --------------------------------------------------------------------
    
@@ -37,7 +37,7 @@
    function passwordRegex($str)
    	{
    if (preg_match("^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}$^", $str)){
-   return TRUE;
+   		return TRUE;
    }else{
     	return FALSE;
    }

@@ -1,4 +1,5 @@
-<?php $this->load->view('backend/elements/header'); ?>
+<?php //echo '<pre>';  print_r($row);die();  
+$this->load->view('backend/elements/header'); ?>
 <!-- Product content -->
 <div id="page-content">
    <form id="form-validation" action="<?php echo base_url();?>admin/update_product" method="post" class="form-horizontal" enctype="multipart/form-data">
