@@ -176,7 +176,7 @@
                            </a>
                            <?php } ?>
                         </div>
-                        <h4 class="title"><a href="<?php echo base_url().'product/'.$product->id; ?>"><?php echo $product->title;?></a></h4>
+                        <h4 class="title"><a href="<?php echo base_url().'product/'.$product->seo_url; ?>"><?php echo $product->title;?></a></h4>
                         <?php } ?>
                      </div>
                      <?php  } ?>
@@ -237,4 +237,4 @@
 <?php } ?>
 <?php } } ?>
 <!-- /.container -->
-<?php $this->load->view('frontend/elements/footer'); ?>
+<?php $this->load->view('frontend/elements/footer'); ?>>>
