@@ -106,7 +106,7 @@
            
            // password validate Regex expresson 
            
-           if (passwordRegex($this->input->post('val_password')) === FALSE) {
+           if (validatePasswordRegex($this->input->post('val_password')) === FALSE) {
                redirect(base_url() . 'admin/account_setting');
            } else {
                

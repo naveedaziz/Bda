@@ -242,7 +242,7 @@
    		
    		// password validate Regex expresson 
    		
-   		if ( passwordRegex($this->input->post('val_password')) === FALSE ) {
+   		if ( validatePasswordRegex($this->input->post('val_password')) === FALSE ) {
    			redirect(base_url() . 'admin');
    		} else {
    			$key = $this->uri->segment(3);
@@ -336,7 +336,7 @@
    
    		// password validate Regex expresson 
    		
-   		if ( passwordRegex($this->input->post('val_password')) === FALSE ) {
+   		if ( validatePasswordRegex($this->input->post('val_password')) === FALSE ) {
    			redirect(base_url() . 'admin');
    		} else {
    			
