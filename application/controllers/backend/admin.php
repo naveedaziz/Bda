@@ -36,6 +36,9 @@ class Admin extends CI_Controller
 		$this->output->set_header("P3P: CP='CAO PSA OUR'");
 		$this->output->set_header('Pragma: no-cache');
 		date_default_timezone_set('Asia/Karachi');
+		
+		// Load model, helper and libraries
+		
 		$this->load->helper('url');
 		$this->load->helper('common_helper');
 		$this->load->library('session');
@@ -54,7 +57,7 @@ class Admin extends CI_Controller
 	 * @access	public
 	 * @return	void
 	 */
-	public function index()
+		public function index()
 		{
 		$session_id = $this->session->userdata('admin_id');
 
@@ -86,7 +89,7 @@ class Admin extends CI_Controller
 	 * @access	public
 	 * @return	void
 	 */
-	public function unauthorized()
+		public function unauthorized()
 		{
 		$session_id = $this->session->userdata('admin_id');
 
@@ -120,7 +123,7 @@ class Admin extends CI_Controller
 	 * @access	public
 	 * @return	void
 	 */
-	public function doLogin()
+		public function doLogin()
 		{
 
 		// get user_email input
@@ -197,7 +200,7 @@ class Admin extends CI_Controller
 	 * @access	public
 	 * @return	void
 	 */
-	public function forgotPassword()
+		public function forgotPassword()
 		{
 		$user_email = Encode($this->input->post('val_email'));
 		if (!empty($user_email))
@@ -222,10 +225,28 @@ class Admin extends CI_Controller
 		$this->load->view('backend/forgot_password');
 		}
 
-	public function forgotPasswordReset()
+	// --------------------------------------------------------------------
+
+	/**
+	 * forgotPasswordReset
+	 *
+	 * This function validates password with regx expression and
+	 * reset user password.
+	 *
+	 * @access	public
+	 * @return	void
+	 */
+		
+		public function forgotPasswordReset()
 		{
-		$key = $this->uri->segment(3);
-		$validLink = $resetPassord = $this->modeladmin->linkValidationPasswordReset($key);
+		
+		// password validate Regex expresson 
+		
+		if ( passwordRegex($this->input->post('val_password')) === FALSE ) {
+			redirect(base_url() . 'admin');
+		} else {
+			$key = $this->uri->segment(3);
+			$validLink = $resetPassord = $this->modeladmin->linkValidationPasswordReset($key);
 		if ($validLink)
 			{
 			$user_password = Encode($this->input->post('val_password'));
@@ -244,7 +265,18 @@ class Admin extends CI_Controller
 			redirect(base_url() . 'admin/');
 			}
 		}
+	}
+	// --------------------------------------------------------------------
 
+	/**
+	 * sendEmail
+	 *
+	 * This function get email parameters and send emails. 
+	 * 
+	 *
+	 * @access	private
+	 * @return	void
+	 */
 	private function sendEmail($to, $subject, $message)
 		{
 		$this->load->library('email');
@@ -256,7 +288,17 @@ class Admin extends CI_Controller
 		$this->email->send();
 		
 		}
+	// --------------------------------------------------------------------
 
+	/**
+	 * updatePasswordAdmin
+	 *
+	 * This function loads the view of update password. 
+	 * 
+	 *
+	 * @access	private
+	 * @return	void
+	 */
 	public function updatePasswordAdmin()
 		{
 		$session_id = $this->session->userdata('admin_id');
@@ -292,6 +334,12 @@ class Admin extends CI_Controller
 	public function resetPassword()
 		{
 
+		// password validate Regex expresson 
+		
+		if ( passwordRegex($this->input->post('val_password')) === FALSE ) {
+			redirect(base_url() . 'admin');
+		} else {
+			
 		// get session admin id
 
 		$session_id = $this->session->userdata('admin_id');
@@ -337,6 +385,7 @@ class Admin extends CI_Controller
 				redirect(base_url() . 'admin');
 				}
 			}
+		}
 		}
 
 	// --------------------------------------------------------------------

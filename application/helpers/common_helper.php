@@ -34,15 +34,15 @@
     * @return	Password string
     */
    
-   function validatePassword($str)
+   function passwordRegex($str)
    	{
-		if (!preg_match_all('(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}', $str)){
-        return FALSE;
+		if (preg_match("^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}$^", $str)){
+		return TRUE;
 		}else{
-    	return TRUE;
+    	return FALSE;
 		}
    	}
-   
+  
    // --------------------------------------------------------------------
    
    /**

@@ -36,18 +36,15 @@ class Banner extends CI_Controller
 		$this->output->set_header('P3P: CP="CAO PSA OUR"');
 		$this->output->set_header("Pragma: no-cache");
 		date_default_timezone_set('Asia/Karachi');
+		
+		// Load model, helper and libraries
+		
 		$this->load->helper('url');
 		$this->load->helper('common_helper');
 		$this->load->library('session');
 		$this->load->model('backend/modeladmin');
 		$this->load->library('xajax');
-		$this->load->library('form_validation');
 		$this->xajax->configure('javascript URI', base_url() . 'xajax');
-		$this->xajax->registerFunction(array(
-			'checkcredentail',
-			$this,
-			'checkcredentail'
-		));
 		$this->xajax->registerFunction(array(
 			'fileupload',
 			$this,

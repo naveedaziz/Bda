@@ -36,8 +36,8 @@
             </div>
          </div>
          <?php }else{ ?>
-         <div class="alert alert-danger alert-dismissable"> 
-            Reset Password information sent to your email. <br />Please check your email for further assitance.
+         <div class="alert alert-success"> 
+            Reset Password information sent to your email. <br />Please check that email for further assitance.
          </div>
          <?php } ?>
          <div class="form-group">

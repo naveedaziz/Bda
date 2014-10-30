@@ -175,7 +175,7 @@
                      <div class="form-group">
                         <label class="col-md-4 control-label" for="user-settings-repassword">Password</label>
                         <div class="col-md-8">
-                           <input required="required" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" type="password" id="val_password" name="val_password" class="form-control" autocomplete="off">
+                           <input required="required" data-rule-required="true" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}" type="password" id="val_password" name="val_password" class="form-control" autocomplete="off">
                         	<p class="note">Password must be between 8 and 20 characters and must contain a combination of uppercase, lowercase, and numeric digits.</p>
                         </div>
                      </div>
