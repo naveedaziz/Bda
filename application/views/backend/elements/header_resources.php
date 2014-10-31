@@ -8,6 +8,8 @@
       <head>
          <meta charset="utf-8">
          <title>Nestle Professionals</title>
+         <!-- Favicon Icon -->
+      	 <link rel="Shortcut Icon" type="image/ico" href="<?php echo base_url();?>assets/frontend/img/favicon_16X16.ico" />
          <!--[if lt IE 9]>
          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
          <![endif]-->

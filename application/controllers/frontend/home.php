@@ -512,7 +512,7 @@ class Home extends CI_Controller
 		$cc = '';
 		$bcc = '';
 		$subject = 'New Query Request Nestle Professionals';
-		$this->sendEmail($from, $to, $cc, $bcc, $subject, $message);
+		$this->sendEmail($from, $to, $cc, $bcc, $subject, html_entity_decode($message));
 		// redirect to thanks page
 		redirect(base_url() . 'thanks');
 		}
@@ -548,23 +548,24 @@ class Home extends CI_Controller
 					return true;
 			}
 		}
-		$this->load->library('email');
-		$this->email->set_newline("\r\n");
-		$this->email->from($from);
-		$this->email->to($to);
-		$this->email->cc($cc);
-		$this->email->bcc($bcc);
-		$this->email->subject($subject);
-		$this->email->message($message);
-
+		// Header for sending HTML email
+		$headers  = "MIME-Version: 1.0\r\n";
+		$headers .= "Content-type: text/html; charset: utf8\r\n";
+		$headers .= 'From: '.EMAIL_CLIENT_FROM. "\r\n";
 		
-
-		$this->email->send();
-
-		
-
+		$res = mail($to,$subject,$message,$headers);
 		}
+	// --------------------------------------------------------------------
 
+	/**
+	 * 404 not found
+	 *
+	 * This function get 404 params and load 404 not found
+	 *
+	 *
+	 * @access	public
+	 * @return	void
+	 */
 	public function notFound()
 		{
 		if(isset($_SESSION['site_meta']->site_off)){

@@ -1,4 +1,4 @@
-<p><b>You have recieved a new Query in Nestle Professionals. </b></p><br />
+<p>You have received a new query from <b><?php echo $fName; ?></b> (<?php echo $email; ?> - <?php echo $contact; ?>) on Nestle Professionals website. <br/>Please login into the admin panel to access complete details.</p><br />
 <table border="1" cellspacing="5px" cellpadding="5" class="dataTable" id="myTable">
    <tr>
       <th  style="text-align:center;"><b>First Name</b></th>

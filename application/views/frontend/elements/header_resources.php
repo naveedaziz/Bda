@@ -3,7 +3,7 @@
    <head>
       <!---- site meta ---->
       <?php $this->load->view('frontend/elements/meta'); ?>
-        <!-- Favicon Icon -->
+      <!-- Favicon Icon -->
       <link rel="Shortcut Icon" type="image/ico" href="<?php echo base_url();?>assets/frontend/img/favicon_16X16.ico" />
       <!-- Theme minify CSS -->
       <link type="text/css" href="<?php echo base_url().ASSETS_FRONTEND_CSS_DIR;?>minify.css" rel="stylesheet">

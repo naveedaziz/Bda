@@ -43,6 +43,7 @@
                            <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Last Name*" autocomplete="off" >
                         </div>
                      </div>
+                     <div class="clearfix"></div>
                      <div class="form-group  col-md-6">
                         <div>
                            <input type="text" id="company" name="company" class="form-control" placeholder="Company*" autocomplete="off" >
@@ -53,6 +54,7 @@
                            <input type="text" id="val_email" name="email" class="form-control" placeholder="Email*" autocomplete="off">
                         </div>
                      </div>
+                     <div class="clearfix"></div>
                      <div class="form-group  col-md-6">
                         <div>
                            <select class="form-control" name="city" id="city">
@@ -68,6 +70,7 @@
                            <input type="text" id="contact" name="contact" class="form-control" placeholder="Contact*" autocomplete="off">
                         </div>
                      </div>
+                     <div class="clearfix"></div>
                       <div class="form-group  col-md-6">
                         <div>
                            <textarea  maxlength="999" name="address" class="form-control no-resize" placeholder="Address" cols="100" rows="10"  aria-invalid="false"></textarea>
@@ -78,6 +81,7 @@
                            <textarea  maxlength="999" name="description"  class="form-control no-resize" placeholder="Comments" cols="100" rows="10" aria-invalid="false"></textarea>
                         </div>
                      </div>
+                     <div class="clearfix"></div>
                      <div class="form-group  col-md-6">
                         <div>
                            <div class="tab-pane fade <?php if(!isset($product_id)) { ?> active in <?php } ?>" id="product">
@@ -99,7 +103,6 @@
                            </div>
                         </div>
                      </div>
-                     
                      <input type="hidden" value="1" id="activeState" name="active_state" />
                      <div class="form-group  col-md-6  margin-left20 <?php if(isset($product_id)) { ?>fade<?php } ?>">
                         <div class="tab-pane brandSelect">

@@ -213,7 +213,7 @@
    				$data['key'] = $resetPassord['key'];
    				$data['userName'] = $resetPassord['userName'];
    				$message = $this->load->view('backend/forgot_password_template', $data, true);
-   				$this->sendEmail($to, $subject, $message);
+   				$this->sendEmail($to, $subject, html_entity_decode($message));
    				redirect(base_url() . 'admin/forgot-password?success');
    				}
    			  else
@@ -242,20 +242,18 @@
    		
    		// password validate Regex expresson 
    		
-   		if ( validatePasswordRegex($this->input->post('val_password')) === FALSE ) {
-   			redirect(base_url() . 'admin');
-   		} else {
    			$key = $this->uri->segment(3);
    			$validLink = $resetPassord = $this->modeladmin->linkValidationPasswordReset($key);
    		if ($validLink)
    			{
    			$user_password = encode($this->input->post('val_password'));
-   			if (!empty($user_password))
-   				{
-   				$updatedPassword = encrypt(encode($this->input->post('val_password')));
+   			if ( validatePasswordRegex($this->input->post('val_password')) === FALSE ) {
+   			redirect(base_url() . 'admin');
+   			} else {
+				$updatedPassword = encrypt(encode($this->input->post('val_password')));
    				$resetPassord = $this->modeladmin->updateUserPassword($updatedPassword, $key);
    				redirect(base_url() . 'admin/reset-password/' . $key . '?success');
-   				}
+   			}
    
    			$data['key'] = $key;
    			$this->load->view('backend/reset_password', $data);
@@ -264,7 +262,6 @@
    			{
    			redirect(base_url() . 'admin/');
    			}
-   		}
    	}
    	// --------------------------------------------------------------------
    
@@ -279,15 +276,13 @@
    	 */
    	private function sendEmail($to, $subject, $message)
    		{
-   		$this->load->library('email');
-   		$this->email->set_newline("\r\n");
-   		$this->email->from(EMAIL_CLIENT_FROM);
-   		$this->email->to($to);
-   		$this->email->subject($subject);
-   		$this->email->message($message);
-   		$this->email->send();
-   		
-   		}
+			// Header for sending HTML email
+			$headers  = "MIME-Version: 1.0\r\n";
+			$headers .= "Content-type: text/html; charset: utf8\r\n";
+			$headers .= 'From: '.EMAIL_CLIENT_FROM. "\r\n";
+			
+			$res = mail($to,$subject,$message,$headers);
+		}
    	// --------------------------------------------------------------------
    
    	/**
