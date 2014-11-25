@@ -1,4 +1,3 @@
 User-agent: *
 Disallow:
 Disallow: /cgi-bin/
-Sitemap: dominos.fishry.com/sitemap.xml

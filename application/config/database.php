@@ -70,8 +70,8 @@ $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
 
 $db['live']['hostname'] = 'localhost';
-$db['live']['username'] = 'professionals';
-$db['live']['password'] = 'W8TWHvCDbw6S5rHn';
+$db['live']['username'] = 'root';
+$db['live']['password'] = '';
 $db['live']['database'] = 'nestle_website-2014_professionals';
 $db['live']['dbdriver'] = 'mysql';
 $db['live']['dbprefix'] = '';
